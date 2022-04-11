@@ -1,0 +1,8 @@
+刊行物の申し込みが承認されました。
+お申し込み内容は以下のようになります。
+
+受付番号：{$recept_id}
+
+【刊行物】
+{foreach from=$books item="datum"}{if $datum.amount}{$datum.name} {$datum.amount} 部
+{/if}{/foreach}
