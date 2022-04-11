@@ -1,6 +1,0 @@
-アカウント
-{$account_name}
-
-再設定用URL
-{$reset_url}
-

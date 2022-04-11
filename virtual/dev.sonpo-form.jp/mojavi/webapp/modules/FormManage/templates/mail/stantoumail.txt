@@ -1,4 +1,0 @@
-{$data.year_3}年{$data.month_3}月{$data.day_3}日実施（受付番号{$data.inst_id}）の講演会について、担当支部からレジュメなどのその他資料の手配依頼が来ていますので、対応してください。
-
-管理画面　https://dev.sonpo-form.jp/manage/forms/
-
