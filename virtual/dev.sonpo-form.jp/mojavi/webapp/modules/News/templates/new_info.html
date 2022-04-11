@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 − 損害保険の契約にあたっての手引（バイヤーズガイド）</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、社団法人日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="/news/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="news">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+{include file=$include_base|cat:"/common/ssi/smarty/head.html" menu_id="news"}
+		<!-- //ヘッダ -->
+		<!-- パンくず -->
+		<div id="breadcrumbs" class="text1"><a href="/">トップ</a><a href="/news/new_info/">お知らせ</a><strong>最新情報</strong></div>
+		<!-- //パンくず -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">最新情報</span></h2>
+				<!-- //content title -->
+				<!-- ニュース一覧 -->
+				<div class="contentBlock1">
+					<div class="legend">
+						<ul class="clearfix">
+							<li class="text1"><span class="icn-act">協会各地の活動</span></li>
+							<li class="text1"><span class="icn-inf">協会からのお知らせ</span></li>
+							<li class="text1"><span class="icn-rel">協会ニュースリリース</span></li>
+						</ul>
+					</div>
+					<div class="clearfix text2" id="latesttopicbox">
+						<dl id="info">
+{foreach from=$data item="datum"}{if $datum.is_time_over && $datum.link_top}
+						<dt>{$datum.open_year2|string_format:"%02d"}.{$datum.open_month|string_format:"%02d"}.{$datum.open_day|string_format:"%02d"}</dt>
+						<dd {if $datum.category==1}class="icn-rel"{/if}{if $datum.category==3}class="icn-act"{/if}{if $datum.category==4}class="icn-inf"{/if}><a href="{if $datum.category==1}/news/release/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==3}/about/action/branch/{$branch_file[$datum.branch]}/{$datum.filename|escape}.html{/if}{if $datum.category==4}/news/information/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}">{if $datum.category==3}【{$branch_sname[$datum.branch]}】{/if}{$datum.list_title|escape}</a></dd>
+{/if}{/foreach}
+						</dl>
+					</div>
+				</div>
+				<!-- //ニュース一覧 -->
+
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+{include file=$include_base|cat:"/common/ssi/smarty/localnav_news.html" menu1="new_info" menu2="index"}
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+{include file=$include_base|cat:"/common/ssi/smarty/foot.html"}
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

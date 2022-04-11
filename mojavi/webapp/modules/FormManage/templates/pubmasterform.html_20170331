@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}')"{/if}>
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>刊行物マスター（詳細）</h3>
+<div class="maincontents">
+<a href="{$script_path|escape}/module/FormManage/action/PubMasterIndex">戻る</a>
+<hr>
+
+{if @$errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/FormManage/action/PubMasterRegist" method="POST" name="frm1">
+
+<table cellspacing="1" class="azlist">
+<!--<tr>
+<th>ID</th>
+<td width="75%">{if @$data.id}{$data.id|string_format:"%05d"}{else}&nbsp;{/if}<input type="hidden" name="id" value=""></td>
+</tr>-->
+<tr>
+<th>冊子番号</th>
+<td width="75%"><input type="text" name="pub_id_1" value="{if @$data.pub_id_1}{$data.pub_id_1|string_format:"%05d"}{/if}" size="5"> - <input type="text" name="pub_id_2" value="{if @$data.pub_id_2}{$data.pub_id_2|string_format:"%02d"}{/if}" size="3"><input type="hidden" name="id" value="{if @$data.id}{$data.id|escape}{/if}"></td>
+</tr>
+<tr>
+<th>冊子名</th>
+<td width="75%"><input type="text" name="name" value="{if @$data.name}{$data.name|escape}{/if}" size="60"></td>
+</tr>
+<tr>
+<th>冊子所管部門</th>
+<td width="75%">{foreach from=$sassi_users item="datum"}<input type="checkbox" name="user[]" value="{$datum.id|escape}"{if @$data.users}{foreach from=$data.users item="datum2"}{if @$datum2==$datum.id} checked{/if}{/foreach}{/if} id="user_{$datum.id|escape}"><label for="user_{$datum.id|escape}">{$datum.bikou|escape}</label><br>{/foreach}</td>
+</tr>
+<tr>
+<th>カテゴリー</th>
+<td width="75%">
+<select name="category">
+{foreach from=$categories key="keyval" item="datum"}<option value="{$keyval|escape}"{if $keyval==@$data.category} selected{/if}>{$datum|escape}
+{/foreach}
+</select>
+</td>
+</tr>
+<tr>
+<th>在庫数</th>
+<td width="75%">{if @$data.total_amount}{$data.total_amount|escape}{/if} 部（納品計：{if @$data.total_amount_p}{$data.total_amount_p|escape}、{/if}発送計：{if @$data.total_amount_m}{$data.total_amount_m|escape}{/if}）</td>
+</tr>
+<tr>
+<th>納品部数</th>
+<td width="75%"><input type="text" name="pcount" value="{if @$data.pcount}{$data.pcount|escape}{/if}">部（追加します）</td>
+</tr>
+<tr>
+<th>重量</th>
+<td width="75%"><input type="text" name="weight" value="{if @$data.weight}{$data.weight|escape}{/if}">ｇ</td>
+</tr>
+<tr>
+<th>単価</th>
+<td width="75%"><input type="text" name="price" value="{if @$data.price}{$data.price|escape}{/if}">円</td>
+</tr>
+<tr>
+<th>在庫調整</th>
+<td width="75%"><input type="text" name="adjcount" value="{if @$data.adjcount}{$data.adjcount|escape}{/if}">冊（正の値：在庫数から削減、負の値：在庫数に追加）</td>
+</tr>
+<tr>
+<th>在庫警告閾値</th>
+<td width="75%"><input type="text" name="border" value="{if @$data.border}{$data.border|escape}{/if}">冊</td>
+</tr>
+<tr>
+<th>リンク先</th>
+<td width="75%"><input type="text" name="url" value="{if @$data.url}{$data.url|escape}{/if}" size="60"></td>
+</tr>
+
+<tr>
+<th>表示範囲</th>
+<!--<td width="75%">{foreach from=$showrange key="dkey" item="datum"}
+<input type="radio" name="showrange" value="{$dkey|escape}"{if @$data.showrange==$dkey} checked{/if}>{$datum|escape}&nbsp;
+{/foreach}
+</td>-->
+<td width="75%">
+<input type="checkbox" name="show_online" value="1"{if @$data.show_online==1} checked{/if} id="show_online"><label for="show_online">オンライン</label>&nbsp;
+<input type="checkbox" name="show_other" value="1"{if @$data.show_other==1} checked{/if} id="show_other"><label for="show_other">取り寄せ</label>&nbsp;
+<input type="checkbox" name="show_inst" value="1"{if @$data.show_inst==1} checked{/if} id="show_inst"><label for="show_inst">講師派遣</label>&nbsp;
+</td>
+</tr>
+
+<tr>
+<th>在庫ゼロ件での一覧<br>表示</th>
+<td width="75%">
+<input type="radio" name="show_if_zero" value="1"{if @$data.show_if_zero==1} checked{/if} id="show_if_zero"><label for="show_if_zero">する</label>&nbsp;
+<input type="radio" name="show_if_zero" value="0"{if @$data.show_if_zero==0} checked{/if} id="not_show_if_zero"><label for="not_show_if_zero">しない</label>
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="submit" value="OK">　<input type="button" value="キャンセル" onClick="location.href='{$script_path|escape}/module/FormManage/action/PubMasterIndex'"></td>
+</tr>
+
+</table>
+</form>
+
+</div>
+</body>
+</html>

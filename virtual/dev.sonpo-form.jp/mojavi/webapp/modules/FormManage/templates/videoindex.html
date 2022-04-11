@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>日本損害保険協会・ビデオ・講師派遣 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script>
+{literal}
+function submitfrm(){
+  document.frm1.submit();
+}
+
+function allCheck(check){
+  var index;
+  if(document.form02.elements["dl[]"].length>1){
+    if(check){
+      for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+        document.form02.elements["dl[]"][index].checked = true;
+      }
+    }else{
+      for(index = 0; index < form02.elements["dl[]"].length; index++){
+        document.form02.elements["dl[]"][index].checked = false;
+      }
+    }
+  }else{
+    if(check){
+      document.form02.elements["dl[]"].checked = true;
+    }else{
+      document.form02.elements["dl[]"].checked = false;
+    }
+  }
+}
+
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・ビデオ 管理画面</h2>
+<h3>ビデオ（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<form action="index.php/module/FormManage/action/VideoIndex" method="POST" name="frm1">
+ステータス<select name="st" onChange="submitfrm();">
+<option value="99">すべて</option>
+<option value="1"{if $l_status==1} selected{/if}>対応待ち</option>
+<option value="2"{if $l_status==2} selected{/if}>貸出中</option>
+<option value="3"{if $l_status==3} selected{/if}>返却済み</option>
+</select><br />
+発送月
+<select name="y" onChange="submitfrm();">
+<option value="99">▼
+{foreach from=$years item="datum"}
+<option value="{$datum|escape}"{if $datum==$l_year} selected{/if}>{$datum|escape}
+{/foreach}
+</select>年
+<select name="m" onChange="submitfrm();">
+<option value="99">▼
+{foreach from=$months item="datum"}
+<option value="{$datum|escape}"{if $datum==$l_month} selected{/if}>{$datum|escape}
+{/foreach}
+</select>月
+</form>
+{if $data}
+<form action="index.php/module/FormManage/action/VideoCsv" method="POST" name="form02">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>ステータス</th>
+<th>受付日時</th>
+<th>発送日</th>
+<th>返却日</th>
+<th>ダウンロード</th>
+{if $is_master || $is_master2}<th>削除</th>{/if}
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td><a href="{$script_path|escape}/module/FormManage/action/VideoRegist?id={$datum.id|escape}">{$datum.video_id|escape}</a></td>
+<td>{$video_status[$datum.status]|escape}</td>
+<td>{$datum.date_regist|date_format:"%Y/%m/%d %H:%M"}</td>
+<td>{if $datum.rent_date}{$datum.rent_date|date_format:"%Y/%m/%d"}{else}&nbsp;{/if}</td>
+<td>{if $datum.back_date}{$datum.back_date|date_format:"%Y/%m/%d"}{else}&nbsp;{/if}</td>
+<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"></td>
+{if $is_master || $is_master2}<td align="center"><a href="{$script_path|escape}/module/FormManage/action/VideoDelete?id={$datum.id|escape:"url"}" onClick="return confirm('このデータを削除しますか？');">削除</a></td>{/if}
+</tr>
+{/foreach}
+</table>
+
+<input type="submit" value="選択したデータをCSVでダウンロード"> <input type="checkbox" name="checkall" onClick="allCheck(this.checked);">全選択
+</form>
+{/if}
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>
+
+</div>
+</body>
+</html>

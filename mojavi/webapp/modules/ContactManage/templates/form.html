@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>日本損害保険協会・WEB相談 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if $popmsg} onLoad="alert('{$popmsg|escape}')"{/if}>
+<h2>日本損害保険協会・WEB相談 管理画面</h2>
+<h3></h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<td width="75%">W{$data.comment_id|escape}</td>
+</tr>
+<tr>
+<th>受付日時</th>
+<td width="75%">{$data.date_regist|date_format:"%Y-%m-%d %H:%M"}</td>
+</tr>
+<tr>
+<th>お名前</th>
+<td>{$data.name1|escape}　{$data.name2|escape}</td>
+</tr>
+<tr>
+<th>郵便番号</th>
+<td>{$data.zip1|escape}-{$data.zip2|escape}</td>
+</tr>
+<tr>
+<th>都道府県</th>
+<td>{$prefs[$data.pref]|escape}</td>
+</tr>
+<tr>
+<th>住所</th>
+<td>{$data.address|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>{$data.email|escape}</td>
+</tr>
+<tr>
+<th>ご相談の保険種目</th>
+<td>{$types[$data.type]|escape}</td>
+</tr>
+<tr>
+<th>ご相談の内容</th>
+<td>{$data.comment|escape|nl2br}</td>
+</tr>
+<tr>
+<th>協会からの回答の要否</th>
+<td>{if $data.no_answer}不要{else}必要{/if}</td>
+</tr>
+<tr>
+<th>入力パスワード</th>
+<td>{$data.upassw|escape}</td>
+</tr>
+<form action="{$script_path|escape}/module/ContactManage/action/Regist" method="POST" enctype="multipart/form-data" name="frm1">
+<tr>
+<th>ステータス</th>
+<td><select name="status">
+{foreach from=$status key="dkey" item="datum"}<option value="{$dkey}"{if $dkey==$data.status} selected{/if}>{$datum|escape}
+{/foreach}
+</select><input type="submit" value="変更"><input type="hidden" name="mode" value="submit"></td>
+</tr>
+</form>
+{if $data.no_answer<>1}
+<tr>
+<th>回答内容</th>
+<td>
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<form action="{$script_path|escape}/module/ContactManage/action/Upload" method="POST" enctype="multipart/form-data">
+<td style="border:none;"><input type="file" name="file1"> <input type="submit" value="保存"{if $pdf_name} onClick="return confirm('すでにアップロードされているファイルを上書きしますか？');"{/if}><input type="hidden" name="mode" value="submit"></td>
+</form>
+</tr>
+<tr>
+{if $is_master}<form action="{$script_path|escape}/module/ContactManage/action/SendAnswer" method="POST" enctype="multipart/form-data">{/if}
+<td style="border:none;">{if $pdf_name}<a href="{$script_path|escape}/module/ContactManage/action/Preview?cid={$data.comment_id|escape:"url"}" target="_blank">{$pdf_name|escape}</a>{if $pdf_date}({$pdf_date|date_format:"%Y-%m-%d %H:%M"}){/if} {if $is_master}<input type="submit" name="submit_mode" value="送信"{if $data.date_send} onClick="return confirm('すでにメールは送信済みですが、再度送信しますか？');"{/if}>{/if}<br>{if $data.date_send}送信日時：{$data.date_send|date_format:"%Y-%m-%d %H:%M"}{/if}{if $data.date_seen}<br>ユーザ閲覧日時：{$data.date_seen|date_format:"%Y-%m-%d %H:%M"}{/if}{/if}</td>
+{if $is_master}</form>{/if}
+</tr>
+{/if}
+</table>
+</td>
+</tr>
+</table>
+<a href="/manage/contact/index.php">戻る</a>
+</div>
+</body>
+</html>

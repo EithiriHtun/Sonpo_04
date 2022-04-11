@@ -1,0 +1,351 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/archive/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body id="archive-form">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+
+		<!-- メインエリア -->
+		<div id="main">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">刊行物申込</span></h2>
+
+				<div class="contentBlock">
+					<img src="/archive/publish/img/step_04.gif" width="670" height="33" border="0" alt="お申し込み完了">
+				</div>
+
+					<div class="subt1">
+						<div class="frm">
+							<p class="text2">お申し込み完了</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1 clearfix">
+						<div class=" clearfix text2">以下の内容で承りました。お申込みありがとうございます。</div>
+						<div><input type="button" class="btnprint" onclick="window.print();return false;" value="&nbsp;&nbsp;このページを印刷する&nbsp;&nbsp;" ></div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="boxNormal text2">
+							あなたの受付番号は<br>
+							<strong>{$data.recept_id|escape}</strong><br>
+							です。お問い合わせの際に必要ですのでこちらの番号をお控えください。
+						</div>
+					</div>
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">ご依頼者様情報</p>
+						</div>
+					</div>
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>属性<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;">{$data.address_type_name|escape}
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>住所<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">郵便番号<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.zipcode1|escape}-{$data.zipcode2|escape}</td>
+											</tr>
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">都道府県<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]|escape}{/if}</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">市区町村以下<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.address|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{if $data.address_type==1}
+								<tr>
+									<td class="gray02"><strong>お名前<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">漢字<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.name1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.name2|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap class="text2" style="border:none; padding: 2px 20px 2px 2px;">フリガナ</td>
+												<td class="text2" style="border:none; padding:2px 20px 2px 2px;">{$data.kana1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.kana2|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{else}
+								<tr>
+									<td class="gray02"><strong>法人・団体名<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px 0 2px 0;">法人・団体名<font class="colorE97">*</font></td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td valign="top" class="text2" style="border:none; padding:2px;">{$data.company|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">部署</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.section|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>ご担当者<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">漢字<span class="colorE97">*</span></td>
+												<td valign="top" class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.name1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.name2|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap class="text2" style="border:none; padding: 2px 20px 2px 2px;">フリガナ</td>
+												<td class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.kana1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.kana2|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{/if}
+								<tr>
+									<td class="gray02"><strong>メールアドレス<span class="colorE97">*</span></strong></td>
+									<td>{$data.email|escape}</td>
+								</tr>
+
+								<tr>
+									<td class="gray02"><strong>電話番号<span class="colorE97">*</span></strong></td>
+									<td>{$data.tel1|escape} - {$data.tel2|escape} - {$data.tel3|escape}</td>
+								</tr>
+
+								<tr>
+									<td class="gray02"><strong>資料送付先<span class="colorE97">*</span></strong></td>
+									<td>
+									{if $data.send_type==0}ご依頼者様住所に同じ{/if}
+									{if $data.send_type==1}ご依頼者様住所と異なる{/if}
+									</td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">資料送付先情報</p>
+						</div>
+					</div>
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>属性<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;">{$data.saddress_type_name|escape}
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>住所<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">郵便番号<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.szipcode1|escape}-{$data.szipcode2|escape}</td>
+											</tr>
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">都道府県<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{if @$prefs[$data.sprefecture]}{$prefs[$data.sprefecture]|escape}{/if}</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">市区町村以下<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.saddress|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{if $data.saddress_type==1}
+								<tr>
+									<td class="gray02"><strong>お名前<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">漢字<span class="colorE97">*</span></td>
+												<td class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.sname1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.sname2|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap class="text2" style="border:none; padding: 2px 20px 2px 2px;">フリガナ</td>
+												<td class="text2" style="border:none; padding:2px 20px 2px 2px;">{$data.skana1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.skana2|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{else}
+								<tr>
+									<td class="gray02"><strong>法人・団体名<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px 0 2px 0;">法人・団体名<font class="colorE97">*</font></td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td valign="top" class="text2" style="border:none; padding:2px;">{$data.scompany|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">部署</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td class="text2" style="border:none; padding:2px;">{$data.ssection|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>ご担当者<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">漢字<span class="colorE97">*</span></td>
+												<td valign="top" class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.sname1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.sname2|escape}</td>
+											</tr>
+											<tr>
+												<td nowrap class="text2" style="border:none; padding: 2px 20px 2px 2px;">フリガナ</td>
+												<td class="text2" style="border:none; padding: 2px 20px 2px 2px;">{$data.skana1|escape}</td>
+												<td class="text2" style="border:none; padding:2px;">{$data.skana2|escape}</td>
+											</tr>
+										</table></td>
+								</tr>
+{/if}
+<!--
+								<tr>
+									<td class="gray02"><strong>メールアドレス</strong></td>
+									<td>{if @$data.semail}{$data.semail|escape}{/if}</td>
+								</tr>
+-->
+								<tr>
+									<td class="gray02"><strong>電話番号<span class="colorE97">*</span></strong></td>
+									<td>{$data.stel1|escape} - {$data.stel2|escape} - {$data.stel3|escape}</td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">到着希望日</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>到着希望日</strong></td>
+									<td><div style="padding-bottom: 5px;">{$data.req_year|escape}年{$data.req_month|escape}月{$data.req_day|escape}日
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>到着希望日摘要</strong></td>
+									<td><div style="padding-bottom: 5px;">
+									{$data.req_text|escape|nl2br}
+									</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">お申し込み内容</p>
+						</div>
+					</div>
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>刊行物</strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2" width="100%">
+{foreach from=$books key="dkey" item="datum"}
+  {foreach from=$datum item="datum2"}
+    {if $datum2.count>0}
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">{$datum2.name|escape}</td>
+												<td class="text2" style="text-align:right; border:none; padding:2px;">{$datum2.count|escape}部</td>
+											</tr>
+    {/if}
+  {/foreach}
+{/foreach}
+										</table></td>
+								</tr>
+<!--								<tr>
+									<td class="gray02" width="25%"><strong>料金</strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2" width="100%">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">刊行物代金</td>
+												<td class="text2" style="text-align:right; border:none; padding:2px;">{$data.total_price|escape}円</td>
+											</tr>
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">発送料金</td>
+												<td class="text2" style="text-align:right; border:none; padding:2px;">{$data.trans_price|escape}円</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">計</td>
+												<td class="text2" style="text-align:right; border:none; padding:2px;">{$data.allprice|escape}円</td>
+											</tr>
+										</table></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>お支払い方法</strong></td>
+									<td>銀行振り込み<br><p class="text1">※請求書については、刊行物お届けとは<span class="fc-red"><strong>別便</strong></span>でお送りいたします。振り込み手数料は、お客様のご負担となります。</p></td>
+								</tr>-->
+							</table>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>備考</strong></td>
+									<td><div style="padding-bottom: 5px;">
+									{$data.bikou|escape|nl2br}
+									</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="contentBlock">
+						<div class="clearfix text2 btn">
+							<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+						</div>
+					</div>
+
+				<!-- //送付先-->
+				<!-- colorCFライン-->
+				<div class="lineCF"></div>
+				<!-- //colorCFライン-->
+
+			</div>
+
+			<!-- //コンテンツエリア -->
+		</div>
+		<!-- //メインエリア -->
+
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>ÆüËÜÂ»³²Êİ¸±¶¨²ñ¡¦´©¹ÔÊª ´ÉÍı²èÌÌ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>ÆüËÜÂ»³²Êİ¸±¶¨²ñ¡¦´©¹ÔÊª ´ÉÍı²èÌÌ</h2>
+<h3>ºß¸Ë¾õ¶·ÍúÎò</h3>
+<div class="maincontents">
+
+<a href="{$script_path|escape}/module/FormManage/action/PubIndex">Ìá¤ë</a>
+<hr>
+{if $data}
+<table cellspacing="1" class="azlist" width="800">
+<tr>
+<th>ºı»ÒÈÖ¹æ</th>
+<th>ºı»ÒÌ¾</th>
+<th>ºß¸Ë¿ô</th>
+</tr>
+
+{foreach from=$data item="datum"}{if $datum.stock}
+<tr>
+<td align="left" valign="top"><!--{$datum.id|string_format:"%05d"}:-->{if $datum.pub_id_1 || $datum.pub_id_2}{$datum.pub_id_1|string_format:"%05d"}-{$datum.pub_id_2|string_format:"%02d"}{/if}</td>
+<td align="left" valign="top">{if $datum.name}{$datum.name|escape}{else}&nbsp;{/if}</td>
+<!--<td align="right" valign="top">{if $datum.total_p}{$datum.total_p|escape}{else}0{/if}</td>
+<td align="right" valign="top">{if $datum.total_online}{$datum.total_online|escape}{else}0{/if}</td>
+<td align="right" valign="top">{if $datum.total_inst}{$datum.total_inst|escape}{else}0{/if}</td>
+<td align="right" valign="top">{if $datum.total_other}{$datum.total_other|escape}{else}0{/if}</td>
+<td align="right" valign="top">{if $datum.total_adj}{$datum.total_adj|escape}{else}0{/if}</td>
+<td align="right" valign="top">{if $datum.total_m}{$datum.total_m|escape}{else}0{/if}</td>-->
+<td align="right" valign="top">{if $datum.stock}{$datum.stock|escape|number_format}{else}0{/if}</td>
+</tr>
+{else}
+{if $datum.show_if_zero==1 || $datum.stock>0}<tr>
+<td align="left" valign="top"><!--{$datum.id|string_format:"%05d"}:-->{if $datum.pub_id_1 || $datum.pub_id_2}{$datum.pub_id_1|string_format:"%05d"}-{$datum.pub_id_2|string_format:"%02d"}{/if}</td>
+<td align="left" valign="top">{if $datum.name}{$datum.name|escape}{else}&nbsp;{/if}</td>
+<td align="right" valign="top">{if $datum.stock}{$datum.stock|escape|number_format}{else}0{/if}</td>
+</tr>{/if}
+{/if}{/foreach}
+</table>
+{/if}
+<hr>
+<a href="{$script_path|escape}/module/FormManage/action/PubIndex">Ìá¤ë</a>
+</div>
+</body>
+</html>

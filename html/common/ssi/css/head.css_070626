@@ -1,0 +1,276 @@
+/* ------------------------------------------
+	header
+--------------------------------------------- */
+#head {
+	width:950px;
+}
+
+	/* - - - - - - - - - - - - - - - 
+		upper ヘッダ上段
+	 - - - - - - - - - - - - - - - - */
+#upper {
+	width:950px;
+}
+
+#upper #title {
+	float:left;
+	width:275px;
+}
+
+#upper #title img{
+	margin:26px 0 9px 16px;
+}
+
+#upper #nav {
+	float:right;
+	width:647px;
+	margin-top:40px;
+}
+
+#upper #nav ul{
+	list-style-type:none;
+}
+
+#upper #nav ul li.a0{
+	float:right;
+	border-left:1px solid #CCCCCC;
+	padding-right:20px;
+}
+
+#upper #nav ul li.a1{
+	float:right;
+	border-left:1px solid #CCCCCC;
+	padding-right:0.7em;
+}
+
+#upper #nav ul li.a2{
+	float:right;
+	padding-right:0.7em;
+}
+
+#upper #nav ul li.a0 a,
+#upper #nav ul li.a1 a{
+	margin-left:0.7em;
+}
+
+	/* - - - - - - - - - - - - - - - 
+		mid ヘッダ中段
+	 - - - - - - - - - - - - - - - - */
+#mid{
+	width:950px;
+	background:#EBF2F6 url("/common/ssi/img/console_bg.gif") repeat-x;
+	padding:4px 0 3px 0;
+}
+
+#mid #search{
+	float:right;
+	width:255px;
+	background:url("/common/ssi/img/console_dotline.gif") repeat-y 0 0;
+	margin-left:12px;
+}
+
+#mid #search #txt{
+	float:left;
+	padding:3px 10px 0 12px;
+}
+
+#mid #search #txt input{
+	height:16px;
+	color:#CCCCCC;
+	border:1px solid #DDDDDD;
+	width:180px;
+	font-size:12px;
+	line-height:1em;
+}
+
+#mid #search #btn{
+	float:left;
+	padding-top:2px;
+	padding-right:10px;
+	font-size:12px;
+	line-height:1em;
+}
+
+#mid #zoom{
+	float:right;
+	width:224px;
+	background:url("/common/ssi/img/font_bg.gif") repeat-x 0 0;
+	border-right:1px solid #DDDDDD;
+}
+
+#mid #zoom .box{
+	background:#FF0000 url("/common/ssi/img/font_foot.gif") 100% 0;
+}
+
+#mid #zoom ul{
+	list-style-type:none;
+}
+
+#mid #zoom ul li.title{
+	float:left;
+	width:99px;
+	height:24px;
+	margin:0px;
+	display:block;
+	background: url("/common/ssi/img/font_head.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-m,
+#mid #zoom ul li.b-l,
+#mid #zoom ul li.b-xl{
+	float:left;
+	width:40px;
+	margin:3px 0;
+}
+
+#mid #zoom ul li.b-m a,
+#mid #zoom ul li.b-l a,
+#mid #zoom ul li.b-xl a{
+	margin:0px;
+	height:18px;
+	display:block;
+	text-decoration:none;
+	/*except macIE\*/overflow: hidden;/*except macIE*/
+}
+
+#mid #zoom ul li.title span,
+#mid #zoom ul li.b-m a span,
+#mid #zoom ul li.b-l a span,
+#mid #zoom ul li.b-xl a span {
+	visibility:hidden;
+	font-size:10px;
+	line-height:10px;
+}
+
+#mid #zoom ul li.b-m a{
+	background: url("/common/ssi/img/b_font_m_1.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-m a:hover{
+	background: url("/common/ssi/img/b_font_m_2.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-l a{
+	background: url("/common/ssi/img/b_font_x_1.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-l a:hover{
+	background: url("/common/ssi/img/b_font_l_2.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-xl a{
+	background: url("/common/ssi/img/b_font_xl_1.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-xl a:hover{
+	background: url("/common/ssi/img/b_font_xl_2.gif") no-repeat 0 0;
+}
+
+	/* - - - - - - - - - - - - - - - 
+		lower ヘッダ下段
+	 - - - - - - - - - - - - - - - - */
+#lower {
+	width:950px;
+	background:url("/common/ssi/img/m_navi_bg.gif") repeat-x right top;
+}
+
+		/*  -  -  -  -  -  -  -  -  -  
+			グローバルメニュー
+		 -  -  -  -  -  -  -  -  -  - */
+#lower ul#globalnav {
+	list-style-type:none;
+}
+
+#lower ul#globalnav li.main{
+	float:left;
+}
+
+#lower ul#globalnav li.beginnernavi{
+	float:right;
+	margin:4px 6px 0 0;
+}
+
+			/*    -    -    -    -    -    -    -    
+						ロールオーバ
+			 -    -    -    -    -    -    -    -  */
+#lower ul#globalnav div.top {
+	background:none;
+}
+ 
+#lower ul#globalnav div.title {
+	width:108px;
+	height:33px;
+	visibility:hidden;
+}
+
+/*
+#lower ul#globalnav a:link,
+#lower ul#globalnav a:visited {
+	width:108px;
+	height:32px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+}
+
+#lower ul#globalnav a:hover,
+#lower ul#globalnav a:active {
+	width:108px;
+	height:32px;
+	background-repeat:no-repeat;
+	background-position: 0 -33px;
+}
+
+#lower ul#globalnav a.m-top {
+	background-image:url(/common/ssi/img/m_top.gif);
+}
+
+body#top #lower ul#globalnav a.m-top {
+	background-image:url(/common/ssi/img/m_top.gif);
+}
+
+#lower ul#globalnav a.m-useful {
+	background-image:url(/common/ssi/img/m_useful.gif);
+}
+
+body#useful #lower ul#globalnav a.m-useful {
+	background-image:url(/common/ssi/img/m_useful.gif);
+}
+*/
+		/*  -  -  -  -  -  -  -  -  -  -  -
+			グローバルメニュープルダウン
+		 -  -  -  -  -  -  -  -  -  -  -  - */
+#lower ul#globalnav .top{
+	width:108px;
+}
+
+#lower ul#globalnav ol.subnav {
+	width:214px;
+	list-style-type:none;
+	border:1px solid #BAD0F5;
+	border-top:0;
+}
+
+#lower ul#globalnav ol.subnav li{
+	clear:both;
+	display:block;
+	border:1px solid #BAD0F5;
+	border-top:0;
+	padding:6px 5px 5px 20px;
+	background:url("/common/img/icon_lnav2.gif") no-repeat 10px 11px;
+}
+
+#lower ul#globalnav ol.subnav li a{
+	text-decoration:none;
+}
+
+#lower #m_useful_sub,
+#lower #m_news_sub,
+#lower #m_protection_sub,
+#lower #m_archive_sub,
+#lower #m_about_sub,
+#lower #m_exam_sub {
+	position:absolute;
+	width:216px;
+	background:#FFFFFF;
+	visibility:hidden;
+}

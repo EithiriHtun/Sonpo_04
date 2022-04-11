@@ -1,0 +1,89 @@
+<script type="text/javascript">
+{literal}
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16600020-1']);
+  _gaq.push(['_setDomainName', '.sonpo.or.jp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+{/literal}
+</script>
+				<div id="head">
+			<div class="clearfix" id="upper">
+				<h1 id="title"><a href="/en/"><img src="/en/common/ssi/img/logo.gif" width="189" height="45" border="0" alt="GIAJ The General Insurance Association of Japan"></a></h1>
+				<div class="clearfix" id="nav">
+
+					<ul>
+						<li class="a0 text1"><a href="/" target="_blank">Japanese</a></li>
+						<li class="a1 text1"><a href="/en/sitemap/">Sitemap</a></li>
+						<li class="a2 text1"><a href="/en/links/">Links</a></li>
+					</ul>
+				</div>
+			</div>
+
+<form name="form" method="post" action="/cgi-bin/search_eng/full_search.cgi">
+			<div class="clearfix" id="mid">
+					<!--  検索 -->
+					<div id="search">
+						<div id="txt"><input type="text" name="query_str" value="Please input the keyword." onFocus="inputareaclr();"></div>
+						<div id="btn"><input type="submit" name="foo" value="Search"></div>
+					</div>
+					<!-- //検索 -->
+<input type="hidden" name="idx" value="english">
+<input type="hidden" name="page" value="1">
+
+<input type="hidden" name="display" value="">
+<input type="hidden" name="flag" value="">
+<input type="hidden" name="sort" value="">
+<input type="hidden" name="search" value="">
+<input type="hidden" name="listFile" value="">
+</form>
+					<!--  文字サイズの変更 -->
+					<div id="zoom">
+						<div class="box">
+							<ul>
+								<li class="title"><span>Text size</span></li>
+
+								<li class="b-m"><a href="#" onClick="setActiveStyleSheet('medium');" onFocus="this.blur();"><span>S</span></a></li>
+								<li class="b-l"><a href="#" onClick="setActiveStyleSheet('large');" onFocus="this.blur();"><span>M</span></a></li>
+								<li class="b-xl"><a href="#" onClick="setActiveStyleSheet('exlarge');" onFocus="this.blur();"><span>L</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //文字サイズの変更 -->
+
+			</div>
+			<div class="clearfix" id="lower">
+				<!-- グローバルナビ -->
+				<ul id="globalnav">
+					<li class="main">
+						<div class="toptop"><a href="/en/" {if $menu_id<>"top"}onmouseover="imgOn('m_top');" onmouseout="imgOff('m_top');"{/if}><img src="/en/common/ssi/img/m_top_{if $menu_id=="top"}3{else}1{/if}.gif" width="106" height="33" alt="Top" name="m_top"></a></div>
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/news/" {if $menu_id<>"news"}onmouseover="imgOn('m_news');" onmouseout="imgOff('m_news');"{/if}><img src="/en/common/ssi/img/m_news_{if $menu_id=="news"}3{else}1{/if}.gif" width="102" height="33" alt="News" name="m_news"></a></div>
+
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/statements/" {if $menu_id<>"statements"}onmouseover="imgOn('m_statements');" onmouseout="imgOff('m_statements');"{/if}><img src="/en/common/ssi/img/m_statements_{if $menu_id=="statements"}3{else}1{/if}.gif" width="101" height="33" alt="Statements" name="m_statements"></a></div>
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/regulations/" onmouseover="imgOn('m_regulations');" onmouseout="imgOff('m_regulations');"><img src="/en/common/ssi/img/m_regulations_1.gif" width="101" height="33" alt="Regulations" name="m_regulations"></a></div>
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/statistics/" onmouseover="imgOn('m_statistics');" onmouseout="imgOff('m_statistics');"><img src="/en/common/ssi/img/m_statistics_1.gif" width="101" height="33" alt="Statistics" name="m_statistics"></a></div>
+
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/publication/" onmouseover="imgOn('m_publication');" onmouseout="imgOff('m_publication');"><img src="/en/common/ssi/img/m_publication_1.gif" width="101" height="33" alt="Publications" name="m_publication"></a></div>
+					</li>
+					<li class="main">
+						<div class="top"><a href="/en/about/" onmouseover="imgOn('m_about');" onmouseout="imgOff('m_about');"><img src="/en/common/ssi/img/m_about_1.gif" width="98" height="33" alt="About Us" name="m_about"></a></div>
+					</li>
+				</ul>
+				<!-- //グローバルナビ -->
+			</div>
+		</div>

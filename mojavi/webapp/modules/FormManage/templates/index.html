@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物・講師派遣関連 管理画面</h2>
+<h3>一覧</h3>
+<div class="maincontents">
+
+<hr>
+<div align="right">
+{if $previous_login_time}最終ログイン日時：{$previous_login_time|escape}　{/if}［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+{if $pw_alert}<div><span style="color:red;">※{$pw_limit_date|escape}までにパスワードを変更してください</span></div>{/if}
+<ul>
+<li><a href="{$script_path|escape}/module/FormManage/action/PubIndex">刊行物</a>
+{if $is_master || $is_master2 || $branch}<li><a href="{$script_path|escape}/module/FormManage/action/InstList">講師派遣</a>{/if}
+{if $is_master}<li><a href="{$script_path|escape}/module/FormManage/action/ListIDPW">登録者</a>{/if}
+<li><a href="{$script_path|escape}/module/FormManage/action/SetPW">パスワード変更</a>
+{if $is_master}<li><a href="{$script_path|escape}/module/FormManage/action/Logdl">ログのダウンロード</a>{/if}
+</ul>
+
+</div>
+</body>
+</html>

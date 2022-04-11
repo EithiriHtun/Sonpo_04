@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>ファイル</h3>
+<div class="maincontents">
+<form name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<td>ファイルをアップロードしました。「OK」を押してください。</td>
+</tr>
+</table>
+<div style="display:none;">
+<textarea name="strhtml">{$strhtml}</textarea>
+</div>
+<table>
+<tr>
+<td><input type="button" value="OK" onClick="var top=getScrollTop(window.opener.document.frm1.content);window.opener.document.frm1.content.value=document.frm1.strhtml.value;scrollTextarea(window.opener.document.frm1.content,{$n},{$len},top);window.close();"></td>
+</tr>
+</table>
+
+</form>
+
+</div>
+</body>
+</html>

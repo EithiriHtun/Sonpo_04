@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>日本損害保険協会・WEB相談 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・WEB相談 管理画面</h2>
+<h3>一覧</h3>
+<div class="maincontents">
+
+<hr>
+<div align="right">
+{if $is_master}［<a href="{$script_path|escape}/module/ContactManage/action/ListIDPW">管理者アカウント/パスワード</a>］{/if}［<a href="{$script_path|escape}/module/ContactManage/action/Logout">ログアウト</a>］
+</div>
+{if $data}
+<form action="index.php/module/ContactManage/action/Csv" method="POST">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>ステータス</th>
+<th>受付日時</th>
+<th>回答日時</th>
+<th>ダウンロード</th>
+{if $is_master}<th>削除</th>{/if}
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td><a href="{$script_path|escape}/module/ContactManage/action/Regist?id={$datum.id|escape}">W{$datum.comment_id|escape}</a></td>
+<td>{$ans_status[$datum.status]|escape}</td>
+<td>{$datum.date_regist|date_format:"%Y/%m/%d %H:%M"}</td>
+<td>{if $datum.date_answer}{$datum.date_answer|date_format:"%Y/%m/%d %H:%M"}{else}　{/if}</td>
+<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"></td>
+{if $is_master}<td align="center"><a href="{$script_path|escape}/module/ContactManage/action/Delete?id={$datum.id|escape:"url"}" onClick="return confirm('このデータを削除しますか？');">削除</a></td>{/if}
+</tr>
+{/foreach}
+</table>
+<input type="submit" value="CSV">
+</form>
+{/if}
+
+</div>
+</body>
+</html>

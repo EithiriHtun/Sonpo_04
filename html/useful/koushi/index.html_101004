@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 － 講師派遣のご案内</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、社団法人日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="/useful/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="useful">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+		<!--#set var="menu_id" value="useful" -->
+		<!--#include virtual="/common/ssi/head.html" -->
+		<!-- //ヘッダ -->
+		
+		<!-- パンくず -->
+		<div id="breadcrumbs" class="text1"><a href="/">トップ</a><a href="/useful/">お役立ち情報</a><strong>講師派遣のご案内</strong></div>
+		<!-- //パンくず -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">講師派遣のご案内</span></h2>
+				<!-- //content title -->
+				<!-- contents Subtitle -->
+				<div class="lineCF"></div>
+				<p class="subhead text2"><strong>
+講師の講演料・交通費はすべて当協会で負担します。
+				</strong></p>
+				<div class="lineCF"></div>
+				<!-- //contents Subtitle -->
+
+				<!-- 講師派遣のご案内 -->
+				<div class="contentBlock1">
+				<p class="text2">
+当協会では、消費者の皆様に損害保険の仕組みや役割を理解していただくために、講師派遣事業を行っています。<br>
+損害保険やその周辺知識に関する講演会、勉強会、研修会等の催しの際にぜひご利用下さい。
+				</p>
+				</div>
+				<!-- //講師派遣のご案内 -->
+
+				<!-- 対象となる講演は -->
+				<div class="subt2"><div class="frm"><p class="text2">対象となる講演は</p></div></div>
+				<div class="contentBlock2 text2">
+<ul class="dot0">
+<li>一般消費者の方等を対象として、消費生活センターや自治体が主催する各種講演会<br>
+（例）消費者セミナー、消費者講座、生活学校、市民向け講座 等</li>
+<li>消費生活相談員の方を対象として、消費生活センターや自治体などが主催する各種勉強会<br>
+（例）相談員研修、相談員向け勉強会 等
+</li>
+<li>高校生や高校教諭、保護者等を対象として高等学校等が主催する講演会<br>
+（例）商業・家庭・公民科の授業、ロングホームルーム、生活指導・交通安全等の講話</li>
+<li>高校教諭によって構成される教育研究団体等が主催する講演会、研究会での基調講演 等</li>
+<li>大学生・短期大学生を対象として大学・短期大学等が主催する講演会<br>
+（例）大学・短期大学の講義・授業、入学時の学生生活に関するガイダンス、学生指導や業界研究 等</li>
+</ul>
+				</div>
+				<!-- //対象となる講演は -->
+				<!-- 損害保険の基礎 -->
+				<div class="subt3"><div class="frm"><p class="text2">損害保険の基礎</p></div></div>
+				<div class="contentBlock3 text2">
+身近な損害保険の種類や仕組みについて、分かりやすくお話します。
+				</div>
+				<!-- //損害保険の基礎 -->
+				<!-- 暮らしの中の危険と損害保険 -->
+				<div class="subt3"><div class="frm"><p class="text2">暮らしの中の危険と損害保険</p></div></div>
+				<div class="contentBlock3 text2">
+火災や交通事故など、わたしたちの暮らしを取り巻く様々な危険からわたしたちの財産を守る損害保険。特に、わたしたちの暮らしとかかわりの深い、住まい･クルマ･からだなどの保険について、その補償内容や加入する際のポイントなどについて、分かりやすくお話します。
+				</div>
+				<!-- //暮らしの中の危険と損害保険 -->
+				<!-- 交通事故とその責任 -->
+				<div class="subt3"><div class="frm"><p class="text2">交通事故とその責任</p></div></div>
+				<div class="contentBlock3 text2">
+交通事故を起こしたとき、あわてたり対応に困ったりしないように、基礎的な知識を身につけていただくため、交通事故から生じる3つの大きな責任、解決の手立ておよび交通事故に備える自動車保険について、分かりやすくお話します。
+				</div>
+				<!-- //交通事故とその責任 -->
+				<!-- 自然災害と損害保険 -->
+				<div class="subt3"><div class="frm"><p class="text2">自然災害と損害保険</p></div></div>
+				<div class="contentBlock3 text2">
+台風、地震、火山の噴火といった自然災害は、わたしたち日本人にとって、残念ながらとっても身近な危険です。そんな危険に備えるための損害保険の種類や補償の内容などについて、分かりやすくお話します。
+				</div>
+				<!-- //自然災害と損害保険 -->
+				<!-- 損害保険業界の現状 -->
+				<div class="subt3"><div class="frm"><p class="text2">損害保険業界の現状</p></div></div>
+				<div class="contentBlock3 text2">
+損害保険業界の最近の動向、損害保険の販売形態と消費者保護などに、車両盗難の増加などのトピックスを交えて、分かりやすくお話します。
+				</div>
+				<!-- //損害保険業界の現状 -->
+				<!-- その他のテーマ -->
+				<div class="subt3"><div class="frm"><p class="text2">その他のテーマ</p></div></div>
+				<div class="contentBlock3 text2">
+「損害保険の上手な選び方」「損害保険の現状」「自転車の交通事故とその責任」
+				</div>
+				<!-- //その他のテーマ -->
+<br>
+				<!-- お申し込みは -->
+				<div class="subt2"><div class="frm"><p class="text2">お申し込みは</p></div></div>
+				<div class="contentBlock2">
+                                    <p class="text2">希望開催日の1か月前までに、お申し込み下さい。<br><br>
+                                             <a href="https://www.sonpo.or.jp/useful/koushi/moushikomi/form.php" class="arw2" target="_blank">インターネットによるお申し込み</a></p>
+                                    <p class="caution text1">※応募フォームはセキュリティで保護されています。</p>
+                                     <p class="text2">なお、希望開催日まで1か月を切っている場合には、お引受けできないことがありますので、スケジュールが決まりましたらお早めにお申込み下さい。</p>
+				</div>
+				<!-- //お申し込みは -->
+				<!-- ご注意 -->
+				<div class="contentBlock2">
+					<!-- ボックス グレー -->
+					<div class="boxGray">
+                                           <p class="text2 notes"><strong>ご注意</strong></p>
+                                        <!-- colorDAライン-->
+                                           <div class="lineDA"></div>
+                                        <!-- //colorDAライン-->
+                                           <ul class="dot0 text2">
+                                               <li>学校でのお申込みについては、原則として学年単位でお願いいたします。</li>
+                                               <li>申込受付後、講師の選定を進めますが、申込状況によってはご希望どおりお引受けできない場合がありますので、お含みおき下さい。</li>
+                                               <li>講師が決まり次第ファックスでご連絡します。また、講演の2週間前に文書で、派遣内容を改めてご通知します。</li>
+                                               <li>講師の講演料・交通費はすべて当協会で負担します。</li>
+                                               <li>会場（使用料を含みます)は、主催者側でご手配下さい。</li>
+                                               <li>使用する資料は事前に送付しますが、レジュメについては必要部数をコピーの上、ご用意下さい。</li>
+                                               <li>講師派遣に関するお問い合わせは、該当の下記申込先（各支部）までご連絡下さい。</li>
+                                           </ul>
+					</div>
+					<!-- //ボックス グレー -->
+				</div>
+				<!-- //ご注意 -->
+				<div class="contentBlock2">
+                                     <p class="text2">インターネットでのお申し込みには、メールアドレスの入力が必須となります。メールアドレスをお持ちでない方は、以下の申込書により、最寄りの当協会の各支部までFAXでお申し込み下さい。<br>
+                                           <a href="/useful/koushi/pdf/index/koushi_moushikomi.pdf" class="arw2" target="_blank">FAXでの申込書はこちら(PDFファイル 26KB)</a></p><br>
+                               </div>
+
+				<!-- 個人情報の取扱いについて -->
+				<div class="subt2"><div class="frm"><p class="text2">個人情報の取扱いについて</p></div></div>
+				<div class="contentBlock2">
+<p class="text2">講師派遣のお申し込みに際し、取得した個人情報は、講師派遣に関する業務にのみ利用し、第三者に開示・提供することはありません。</p></div>
+				<!-- //個人情報の取扱いについて -->
+				<!-- お申し込み先（支部）一覧 -->
+				<div class="subt2"><div class="frm"><p class="text2">お申し込み先（支部）一覧</p></div></div>
+				<div class="contentBlock2">
+<table border="0" cellpadding="0" cellspacing="0" class="list text2">
+<tr>
+<th class="gray01">主催者所在地域</th>
+<th class="gray01">申込先</th>
+<th class="gray01">FAX</th>
+<th class="gray01">電話</th>
+</tr>
+<tr>
+<td>北海道</td>
+<td>北海道支部</td>
+<td>011-231-3843</td>
+<td>011-231-3815</td>
+</tr>
+
+<tr>
+<td>青森県、岩手県、宮城県、秋田県、山形県、福島県</td>
+<td>東北支部</td>
+<td>022-221-7381</td>
+<td>022-221-6466</td>
+</tr>
+
+<tr>
+<td>東京都、神奈川県、埼玉県、千葉県、茨城県、栃木県、群馬県、山梨県、長野県、新潟県</td>
+<td>関東支部</td>
+<td>03-3255-1238</td>
+<td>03-3255-1450</td>
+</tr>
+
+<tr>
+<td>静岡県</td>
+<td>静岡支部</td>
+<td>054-273-2514</td>
+<td>054-252-1843</td>
+</tr>
+<tr>
+<td>富山県、石川県、福井県</td>
+<td>北陸支部</td>
+<td>076-221-0482</td>
+<td>076-221-1149</td>
+</tr>
+<tr>
+<td>岐阜県、愛知県、三重県</td>
+<td>名古屋支部</td>
+<td>052-249-9761</td>
+<td>052-249-9760</td>
+</tr>
+<tr>
+<td>滋賀県、京都府、大阪府、奈良県、和歌山県、兵庫県</td>
+<td>近畿支部</td>
+<td>06-6202-8764</td>
+<td>06-6202-8761</td>
+</tr>
+<tr>
+<td>広島県、山口県、岡山県、鳥取県、島根県</td>
+<td>中国支部</td>
+<td>082-242-3992</td>
+<td>082-247-4529</td>
+</tr>
+<tr>
+<td>徳島県、香川県、愛媛県、高知県</td>
+<td>四国支部</td>
+<td>087-823-1377</td>
+<td>087-851-3344</td>
+</tr>
+<tr>
+<td>福岡県、佐賀県、長崎県、熊本県、大分県、宮崎県、鹿児島県</td>
+<td>九州支部</td>
+<td>092-731-7878</td>
+<td>092-771-9766</td>
+</tr>
+<tr>
+<td>沖縄県</td>
+<td>沖縄支部</td>
+<td>098-862-8372</td>
+<td>098-862-8363</td>
+</tr>
+</table>
+				</div>
+				<!-- //お申し込み先（支部）一覧 -->
+
+
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+			<!--#set var="menu1" value="koushi" -->
+			<!--#set var="menu2" value="index" -->
+			<!--#include virtual="/common/ssi/localnav_useful.html" -->
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+				<div class="clearfix" id="foot">
+			<div id="copy"><a href="/index.html"><img src="/common/ssi/img/copyright.gif" width="400" height="10" border="0" alt="Copyright (c)  The General Insurance Association of Japan. All rights reserved."></a></div>
+			<div id="links">
+				<ul>
+					<li class="text1 li0"><a href="/notice/">当サイトについて</a></li>
+					<li class="text1 li1"><a href="/about/guideline/individual/">個人情報保護方針</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

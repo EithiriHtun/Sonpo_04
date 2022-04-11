@@ -1,0 +1,3 @@
+"¹Ö±éÆü","ÂĞ¾İ","¼çºÅ¼ÔÌ¾","¹Ö±é¥Æ¡¼¥Ş","Ê¬Îà","¹Ö»ÕÌ¾","Ä°¹Ö¼Ô¿ô"
+{foreach from=$data item="datum"}"{if @$datum.year_3}{$datum.year_3}Ç¯{$datum.month_3}·î{$datum.day_3}Æü{else}{$datum.year_1}Ç¯{$datum.month_1}·î{$datum.day_1}Æü{/if}","{if @$taisyou[$datum.taisyou]}{$taisyou[$datum.taisyou]}{/if}","{if @$datum.host2}{$datum.host2}{else}{if @$datum.host}{$datum.host}{/if}{/if}","{if @$datum.theme2}{$datum.theme2}{else}{if @$theme[$datum.themes]}{$theme[$datum.themes]}{/if}{/if}","{if @$inst_type[$datum.inst_type]}{$inst_type[$datum.inst_type]}{/if}","{if @$datum.inst_name}{$datum.inst_name}{/if}","{if @$datum.inst_num}{$datum.inst_num}{/if}"
+{/foreach}

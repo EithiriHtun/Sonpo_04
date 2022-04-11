@@ -1,0 +1,126 @@
+140
+a:4:{s:8:"template";a:1:{s:18:"pubreceptlist.html";b:1;}s:9:"timestamp";i:1646886407;s:7:"expires";i:1646886407;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+
+<script>
+<!--
+function sendForm01(){
+  document.form01.submit();
+}
+function allCheck(check){
+  var index;
+  if(check){
+    for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = true;
+    }
+  }else{
+    for(index = 0; index < form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = false;
+    }
+  }
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('削除するデータが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを削除してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>受付管理（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<div align="right">
+［<a href="/manage/forms/index.php/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<form action="/manage/forms/index.php/module/FormManage/action/PubReceptIndex" method="POST" name="form01">
+<table>
+<tr>
+<tr>
+<td align="right">受付月</td><td><select name="rec_year" onChange="sendForm01();"><option value="99">▼年度<option value="2009">2009<option value="2010">2010<option value="2011">2011<option value="2012">2012<option value="2013">2013<option value="2014">2014<option value="2015">2015<option value="2016">2016<option value="2017">2017<option value="2018">2018<option value="2019">2019<option value="2020">2020<option value="2021" selected>2021<option value="2022">2022<option value="2023">2023</select><select name="rec_month" onChange="sendForm01();"><option value="99">▼月<option value="4">4<option value="5">5<option value="6">6<option value="7">7<option value="8">8<option value="9">9<option value="10">10<option value="11">11<option value="12">12<option value="1">1<option value="2">2<option value="3">3</select></td>
+</tr>
+<tr>
+<td align="right">承認</td><td><select name="approve" onChange="sendForm01();"><option value="99">▼すべて<option value="0">未承認<option value="1">承認済み</select></td>
+</tr>
+</table>
+</form>
+
+<form action="index.php/module/FormManage/action/PubReceptDelete" method="POST" name="form02">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講師派遣<br>受付番号</th>
+<th>名前・主催者名</th>
+<th>到着希望日</th>
+<th>承認</th>
+<th>チェック</th></tr>
+
+<tr>
+<td><a href="/manage/forms/index.php/module/FormManage/action/PubReceptRegist?id=11298">R2104210542</a></td>
+<td>&nbsp;</td>
+<td>てすとたろう</td>
+<td>2021/05/10</td>
+<td>未承認</td>
+<td align="center"><input type="checkbox" name="dl[]" value="11298"><input type="hidden" name="recept_id[]" value="R2104210542"></td></tr>
+<tr>
+<td><a href="/manage/forms/index.php/module/FormManage/action/PubReceptRegist?id=11296">R2103255611</a></td>
+<td>&nbsp;</td>
+<td>損保太郎</td>
+<td>2021/04/01</td>
+<td>未承認</td>
+<td align="center"><input type="checkbox" name="dl[]" value="11296"><input type="hidden" name="recept_id[]" value="R2103255611"></td></tr>
+<tr>
+<td><a href="/manage/forms/index.php/module/FormManage/action/PubReceptRegist?id=11295">R2103237532</a></td>
+<td>&nbsp;</td>
+<td>てすとたろう</td>
+<td>2021/03/28</td>
+<td>未承認</td>
+<td align="center"><input type="checkbox" name="dl[]" value="11295"><input type="hidden" name="recept_id[]" value="R2103237532"></td></tr>
+<tr>
+<td><a href="/manage/forms/index.php/module/FormManage/action/PubReceptRegist?id=11293">R2103102715</a></td>
+<td>&nbsp;</td>
+<td>てすとたろう</td>
+<td>2021/03/15</td>
+<td>未承認</td>
+<td align="center"><input type="checkbox" name="dl[]" value="11293"><input type="hidden" name="recept_id[]" value="R2103102715"></td></tr>
+<tr>
+<td><a href="/manage/forms/index.php/module/FormManage/action/PubReceptRegist?id=11294">R2103105363</a></td>
+<td>&nbsp;</td>
+<td>てすとじろう</td>
+<td>&nbsp;</td>
+<td>未承認</td>
+<td align="center"><input type="checkbox" name="dl[]" value="11294"><input type="hidden" name="recept_id[]" value="R2103105363"></td></tr>
+<input type="hidden" name="dl[]" value="">
+<input type="hidden" name="recept_id[]" value="">
+</table>
+<input type="checkbox" name="checkall" onClick="allCheck(this.checked);">全選択<br><input type="submit" value="チェックしたデータの削除" onClick="return checkchecked();">
+</form>
+<br><a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+
+</div>
+</body>
+</html>

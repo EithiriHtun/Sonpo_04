@@ -1,0 +1,372 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<!--<script type="text/javascript" src="/manage/cm.js"></script>-->
+<script languege="javascript">
+<!--
+  var szip1=new Array();
+  var szip2=new Array();
+  var spref=new Array();
+  var sadd =new Array();
+  var sname=new Array();
+  var stel1=new Array();
+  var stel2=new Array();
+  var stel3=new Array();
+  {foreach from=$branch_name key="dkey" item="datum"}
+  szip1[{$dkey}]='{$branch_zip12[$dkey][0]}';szip2[{$dkey}]='{$branch_zip12[$dkey][1]}';
+  spref[{$dkey}]='{$branch_pref[$dkey]}';
+  sadd[{$dkey}]='{$branch_address[$dkey]}';
+  sname[{$dkey}]='{$branch_name[$dkey]}';
+  stel1[{$dkey}]='{$branch_tel123[$dkey][0]}';stel2[{$dkey}]='{$branch_tel123[$dkey][1]}';stel3[{$dkey}]='{$branch_tel123[$dkey][2]}';
+  {/foreach}
+{literal}
+  function setBranchAddress(){
+    f=document.frm1;
+    n=f.addresslist.selectedIndex;
+    if(n){
+      f.szip1.value=szip1[n];
+      f.szip2.value=szip2[n];
+      f.saddress.value=sadd[n];
+      f.sname.value='一般社団法人 日本損害保険協会 '+sname[n]+'支部';
+      f.stel1.value=stel1[n];
+      f.stel2.value=stel2[n];
+      f.stel3.value=stel3[n];
+      f.spref.selectedIndex=spref[n];
+    }else{
+      f.szip1.value='';
+      f.szip2.value='';
+      f.saddress.value='';
+      f.sname.value='';
+      f.stel1.value='';
+      f.stel2.value='';
+      f.stel3.value='';
+      f.spref.selectedIndex=0;
+    }
+  }
+
+  function checkStatus(){
+    if(confirm('新規番号を取って登録しますか？')){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
+
+// 曜日算出用の曜日データ
+var weekT = new Array("日","月","火","水","木","金","土");
+
+// 曜日の算出：第一希望日
+function weekTxt01(){
+
+	var $TF = document.form01;
+	// 開催日時第一希望
+	var chYear = $TF.year_1[$TF.year_1.selectedIndex].value;
+	var chMonth = $TF.month_1[$TF.month_1.selectedIndex].value;
+	var chDay = $TF.day_1[$TF.day_1.selectedIndex].value;
+
+	if((chYear != '') && (chMonth != '') && (chDay != '')){
+		var chDate = new Date(chYear*1,(chMonth-1),chDay*1);
+		$TF.wTx01.value = weekT[chDate.getDay()];
+	}
+}
+
+
+
+// 曜日の算出：第二希望日
+function weekTxt02(){
+
+	var $TF = document.form01;
+	// 開催日時第二希望
+	var chYear = $TF.year_2[$TF.year_2.selectedIndex].value;
+	var chMonth = $TF.month_2[$TF.month_2.selectedIndex].value;
+	var chDay = $TF.day_2[$TF.day_2.selectedIndex].value;
+
+	if((chYear != '') && (chMonth != '') && (chDay != '')){
+		var chDate = new Date(chYear*1,(chMonth-1),chDay*1);
+		$TF.wTx02.value = weekT[chDate.getDay()];
+	}
+}
+
+{/literal}
+//-->
+</script>
+<style>
+{literal}
+ul.sdocs{
+  margin-left:0px;
+  padding-left:0px;
+}
+ul.sdocs li{
+  float:left;
+  width:500px;
+  list-style-type:none;
+}
+{/literal}
+
+</style>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}');"{/if}>
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（詳細）コピー</h3>
+<div class="maincontents">
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y={if @$year}{$year|escape}{/if}&amp;br={if @$nbranch}{$nbranch|escape}{/if}&amp;st={if @$nstatus}{$nstatus|escape}{/if}&amp;ts={if @$ntaisyou}{$ntaisyou|escape}{/if}">戻る</a>
+<hr>
+{if @$errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+申込み内容
+<form action="{$script_path|escape}/module/FormManage/action/InstCopy" method="post" name="form01"><!-- onSubmit="return pre_chk_1();"-->
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>主催者名</th>
+<td>{$data.host|escape}<input type="hidden" name="host" value="{$data.host|escape}"></td>
+</tr>
+<tr>
+<th>所在地（郵便番号）</th>
+<td>{$data.post1|escape}-{$data.post2|escape}
+<input type="hidden" name="post1" value="{$data.post1|escape}">
+<input type="hidden" name="post2" value="{$data.post2|escape}"></td>
+</tr>
+<tr>
+<th>所在地（都道府県）</th>
+<td>{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]|escape}{/if}<input type="hidden" name="prefecture" value="{$data.prefecture|escape}"></td>
+</tr>
+<tr>
+<th>所在地（市町村以下）</th>
+<td>{$data.address|escape}<input type="hidden" name="address" value="{$data.address|escape}"></td>
+</tr>
+<tr>
+<th>ご担当者名</th>
+<td>{$data.person_last|escape}　{$data.person_first|escape}
+<input type="hidden" name="person_last" value="{$data.person_last|escape}">
+<input type="hidden" name="person_first" value="{$data.person_first|escape}"></td>
+</tr>
+<tr>
+<th>ご担当者名フリガナ</th>
+<td>{$data.person_kana_last|escape}　{$data.person_kana_first|escape}
+<input type="hidden" name="person_kana_last" value="{$data.person_kana_last|escape}">
+<input type="hidden" name="person_kana_first" value="{$data.person_kana_first|escape}"></td>
+</tr>
+<tr>
+<th>ご担当者役職</th>
+<td>{$data.yaku|escape}<input type="hidden" name="yaku" value="{$data.yaku|escape}"></td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}{if $data.naisen}　（内）{$data.naisen|escape}{/if}
+<input type="hidden" name="tel1" value="{$data.tel1|escape}">
+<input type="hidden" name="tel2" value="{$data.tel2|escape}">
+<input type="hidden" name="tel3" value="{$data.tel3|escape}">
+<input type="hidden" name="naisen" value="{$data.naisen|escape}"></td>
+</tr>
+<tr>
+<th>FAX番号</th>
+<td>{$data.fax1|escape}-{$data.fax2|escape}-{$data.fax3|escape}
+<input type="hidden" name="fax1" value="{$data.fax1|escape}">
+<input type="hidden" name="fax2" value="{$data.fax2|escape}">
+<input type="hidden" name="fax3" value="{$data.fax3|escape}"></td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>{$data.email1|escape}<input type="hidden" name="email1" value="{$data.email1|escape}"></td>
+</tr>
+
+<tr>
+<td colspan="2"><hr></td>
+</tr>
+
+<tr>
+<th>希望開催日時(第1希望)</th>
+<td>
+											<select name="year_1" onChange="weekTxt01()">
+												<option value=""></option>
+{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==$data.year_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 年 
+											<select name="month_1" onChange="weekTxt01()">
+												<option value=""></option>
+{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==$data.month_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 月 
+											<select name="day_1" onChange="weekTxt01()">
+												<option value=""></option>
+{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==$data.day_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 日 
+											&nbsp;&nbsp;<input type="text" name="wTx01" size="2" value="{$data.wTx01|escape}">&nbsp;曜日<br>&nbsp;&nbsp;&nbsp;
+											<select name="hour_from_1">
+												<option value=""></option>
+{foreach from=$hours item="datum"}<option value="{$datum|escape}"{if $datum==$data.hour_from_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 時 
+											<select name="min_from_1">
+												<option value=""></option>
+{foreach from=$mins item="datum"}<option value="{$datum|escape}"{if $datum==$data.min_from_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 分 〜 
+											<select name="hour_to_1">
+												<option value=""></option>
+{foreach from=$hours item="datum"}<option value="{$datum|escape}"{if $datum==$data.hour_to_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 時 
+											<select name="min_to_1">
+												<option value=""></option>
+{foreach from=$mins item="datum"}<option value="{$datum|escape}"{if $datum==$data.min_to_1} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 分
+</td>
+</tr>
+<tr>
+<th>希望開催日時(第2希望)</th>
+<td>
+											<select name="year_2" onChange="weekTxt02()">
+
+												<option value=""></option>
+{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==$data.year_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+
+											</select> 年 
+											<select name="month_2" onChange="weekTxt02()">
+												<option value=""></option>
+{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==$data.month_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 月 
+											<select name="day_2" onChange="weekTxt02()">
+												<option value=""></option>
+{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==$data.day_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 日 
+											&nbsp;&nbsp;<input type="text" name="wTx02" size="2" value="{$data.wTx02|escape}">&nbsp;曜日<br>&nbsp;&nbsp;&nbsp;
+											<select name="hour_from_2">
+												<option value=""></option>
+{foreach from=$hours item="datum"}<option value="{$datum|escape}"{if $datum==$data.hour_from_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+
+											</select> 時 
+											<select name="min_from_2">
+												<option value=""></option>
+{foreach from=$mins item="datum"}<option value="{$datum|escape}"{if $datum==$data.min_from_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+
+											</select> 分 〜 
+											<select name="hour_to_2">
+												<option value=""></option>
+{foreach from=$hours item="datum"}<option value="{$datum|escape}"{if $datum==$data.hour_to_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 時 
+											<select name="min_to_2">
+
+												<option value=""></option>
+{foreach from=$mins item="datum"}<option value="{$datum|escape}"{if $datum==$data.min_to_2} selected{/if}>{$datum|escape}</option>
+{/foreach}
+											</select> 分
+
+{if $data.year_2}{$data.year_2|escape}年{$data.month_2|escape}月{$data.day_2|escape}日({$data.wTx02|escape}){$data.hour_from_2|escape}:{$data.min_from_2|escape}〜{$data.hour_to_2|escape}:{$data.min_to_2|escape}{/if}
+</td>
+</tr>
+<tr>
+<th>会場所在地（会場名）</th>
+<td><input type="text" name="lecture_hall" size="45" value="{$data.lecture_hall|escape}"></td>
+</tr>
+<tr>
+<th>会場所在地（郵便番号）</th>
+<td><input type="text" name="lecture_zip1" size="3" maxlength="3" value="{$data.lecture_zip1|escape}">
+−
+<input type="text" name="lecture_zip2" size="4" maxlength="4" value="{$data.lecture_zip2|escape}"></td>
+</tr>
+<tr>
+<th>会場所在地（都道府県）</th>
+<td><select name="lecture_prefecture">
+<option value="">選択してください。</option>
+{foreach from=$prefs item="datum" name="loop_pref"}<option value="{$smarty.foreach.loop_pref.iteration}"{if $smarty.foreach.loop_pref.iteration==$data.lecture_prefecture} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select></td>
+</tr>
+<tr>
+<th>会場所在地（市町村以下）</th>
+<td><input type="text" name="lecture_address" size="45" value="{$data.lecture_address|escape}"></td>
+</tr>
+<tr>
+<th>会場電話番号</th>
+<td><input type="text" name="lecture_tel1" size="6" value="{$data.lecture_tel1|escape}">
+								−
+								<input type="text" name="lecture_tel2" size="4" value="{$data.lecture_tel2|escape}">
+								−
+								<input type="text" name="lecture_tel3" size="4" value="{$data.lecture_tel3|escape}"></td>
+</tr>
+<tr>
+<th>対象</th>
+<td><select name="object_select">
+												<option value="">選択してください。</option>
+{foreach from=$taisyou item="datum" name="loop_taisyou"}<option value="{$smarty.foreach.loop_taisyou.iteration}"{if $smarty.foreach.loop_taisyou.iteration==$data.object_select} selected{/if}>{$datum|escape}</option>
+{/foreach}</select><input type="text" name="object_text" size="40" value="{$data.object_text|escape}"></td>
+</tr>
+<tr>
+<th>受講予定人数</th>
+<td><input type="text" size="8" name="object_num" value="{$data.object_num|escape}"></td>
+</tr>
+<tr>
+<th>講演テーマ</th>
+<td><select name="themes">
+									<option value="">こちらからお選びください。</option>
+
+{foreach from=$theme key="dkey" item="datum" name="loop_theme"}<option value="{$dkey|escape}"{if $data.themes==$dkey|escape} selected{/if}>{$datum|escape}</option>
+{/foreach}
+								</select><br />その他の場合：<br><textarea cols="40" rows="3" name="theme_text">{$data.theme_text|escape}</textarea></td>
+</tr>
+<tr>
+<th>ビデオ</th>
+<td><input type="radio" name="video" value="1"{if $data.video=="1"} checked{/if}>&nbsp;あり&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="video" value="0"{if $data.video=="0"} checked{/if}>&nbsp;なし</td>
+</tr>
+<tr>
+<th>配付希望資料（必要部数）</th>
+<td><input type="text" name="copy" size="5" value="{$data.copy|escape}">部</td>
+</tr>
+<tr>
+<th>配付希望資料（資料送付先）</th>
+<td><input type="radio" name="receiver_address" value="host"{if $data.receiver_address=="host"} checked{/if}> 主催者<br>
+<input type="radio" name="receiver_address" value="venue"{if $data.receiver_address=="venue"} checked{/if}> 会場<br>
+<input type="radio" name="receiver_address" value="other"{if $data.receiver_address=="other"} checked{/if}> その他&nbsp;&nbsp;送付先住所   &nbsp;&nbsp;
+								<input type="text" name="receiver_text" size="45" value="{$data.receiver_text|escape}"></td>
+</tr>
+<tr>
+<th>パソコンおよびプロジェクターの使用</th>
+<td><input type="radio" name="use_pcprj" value="1"{if $data.use_pcprj=="1"} checked{/if}> 使用可能<br>
+								<input type="radio" name="use_pcprj" value="2"{if $data.use_pcprj=="2"} checked{/if}> 使用不可能</td>
+</tr>
+<tr>
+<th>本制度・動画教材のご利用経験</th>
+<td><input type="radio" name="exp" value="1"{if $data.exp=="1"} checked{/if}>あり&nbsp;&nbsp;&nbsp;&nbsp;
+
+								<input type="radio" name="exp" value="0"{if $data.exp=="0"} checked{/if}> なし <br>
+								&nbsp;<br>
+								前回は
+								<input type="text" size="4" maxlength="4" name="use_year" value="{$data.use_year|escape}"> 年 
+								<select name="use_month">
+
+								<option value=""></option>
+{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==$data.use_month} selected{/if}>{$datum|escape}</option>
+{/foreach}
+								</select> 月 頃</td>
+</tr>
+<tr>
+<th>その他連絡事項</th>
+<td><textarea cols="60" rows="5" name="connection" style="width:100%">{$data.connection|escape}</textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value="　登録　" onClick="return checkStatus();"><input type="hidden" name="mode" value="submit"></td>
+</tr>
+</table>
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+</form>
+
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y={if @$year}{$year|escape}{/if}&amp;br={if @$nbranch}{$nbranch|escape}{/if}&amp;st={if @$nstatus}{$nstatus|escape}{/if}&amp;ts={if @$ntaisyou}{$ntaisyou|escape}{/if}">戻る</a>
+</div>
+</body>
+</html>

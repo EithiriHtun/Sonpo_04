@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | 統計･刊行物・報告書 − ビデオ − お申し込みのご案内</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、一般社団法人 日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+<link rel="stylesheet" type="text/css" href="/archive/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="archive-form">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+
+<script type="text/javascript">
+{literal}
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16600020-1']);
+  _gaq.push(['_setDomainName', '.sonpo.or.jp']);
+  _gaq.push(['_trackPageview', '/archive/video/kashidashi/form_confirm.html']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+{/literal}
+</script>
+
+		<!-- ヘッダ -->
+		<div id="head">
+			<h1 id="title"><a href="http://www.sonpo.or.jp/"><img src="/common/ssi/img/logo.gif" width="288" height="34" border="0" alt="日本損害保険協会 SONPO"></a></h1>
+		</div>
+
+		<!-- //ヘッダ -->
+
+		<!-- メインエリア -->
+		<div id="main">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">お申し込み確認</span></h2>
+				<div class="lineCF"></div>
+
+				<!-- //content title -->
+
+				<!-- お申し込み確認-->
+				<div class="contentBlock">
+					<div class="clearfix text2">
+						<p>お申し込み内容に間違いがないかを確認してください。<br>間違いがなければ「送信」ボタンをクリックしてください。</p>
+					</div>
+				</div>
+
+<!-- HEAD_PARTS_END -->
+<!-- FORM_CONTENTS_START -->
+<form method="post" action="form.php" name="confForm">
+
+				<div class="subt1">
+
+					<div class="frm">
+						<p class="text2">貸し出し希望ビデオ</p>
+					</div>
+				</div>
+<!--
+				<div class="contentBlock4">
+
+					<div class="clearfix">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+-->
+				<div class="contentBlock4">
+
+					<div class="clearfix">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+{foreach from=$data.video_checked key="dkey" item="datum" name="loop_video"}				<tr>
+								{if $smarty.foreach.loop_video.first}<td rowspan="{$nselectvideo|escape}" class="gray02" style="width:110px;"><strong>タイトル</strong></td>{/if}<td>{$vname[$dkey]|escape}</td>
+			</tr>
+{/foreach}
+							<tr>
+
+								<td class="gray02"><strong>借用期間</strong></td>
+								<td>{$data.syear|escape}年{$data.smonth|escape}月{$data.sday|escape}日〜{$data.eyear|escape}年{$data.emonth|escape}月{$data.eday|escape}日</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="subt1">
+					<div class="frm">
+
+						<p class="text2">申し込み者</p>
+					</div>
+				</div>
+				<div class="contentBlock4">
+					<div class="clearfix">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+							<tr>
+								<td class="gray02" style="width:110px;"><strong>住所</strong></td>
+
+								<td>{$data.zipcode1|escape}-{$data.zipcode2|escape}<br>{$prefs[$data.prefecture]|escape}<br>{$data.address|escape}</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>お名前</strong></td>
+								<td>{$data.name_dat|escape}<br>{$data.name_kana|escape}</td>
+
+							</tr>
+							<tr>
+								<td class="gray02"><strong>電話番号</strong></td>
+								<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>FAX番号</strong></td>
+
+								<td>{$data.fax1|escape}-{$data.fax2|escape}-{$data.fax3|escape}</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>メールアドレス</strong></td>
+								<td>{$data.email|escape}</td>
+							</tr>
+
+{if $data.method==1}
+							<tr>
+								<td class="gray02"><strong>希望貸し出し方法</strong></td>
+								<td>支部へ来訪</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>希望来訪日</strong></td>
+								<td>{$data.month_1|escape}月{$data.day_1|escape}日&nbsp;&nbsp;{if $data.visittime==1}AM（8〜12時）{/if}{if $data.visittime==2}PM（13〜17時）{/if}</td>
+							</tr>
+{/if}
+
+{if $data.method==2}
+<!--							<tr>
+								<td class="gray02"><strong>送付先</strong></td>
+								<td>申込者と同じ</td>
+							</tr>-->
+{/if}
+
+{if $data.method==3}
+						</table>
+					</div>
+				</div>
+				<div class="subt1">
+					<div class="frm">
+
+						<p class="text2">送付先</p>
+					</div>
+				</div>
+				<div class="contentBlock4">
+					<div class="clearfix">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+
+							<tr>
+								<td class="gray02" style="width:110px;"><strong>住所</strong></td>
+								<td>{$data.szipcode1|escape}-{$data.szipcode2|escape}<br>{$prefs[$data.sprefecture]|escape}<br>{$data.saddress|escape}</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>お名前</strong></td>
+
+								<td>{$data.sname_dat|escape}<br>{$data.sname_kana|escape}</td>
+							</tr>
+							<tr>
+								<td class="gray02"><strong>電話番号</strong></td>
+								<td>{$data.stel1|escape}-{$data.stel2|escape}-{$data.stel3|escape}</td>
+							</tr>
+{/if}
+
+						</table>
+					</div>
+				</div>
+				<div class="contentBlock4">
+					<div class="clearfix text2">
+
+						<input name="reset" type="button" value="&nbsp;&nbsp;戻る&nbsp;&nbsp;" onClick="document.form02.submit();">
+						&nbsp;&nbsp;
+						<input name="submit" type="submit" value="&nbsp;&nbsp;送信&nbsp;&nbsp;"><input type="hidden" name="mode" value="submit"><input type="hidden" name="token" value="{$token|escape}">
+
+					</div>
+				</div>
+
+				</form>
+<form action="form.php" name="form02" method="POST">
+<input type="hidden" name="mode" value="rewrite"><input type="hidden" name="token" value="{$token|escape}">
+</form>
+
+				<!-- //お申し込み確認-->
+				<!-- colorCFライン-->
+				<div class="lineCF"></div>
+
+				<!-- //colorCFライン-->
+				<!-- ページの先頭に戻る -->
+				<div class="topLink">
+					<p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p>
+
+				</div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+		<div id="foot">
+
+			<div id="copy"><a href="/index.html"><img src="/common/ssi/img/copyright.gif" width="400" height="10" border="0" alt="Copyright (c)  The General Insurance Association of Japan. All rights reserved."></a></div>
+		</div>
+		<!-- //フッタ -->
+	</div>
+</div>
+
+</body>
+</html>

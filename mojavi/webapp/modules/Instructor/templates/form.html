@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 − WEBからのご相談</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、一般社団法人 日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="/useful/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="useful-form">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+
+<script type="text/javascript">
+{literal}
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16600020-1']);
+  _gaq.push(['_setDomainName', '.sonpo.or.jp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+{/literal}
+</script>
+
+		<!-- ヘッダ -->
+		<div id="head">
+			<h1 id="title"><a href="http://www.sonpo.or.jp/"><img src="/common/ssi/img/logo.gif" width="288" height="34" border="0" alt="日本損害保険協会 SONPO"></a></h1>
+		</div>
+		<!-- //ヘッダ -->
+		<!-- メインエリア -->
+		<div id="main">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">ご相談内容</span></h2>
+				<div class="lineCF"></div>
+				<!-- //content title -->
+
+				<div class="contentBlock1">
+					<p class="text2">ご相談内容等を入力してください。</p>
+					<br>
+					<p class="text2">※<span class="fc-red">*</span>印は必須項目です。
+{if $errors}<br>
+<span style="color:red;font-weight:bold;">{foreach from=$errors item="datum"}　{$datum|escape}<br />{/foreach}</span>
+{/if}</p>
+				</div>
+
+				<!-- 相談内容入力 -->
+				<form action="form.php" method="POST">
+				<div class="contentBlock1">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form_list text2">
+						<tr>
+							<td valign="top" class="gray02"><strong>お名前<span class="fc-red">*</span></strong></td>
+							<td width="460">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td style="border:none; padding:0 2px;" class="text2">姓</td>
+										<td style="border:none; padding:0 2px;" class="text2"><input type="text" name="name1" size="20" value="{$data.name1|escape}">&nbsp;&nbsp;</td>
+										<td style="border:none; padding:0 2px;" class="text2">名</td>
+										<td style="border:none; padding:0 2px;" class="text2"><input type="text" name="name2" size="20" value="{$data.name2|escape}">&nbsp;&nbsp;</td>
+										<td style="border:none; padding:0 2px;" class="text2">（漢字）</td>
+									</tr>
+									<tr>
+										<td style="border:none; padding:2px 2px 0;" class="text2">姓</td>
+										<td style="border:none; padding:2px 2px 0;" class="text2"><input type="text" name="kana1" size="20" value="{$data.kana1|escape}">&nbsp;&nbsp;</td>
+										<td style="border:none; padding:2px 2px 0;" class="text2">名</td>
+										<td style="border:none; padding:2px 2px 0;" class="text2"><input type="text" name="kana2" size="20" value="{$data.kana2|escape}">&nbsp;&nbsp;</td>
+										<td style="border:none; padding:2px 2px 0;" class="text2">（カナ）</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>所在地<span class="fc-red">*</span></strong></td>
+							<td valign="top" width="460">
+								<table border="0" cellspacing="0" cellpadding="2">
+									<tr>
+										<td valign="top" style="border:none; padding:2px;" class="text2">郵便番号<span class="fc-red">*</span></td>
+										<td style="border:none; padding:2px;" class="text2"><input type="text" name="zip1" size="3" maxlength="3" value="{$data.zip1|escape}">
+											−
+											<input type="text" name="zip2" size="4" maxlength="4" value="{$data.zip2|escape}">
+											&nbsp;&nbsp;<span class="fc-red">半角数字</span> <br>（例：101-8335） </td>
+									</tr>
+									<tr>
+										<td style="border:none; padding:2px;" class="text2">都道府県<span class="fc-red">*</span></td>
+										<td style="border:none; padding:2px;" class="text2"><select name="pref">
+												<option value="" selected>選択してください。</option>
+{foreach from=$prefs item="datum" key="dkey"}		<option value="{$dkey|escape}"{if $data.pref==$dkey} selected{/if}>{$datum|escape}</option>
+{/foreach}		</select>
+										</td>
+									</tr>
+									<tr>
+										<td nowrap valign="top" style="border:none; padding:2px;" class="text2">市区町村以下<span class="fc-red">*</span></td>
+										<td style="border:none; padding:2px;" class="text2"><input type="text" name="address" size="45" value="{$data.address|escape}"><br>（例：千代田区神田淡路町2-9）</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>電話番号<span class="fc-red">*</span></strong></td>
+							<td width="460"><input type="text" name="tel1" size="6" value="{$data.tel1|escape}">
+								−
+								<input type="text" name="tel2" size="6" value="{$data.tel2|escape}">
+								−
+								<input type="text" name="tel3" size="6" value="{$data.tel3|escape}">
+								&nbsp;&nbsp;<span class="fc-red">半角数字</span><br>（例：03 - 3255 - 1306）<br>
+								※当協会の業務時間内（注1）にご連絡のつく電話番号を入力下さい。</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>メールアドレス<span class="fc-red">*</span></strong></td>
+							<td valign="top" width="460"><input type="text" name="email" size="40" value="{$data.email|escape}">
+								&nbsp;&nbsp;<span class="fc-red">半角英数字</span><br> 確認のため、再度入力してください。<br>
+								<input type="text" name="email2" size="40" value="{$data.email2|escape}">
+								&nbsp;&nbsp;<span class="fc-red">半角英数字</span><br>（例：abc@sonpo.or.jp） </td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>ご相談の保険種目<span class="fc-red">*</span></strong></td>
+							<td valign="top" width="460">
+<input type="radio" name="type" id="car" value="1"{if $data.type==1} checked{/if}>&nbsp;<label accesskey="1" for="car">{$types[1]|escape}</label>&nbsp;
+<input type="radio" name="type" id="fire" value="2"{if $data.type==2} checked{/if}>&nbsp;<label accesskey="2" for="fire">{$types[2]|escape}</label>&nbsp;
+<input type="radio" name="type" id="earth" value="3"{if $data.type==3} checked{/if}>&nbsp;<label accesskey="3" for="earth">{$types[3]|escape}</label>&nbsp;
+<input type="radio" name="type" id="hurt" value="4"{if $data.type==4} checked{/if}>&nbsp;<label accesskey="4" for="hurt">{$types[4]|escape}</label>&nbsp;<br>
+<input type="radio" name="type" id="income" value="5"{if $data.type==5} checked{/if}>&nbsp;<label accesskey="5" for="income">{$types[5]|escape}</label>&nbsp;
+<input type="radio" name="type" id="response" value="6"{if $data.type==6} checked{/if}>&nbsp;<label accesskey="6" for="response">{$types[6]|escape}</label>&nbsp;
+<input type="radio" name="type" id="medical" value="7"{if $data.type==7} checked{/if}>&nbsp;<label accesskey="7" for="medical">{$types[7]|escape}</label>&nbsp;
+<input type="radio" name="type" id="fund" value="8"{if $data.type==8} checked{/if}>&nbsp;<label accesskey="8" for="fund">{$types[8]|escape}</label>&nbsp;<br>
+<input type="radio" name="type" id="other" value="9"{if $data.type==9} checked{/if}>&nbsp;<label accesskey="9" for="other">{$types[9]|escape}</label>（自由記入欄　20字まで）
+<input type="text" name="type_other" size="36" value="{$data.type_other|escape}">
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>ご相談の内容<span class="fc-red">*</span></strong></td>
+							<td valign="top">
+<textarea name="comment" cols="50" rows="5">{$data.comment|escape}</textarea>
+<p>※1,000文字以内（全角）でご記入下さい。</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>当協会からの回答の要否</strong></td>
+							<td valign="top" width="460">
+<p>※お客様のご相談の主旨が、損害保険等に関するお客様のご意見を当協会にご連絡くださることにあり、
+当協会からの回答が不要な方は、下記枠内にチェックを入れてください。</p>
+<p><input type="checkbox" name="no_answer" id="answer" value="1"{if $data.no_answer==1} checked{/if}>&nbsp;<label accesskey="d" for="answer">協会からの回答は不要です。</label></p><br>
+<p>ご相談への回答はPDFファイルで行います。PDFに設定するパスワードをご入力ください。</p>
+<p>※相談の回答をPDFでお受け取りになる際、ファイルを開くのに、こちらのパスワードが必要となります。</p>
+<br>
+<p>パスワード（8文字以上16文字以内）</p>
+<input type="password" name="upassw" size="40">&nbsp;&nbsp;<span class="fc-red">半角英数字</span>
+<p>確認のため、再度入力してください。</p>
+<input type="password" name="upassw2" size="40">&nbsp;&nbsp;<span class="fc-red">半角英数字</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="contentBlock2">
+					<p class="text1">（注1）年末年始（12月31日から1月3日）を除く月曜日〜金曜日（祝日を除く）の9時〜18時</p>
+					<p class="text1">（注2）メールアドレスに誤りがありました場合、ご相談への回答ができかねますので、入力に当たりましては十分ご注意下さい。</p>
+				</div>
+				<div class="contentBlock1">
+					<div class="clearfix text2">
+						<input name="submit" type="submit" value="&nbsp;&nbsp;入力内容確認&nbsp;&nbsp;"><input type="hidden" name="mode" value="preview"><input type="hidden" name="token" value="{$token}">
+					</div>
+				</div>
+				</form>
+				<!-- //相談内容入力 -->
+
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+		<div id="foot">
+			<div id="copy"><a href="/index.html"><img src="/common/ssi/img/copyright.gif" width="400" height="10" border="0" alt="Copyright (c)  The General Insurance Association of Japan. All rights reserved."></a></div>
+		</div>
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,533 @@
+/* ==========================================
+				/index.html用定義
+============================================ */
+
+/* ------------------------------------------
+					リードエリア
+--------------------------------------------- */
+#lead {
+	width:950px;
+	margin-bottom:15px;
+}
+#mainlead {
+	padding:11px 20px 15px;
+	background:url(/img/bg_mainlead.jpg) no-repeat 0 0;
+}
+#mainlead #mvfrm {
+	float:left;
+	width:670px;
+	position:relative;
+}
+/* mainvisual */
+#mainlead #mainvisual {	width:670px;	height:160px;	overflow:hidden;	position:relative;	}
+#mainlead #mainvisual ul { list-style-type:none;	}
+#mainlead #mainvisual li { position:absolute; width:670px;	}
+
+/* mainvisual(縦スライド用) */
+#mainlead #mainvisual ul.anima_bt li { top:160px; left:0;}
+/* mainvisual(横スライド用) */
+#mainlead #mainvisual ul.anima_rl li { top:0; left:670px;}
+/* mainvisual(クロスフェード用) */
+#mainlead #mainvisual ul.anima_fd li { top:0; left:0;}
+/* mainvisual(トグルスイッチ用) */
+#mainlead #mainvisual ul.anima_tg li { top:0; left:0;}
+
+#mainlead .mainbnr {
+	float:right;
+	width:220px;
+}
+
+/* ------------------------------------------
+					メインエリア
+--------------------------------------------- */
+#top #main {
+	background:#fff;
+	padding-top:10px;
+}
+/* ------------------------------------------
+					コンテンツエリア
+--------------------------------------------- */
+#content-top {
+	float:left;
+	width:670px;
+	text-align:left;
+	background:#fff;
+}
+
+.fc-gry {	color:#666666;	}
+
+
+/*   ==========  震災メッセージエリア ==========  */
+#msg2011quake {
+	position:relative;
+	background:#f3f3f3;
+	padding:9px;
+	margin-bottom:10px;
+}
+#msg2011quake .txt {
+	padding-left:37px;
+}
+#msg2011quake .btn {
+	position:absolute;
+	top:4px;
+	left:596px;
+}
+		/*   -   -   -   -   -   -   -   -   -   -   -
+				ニュース一覧エリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+#content-top #infoarea{
+	margin:0 0 20px 0;
+}
+
+		/*   ==========  ニュースタブエリア ==========  */
+#content-top #infoarea #headline{
+	float:left;
+	width:495px;
+}
+
+#content-top #infoarea #headline #news_tabs{
+	background:url("/img/tab_news_bg.gif") repeat-x;
+	width:495px;
+	height:31px;
+}
+
+#content-top #infoarea #headline #news_tabs .cate{
+	float:left;
+	width:120px;
+	height:31px;
+	margin-right:5px;
+}
+
+#content-top #infoarea #headline #news_tabs .cate-r{
+	float:left;
+	width:120px;
+	height:31px;
+	margin-right:0px;
+}
+
+#content-top #infoarea #headline .headlinebox{
+	border:1px solid #CCCCCC;
+	border-top:0;
+	padding:10px 6px 6px 10px;
+}
+#content-top #infoarea #headline .headlinebox .hdn {
+	display:none;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata {
+	clear: both;
+	width: 475px;
+	margin:0;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata dt {
+	width: 5.0em;
+	margin-bottom:0.2em;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata dd {
+	margin: -1.5em 0 0.1em 5.2em;
+	padding: 0 0 3px 24px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata dd.icn-rel {
+	background: url(/common/img/icon_news_release.gif) no-repeat 0% 1px;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata dd.icn-inf {
+	background: url(/common/img/icon_news_info.gif) no-repeat 0% 1px;
+}
+
+#content-top #infoarea #headline .headlinebox dl.infodata dd.icn-pri,
+#content-top #infoarea #headline .headlinebox dl.infodata dd.icn-act {
+	background: url(/common/img/icon_news_act.gif) no-repeat 0% 1px;
+}
+
+#content-top #infoarea #headline .headlinebox .btnarea{
+	background: url(/common/img/dotline_w475.gif) repeat-x 0% 0;
+	margin-top:8px;
+	padding-top:6px;
+	padding-right:5px;
+}
+
+#content-top #infoarea #headline .headlinebox .btnarea .rssbtn{
+	float:left;
+	width:50px;
+	margin:4px 0px 0 10px;
+}
+
+#content-top #infoarea #headline .headlinebox .btnarea .listbtn{
+	float:left;
+	width:45px;
+	margin:4px 5px 0 0;
+}
+
+#content-top #infoarea #headline .headlinebox .btnarea .memberbtn{
+	float:right;
+	width:180px;
+	margin:4px 0 0 5px;
+	text-align:right;
+}
+#content-top #infoarea #headline .headlinebox .btnarea .memberbtn a {
+	background: url(/common/img/icon_news_act.gif) no-repeat 0% 1px;
+	padding:2px 0 2px 20px;
+}
+
+#content-top #infoarea #headline .headlinebox .btnarea .actionbtn{
+	float:right;
+	width:140px;
+	margin:4px 0 0 0;
+	text-align:right;
+}
+
+		/*   ==========  バナーエリア ==========  */
+#content-top #infoarea #bnrbox{
+	float:left;
+	width:160px;
+	margin:0 0 0 15px;
+}
+
+#content-top #infoarea #bnrbox .box1{
+	margin:0 0 10px 0;
+}
+
+#content-top #infoarea #bnrbox .box2{
+	margin:0;
+}
+
+		/*   -   -   -   -   -   -   -   -   -   -   -
+					コンテンツエリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+.contentBlockf {
+	width:670px;
+	background: url(/img/p_guide_buyers.gif) no-repeat 100% 0;
+}
+
+.contentBlockf .pad0{
+	padding: 5px 170px 15px 0;
+}
+
+table {
+	font-size:100%;
+	line-height:130%
+}
+
+table.newsbox {
+	border-collapse:collapse;
+}
+
+table.newsbox td.img-r{
+	padding:0 0 5px 15px;
+}
+
+
+img.thumb{
+	border:1px solid #cccccc;
+}
+
+/* 中見出しの中
+--------------------------------------------------------------------*/
+/* サブタイトル */
+#top .t0 {
+	padding-bottom:5px;
+}
+
+/* リストボックス1 */
+#top #contentFrmMain {
+	width:670px;
+	background:url("/img/navi_dotline_w670.gif") no-repeat 0 0;
+	padding-top:1px;
+}
+
+/* 枠設定 */
+#top #contentFrmMain #contentListMain1 {
+	float:left;
+	width:271px;
+	padding-bottom:19px;
+	list-style-type:none;
+	margin-right:20px;
+	background:url("/img/navi_dotline_h.gif") repeat-y 0 0;	
+}
+
+	/* テキスト設定 */
+	#top #contentFrmMain #contentListMain1 .contentTextBox {
+		padding:10px 20px 0 10px;
+	}
+	
+	/* 画像設定 */
+	#top #contentFrmMain #contentListMain1 .contentImg {
+		padding:20px 0 0 70px;
+	}
+
+#top #contentFrmMain #contentListMain2 {
+	float:left;
+	width:379px;
+	list-style-type:none;
+}
+
+	#top #contentFrmMain #contentListMain2 .contentListBox {
+		background:url("/img/navi_dotline_w380.gif") repeat-x 0 0;
+		padding-top:12px;
+		padding-bottom:12px;
+	}
+
+	#top #contentFrmMain #contentListMain2 .boxTop {
+		padding-top:20px;
+		background:none;
+	}
+
+	/* テキスト設定 */
+	#top #contentFrmMain #contentListMain2 .contentTextBox {
+		float:left;
+		width:300px;
+		margin-right:10px;
+	}
+	
+	/* 画像設定 */
+	#top #contentFrmMain #contentListMain2 .contentImg {
+		float:left;
+		width:60px;
+	}
+
+/* テキスト設定 */
+#top #contentFrmMain .contentTextBox p.arw2 {
+	margin-top:6px;
+}
+
+#top #contentFrmMain .contentTextBox strong {
+	display:block;
+	padding-bottom:5px;
+}
+
+
+
+/* リストボックス2 */
+#top #contentFrm {
+	padding-top:20px;
+	width:670px;
+	border-top:#cccccc solid 1px;	
+}
+
+/* 枠設定 */
+#top #contentFrm #contentList1 {
+	float:left;
+	width:350px;
+	padding-bottom:19px;
+	list-style-type:none;
+}
+#top #contentFrm #contentList2 {
+	float:left;
+	width:320px;
+	padding-bottom:19px;
+	list-style-type:none;
+}
+#top #contentFrm #contentList3,
+#top #contentFrm #contentList5,
+#top #contentFrm #contentList7 {
+	float:left;
+	width:340px;
+	padding:15px 0 19px;
+	border-top:#cccccc solid 1px;
+	list-style-type:none;
+}
+#top #contentFrm #contentList4,
+#top #contentFrm #contentList6,
+#top #contentFrm #contentList8 {
+	float:left;
+	width:330px;
+	padding:15px 0 19px;
+	border-top:#cccccc solid 1px;
+	list-style-type:none;
+}
+
+/* テキスト設定 */
+#top #contentFrm .contentTextBox {
+	float:left;
+	width:230px;
+	margin-right:10px;
+}
+
+/* テキスト設定(写真なし) */
+#top #contentFrm .nophoto .contentTextBox {
+	float:none;
+	width:auto;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+#top #contentFrm .contentTextBox p.arw2 {
+	margin-top:6px;
+}
+#top #contentFrm #contentList1 .contentTextBox p.arw2 {
+	margin-left:10px;
+}
+
+#top #contentFrm #contentList1 .contentTextBox p {
+	padding-left:10px;
+}
+#top #contentFrm .contentTextBox strong {
+	display:block;
+	padding-bottom:5px;
+}
+
+/* 画像設定 */
+#top #contentFrm .contentImg {
+	float:left;
+	width:80px;
+}
+
+/* ------------------------------------------
+						右ナビエリア
+--------------------------------------------- */
+#rightside {
+	float:right;
+	width:220px;
+	background-color:#FFFFFF;
+	margin:0px;
+	padding-bottom:10px;
+}
+
+#rightside .arw2 {
+	display:block;
+}
+
+		/*   -   -   -   -   -   -   -   -   -   -   -
+				各種ナビエリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+#rightside .topbnr {
+	padding-bottom:10px;
+}
+#rightside .btmbnr {
+	padding-top:0;
+}
+#rightside .navibox {
+	background:url("/img/box_navi_bg.gif") repeat-y;
+	margin:0 0 12px 0;
+}
+
+#rightside .navibox .frm{
+	padding:0px 8px 6px 12px;
+	background:url("/img/box_navi_bottom.gif") no-repeat 0 100%;
+}
+
+#rightside .navibox .frm p{
+	padding:0 0 2px 0;
+}
+
+#rightside .navibox .frm p.naviboxbtn{
+	margin: 3px 0 0 -2px;
+}
+
+#rightside .navibox2 {
+	background:url("/img/box_navi2_bg.gif") repeat-y;
+	margin:0 0 12px 0;
+}
+
+#rightside .navibox2 .frm{
+	padding:4px 8px 6px 12px;
+	background:url("/img/box_navi2_bottom.gif") no-repeat 0 100%;
+}
+
+#rightside .navibox2 .frm p{
+	padding:0 0 2px 0;
+}
+
+#rightside .navibox .boxtop,
+#rightside .navibox2 .boxtop {
+	zoom:1;
+}
+
+#rightside .navibox .boxbelow,
+#rightside .navibox2 .boxbelow {
+	padding-top:1px;
+	background:url("/common/img/dotline_w220.gif") repeat-x 0 0;
+	zoom:1;
+}
+
+#rightside .navibox .memberlink0,
+#rightside .navibox2 .memberlink0 {
+	padding:6px 2px 6px 2px;
+	background:none;
+}
+#rightside .navibox .memberlink1,
+#rightside .navibox2 .memberlink1 {
+	padding:6px 2px 6px 60px;
+	background:url("/img/p_hoken.gif") no-repeat 0 6px;
+}
+#rightside .navibox .memberlink2,
+#rightside .navibox2 .memberlink2 {
+	padding:6px 2px 6px 60px;
+	background:url("/img/p_pickup_kaiinjyoho.jpg") no-repeat 0 6px;
+}
+#rightside .navibox .boxbelow .memberlink0,
+#rightside .navibox .boxbelow .memberlink1,
+#rightside .navibox .boxbelow .memberlink2,
+#rightside .navibox2 .boxbelow .memberlink0,
+#rightside .navibox2 .boxbelow .memberlink1,
+#rightside .navibox2 .boxbelow .memberlink2 {
+	padding-top:10px;
+	background-position:0 10px;
+}
+
+
+		/*   -   -   -   -   -   -   -   -   -   -   -
+				ニュースティッカーエリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+#newstickerblk {
+	background:url(/img/bg_newsticker_frm.gif) repeat-y 0 0;
+	width:910px;
+	margin:0 20px 20px;
+}
+#newstickerblk .frmt {
+	background:url(/img/bg_newsticker_frmt.gif) no-repeat 0 0;
+	padding-top:5px;
+}
+#newstickerblk .frmb {
+	background:url(/img/bg_newsticker_frmb.gif) no-repeat 0 100%;
+	padding:4px 11px 9px;
+}
+
+#newstickerlist {	width:888px;	height:1.4em;	overflow:hidden;	position:relative;	}
+#newstickerlist li { position:absolute; top:0; left:910px; width:888px;	background:#fffcca;	list-style-type:none;}
+
+		/*   -   -   -   -   -   -   -   -   -   -   -
+				フッターバナーエリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+#footbnr {
+	padding-left:20px;
+}
+#footbnr li {
+	list-style:none;
+	float:left;
+	padding-bottom:10px;
+	margin-right:10px;
+}
+
+
+		/*   -   -   -   -   -   -   -   -   -   -   -
+				関連リンクエリア
+		   -   -   -   -   -   -   -   -   -   -   -   */
+#rightside .refarea {
+	background:url("/common/img/dotline_w220.gif") repeat-x 0 100%;
+}
+
+#rightside .refarea table.refbox {
+	width:220px;
+}
+
+#rightside .refarea table.refbox td.txt0 {
+	background:url("/common/img/dotline_w220.gif") repeat-x 0 0;
+	width:158px;
+	padding:8px 0;
+}
+
+#rightside .refarea table.refbox td.img0 {
+	background:url("/common/img/dotline_w220.gif") repeat-x 0 0;
+	padding:8px 0 8px 12px;
+}
+#rightside .refarea table.refbox td.img2 {
+	background:url("/common/img/dotline_w220.gif") repeat-x 0 0;
+	padding:8px 0;
+}

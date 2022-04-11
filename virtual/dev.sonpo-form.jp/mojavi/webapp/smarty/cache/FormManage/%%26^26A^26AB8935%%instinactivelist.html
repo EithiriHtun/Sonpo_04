@@ -1,0 +1,138 @@
+143
+a:4:{s:8:"template";a:1:{s:21:"instinactivelist.html";b:1;}s:9:"timestamp";i:1646880307;s:7:"expires";i:1646880307;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+<!--
+
+var allSel=false;
+function fnc_all_click(objAll){
+	if(allSel){
+	  allSel=false;
+	  document.getElementById("btnSelChk").value="全選択";
+	}else{
+	  allSel=true;
+	  document.getElementById("btnSelChk").value="全解除";
+	}
+
+	for(var i=0;i<document.frm1.length;i++){
+		//チェックボックスであれば
+		if(document.frm1[i].type=="checkbox"){
+			document.frm1[i].checked = allSel;
+		}
+	}
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.frm1.elements["dl[]"].length; index++){
+    if(document.frm1.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.frm1.elements["inst_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを元に戻してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+function checkchecked2(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.frm1.elements["dl[]"].length; index++){
+    if(document.frm1.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.frm1.elements["inst_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    conf=confirm('選択したデータを完全に削除してよろしいですか？'+ "\n" + ids);
+    if(conf){
+      document.frm1.do_mode.value="delete";
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+}
+
+//-->
+
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣削除データ（一覧）</h3>
+<!---->
+<!---->
+<!---->
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y=2021&br=0&st=99&ts=">講師派遣一覧に戻る</a>
+<hr>
+<div align="right">
+［<a href="/manage/forms/index.php/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+
+<form action="/manage/forms/index.php/module/FormManage/action/InstActivate" method="POST" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講演日</th>
+<th>担当部署</th>
+<th>対象</th>
+<th>主催者</th>
+<th>講演テーマ</th>
+<th>ステータス</th>
+<th>発送状況（旧）</th>
+<th>発送状況</th>
+<th>チェック</th>
+</tr>
+
+<tr>
+<td>K2103183341</td>
+<td>2021/4/3</td>
+<td>関東支部</td>
+<td>一般消費者</td>
+<td>てすとたろう&nbsp;</td>
+<td>&nbsp;</td>
+<td>未対応</td>
+<!-- old --><td>
+&nbsp;
+</td>
+<td>
+&nbsp;</td>
+<td align="center"><input type="checkbox" name="dl[]" value="8440"><input type="hidden" name="inst_id[]" value="K2103183341"></td>
+</tr>
+<input type="hidden" name="dl[]" value="">
+<input type="hidden" name="inst_id[]" value="">
+<tr><td colspan="9">&nbsp;</td><td><input type="button" value="全選択" id="btnSelChk" onClick="fnc_all_click(this);"></td></tr>
+</table>
+<div>
+<input type="hidden" name="y" value="2021">
+<input type="hidden" name="br" value="">
+<input type="hidden" name="st" value="99">
+<input type="hidden" name="ts" value="">
+
+<input type="hidden" name="do_mode" value="activate">
+<input type="submit" value="チェックしたデータを元に戻す" onClick="return checkchecked();"><input type="submit" value="チェックしたデータを完全に削除する" onClick="return checkchecked2();"></form>
+<br><hr>
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y=2021&br=&st=99&ts=">講師派遣一覧に戻る</a>
+
+</div>
+</body>
+</html>

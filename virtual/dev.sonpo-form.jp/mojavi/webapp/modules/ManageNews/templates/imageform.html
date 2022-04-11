@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="document.frm1.content.value=window.opener.document.frm2.tempcontent.value;">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>画像</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageNews/action/ImageRegist" method="POST" enctype="multipart/form-data" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>配置</th>
+<td>
+
+<input type="radio" name="position" value="0"{if $data.position==0} checked{/if}>画像左寄せ　
+<input type="radio" name="position" value="1"{if $data.position==1} checked{/if}>画像右寄せ　
+<input type="radio" name="position" value="2"{if $data.position==2} checked{/if}>画像センタリング　
+<br /><span style="color:red;">※画像2枚を参照した場合、自動的にセンタリングされます。</span>
+</td>
+</tr>
+
+<tr>
+<th>画像１</th>
+<td>
+
+<table cellspacing="1">
+<tr>
+<td>ファイル</td>
+<td><input type="file" name="image_1"><br><span style="color:red;">幅300ピクセル未満の画像を参照してください。（推奨）</span></td>
+</tr>
+<tr>
+<td>キャプション</td>
+<td>
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td width="50">挿入</td>
+<td><input type="button" value="改行" onClick="insertBr(document.frm1.caption_1);"></td>
+</tr>
+</table>
+<textarea name="caption_1" cols="50" rows="3">{$data.caption_1|escape}</textarea></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="url_1" value="{$data.url_1|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<!--
+<tr>
+<td>テキスト</td>
+<td>
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td width="50">挿入</td>
+<td><input type="button" value="改行" onClick="insertBr(document.frm1.image_text);"></td>
+</tr>
+</table>
+<textarea name="image_text" cols="50" rows="15">{$data.image_text|escape}</textarea>
+<input type="hidden" name="content">
+</td>
+</tr>
+-->
+ <input type="hidden" name="image_text">
+ <input type="hidden" name="content">
+</table>
+
+</td>
+</tr>
+<th>画像２</th>
+<td>
+
+<table cellspacing="1">
+<tr>
+<td>ファイル</td>
+<td><input type="file" name="image_2"><br><span style="color:red;">幅300ピクセル未満の画像を参照してください。（推奨）</span></td>
+</tr>
+<tr>
+<td>キャプション</td>
+<td>
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td width="50">挿入</td>
+<td><input type="button" value="改行" onClick="insertBr(document.frm1.caption_2);"></td>
+</tr>
+</table>
+<textarea name="caption_2" cols="50" rows="3">{$data.caption_2|escape}</textarea></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="url_2" value="{$data.url_2|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="submit" value="OK"></td>
+</tr>
+</table>
+
+</form>
+
+</div>
+</body>
+</html>

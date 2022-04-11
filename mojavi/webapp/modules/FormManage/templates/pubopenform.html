@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}')"{/if}>
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>刊行物申込受付一時停止設定</h3>
+<div class="maincontents">
+<a href="{$script_path|escape}/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+
+{if @$errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/FormManage/action/PubOpenRegist" method="POST" name="frm1">
+
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付設定</th>
+<td width="75%"><input type="hidden" name="id" value="{$data.id|escape}">
+<input type="checkbox" name="do_close" value="1"{if @$data.do_close==1} checked{/if}>受け付けない
+</td>
+</tr>
+<tr>
+<th>メッセージ</th>
+<td width="75%"><textarea name="message" cols="60" rows="6">{$data.message|escape}</textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="OK">　<input type="button" value="戻る" onClick="location.href='{$script_path|escape}/module/FormManage/action/PubIndex'"></td>
+</tr>
+
+</table>
+</form>
+
+</div>
+</body>
+</html>

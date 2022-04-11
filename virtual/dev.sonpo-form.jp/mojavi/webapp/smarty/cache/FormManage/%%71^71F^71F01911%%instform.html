@@ -1,0 +1,806 @@
+135
+a:4:{s:8:"template";a:1:{s:13:"instform.html";b:1;}s:9:"timestamp";i:1641473195;s:7:"expires";i:1641473195;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<!--<script type="text/javascript" src="/manage/cm.js"></script>-->
+<script languege="javascript">
+<!--
+  var szip1=new Array();
+  var szip2=new Array();
+  var spref=new Array();
+  var sadd =new Array();
+  var sname=new Array();
+  var stel1=new Array();
+  var stel2=new Array();
+  var stel3=new Array();
+    szip1[1]='060';szip2[1]='0001';
+  spref[1]='1';
+  sadd[1]='札幌市中央区北一条西7-1 CARP札幌ビル7F';
+  sname[1]='北海道';
+  stel1[1]='011';stel2[1]='231';stel3[1]='3815';
+    szip1[2]='980';szip2[2]='0811';
+  spref[2]='4';
+  sadd[2]='仙台市青葉区一番町2-8-15 太陽生命仙台ビル９階';
+  sname[2]='東北';
+  stel1[2]='022';stel2[2]='221';stel3[2]='6466';
+    szip1[13]='101';szip2[13]='8335';
+  spref[13]='13';
+  sadd[13]='千代田区神田淡路町2-9 損保会館12F';
+  sname[13]='関東';
+  stel1[13]='03';stel2[13]='3255';stel3[13]='1450';
+    szip1[4]='920';szip2[4]='0919';
+  spref[4]='17';
+  sadd[4]='金沢市南町5-16 金沢共栄火災ビル4階';
+  sname[4]='北陸';
+  stel1[4]='076';stel2[4]='221';stel3[4]='1149';
+    szip1[5]='420';szip2[5]='0031';
+  spref[5]='22';
+  sadd[5]='静岡市葵区呉服町1-1-2 静岡呉服町スクエア8F';
+  sname[5]='静岡';
+  stel1[5]='054';stel2[5]='252';stel3[5]='1843';
+    szip1[6]='460';szip2[6]='0008';
+  spref[6]='23';
+  sadd[6]='名古屋市中区栄4-5-3 KDX名古屋栄ビル4階';
+  sname[6]='中部';
+  stel1[6]='052';stel2[6]='249';stel3[6]='9760';
+    szip1[7]='541';szip2[7]='0041';
+  spref[7]='27';
+  sadd[7]='大阪市中央区北浜2-6-26 大阪グリーンビル9階';
+  sname[7]='近畿';
+  stel1[7]='06';stel2[7]='6202';stel3[7]='8761';
+    szip1[8]='730';szip2[8]='0036';
+  spref[8]='34';
+  sadd[8]='広島市中区袋町3-17  シシンヨービル12階';
+  sname[8]='中国';
+  stel1[8]='082';stel2[8]='247';stel3[8]='4529';
+    szip1[9]='760';szip2[9]='0025';
+  spref[9]='37';
+  sadd[9]='高松市古新町8-1 高松スクエアビル3階';
+  sname[9]='四国';
+  stel1[9]='087';stel2[9]='851';stel3[9]='3344';
+    szip1[10]='810';szip2[10]='0041';
+  spref[10]='40';
+  sadd[10]='福岡市中央区大名2-4-30 西鉄赤坂ビル9F';
+  sname[10]='九州';
+  stel1[10]='092';stel2[10]='771';stel3[10]='9766';
+    szip1[11]='900';szip2[11]='0033';
+  spref[11]='47';
+  sadd[11]='那覇市久米2-2-20 大同火災海上保険（株）久米ビル9F';
+  sname[11]='沖縄';
+  stel1[11]='098';stel2[11]='862';stel3[11]='8363';
+  
+  function setBranchAddress(){
+    f=document.frm1;
+    n=f.addresslist[f.addresslist.selectedIndex].value;
+
+    if(n){
+      f.szip1.value=szip1[n];
+      f.szip2.value=szip2[n];
+      f.saddress.value=sadd[n];
+      f.sname.value='一般社団法人 日本損害保険協会 '+sname[n]+'支部';
+      f.stel1.value=stel1[n];
+      f.stel2.value=stel2[n];
+      f.stel3.value=stel3[n];
+      f.spref.selectedIndex=spref[n];
+    }else{
+      f.szip1.value='';
+      f.szip2.value='';
+      f.saddress.value='';
+      f.sname.value='';
+      f.stel1.value='';
+      f.stel2.value='';
+      f.stel3.value='';
+      f.spref.selectedIndex=0;
+    }
+  }
+
+  function checkStatus(){
+    f=document.frm1;
+    sv=f.status[f.status.selectedIndex].value;
+    send=f.sregist[0].checked;
+    if(send){
+      if(sv==2){
+        return true;
+      }else{
+        if(sv==3 || sv==5){
+          return true;
+        }else{
+          alert('ステータスが「確定」になっていません。資料発送依頼をする場合は、ステータスを「確定」に変更してください。');
+          return false;
+        }
+      }
+    }
+    return true;
+    
+  }
+
+//-->
+</script>
+<style>
+
+ul.sdocs{
+  margin-left:0px;
+  padding-left:0px;
+}
+ul.sdocs li{
+  float:left;
+  width:500px;
+  list-style-type:none;
+}
+
+
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（詳細）</h3>
+<div class="maincontents">
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y=2022&amp;br=&amp;st=99&amp;ts=">戻る</a>
+<hr>
+<form action="/manage/forms/index.php/module/FormManage/action/InstCopy">
+<input type="hidden" name="id" value="8449">
+<input type="hidden" name="y" value="2022">
+<input type="hidden" name="br" value="">
+<input type="hidden" name="st" value="99">
+<input type="hidden" name="ts" value="">
+<div style="text-align:right;padding-right:10%;"><input type="submit" value="コピー"></div>
+</form>
+申込み内容
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付番号</th>
+<td width="75%">K2201063281</td>
+</tr>
+<tr>
+<th>受付日時</th>
+<td width="75%">2022-01-06 21:43</td>
+</tr>
+<tr>
+<th>主催者名</th>
+<td>あああああ</td>
+</tr>
+<tr>
+<th>所在地（郵便番号）</th>
+<td>111-1111</td>
+</tr>
+<tr>
+<th>所在地（都道府県）</th>
+<td>岩手県</td>
+</tr>
+<tr>
+<th>所在地（市町村以下）</th>
+<td>ああああああ</td>
+</tr>
+<tr>
+<th>ご担当者名</th>
+<td>田口　達雄</td>
+</tr>
+<tr>
+<th>ご担当者名フリガナ</th>
+<td>タグチ　タツオ</td>
+</tr>
+<tr>
+<th>ご担当者役職</th>
+<td>課長</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>11-1111-111　（内）111</td>
+</tr>
+<tr>
+<th>FAX番号</th>
+<td>22-2222-2222</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>t.taguchi@rainbow.co.jp</td>
+</tr>
+
+<tr>
+<td colspan="2"><hr></td>
+</tr>
+
+<tr>
+<th>希望開催日時(第1希望)</th>
+<td>2022年5月1日(日)8:00〜9:00</td>
+</tr>
+<tr>
+<th>希望開催日時(第2希望)</th>
+<td></td>
+</tr>
+<tr>
+<th>会場所在地（会場名）</th>
+<td>あああああああ</td>
+</tr>
+<tr>
+<th>会場所在地（郵便番号）</th>
+<td>111-1111</td>
+</tr>
+<tr>
+<th>会場所在地（都道府県）</th>
+<td>青森県</td>
+</tr>
+<tr>
+<th>会場所在地（市町村以下）</th>
+<td>ああああああああ</td>
+</tr>
+<tr>
+<th>会場電話番号</th>
+<td>22-2222-2222</td>
+</tr>
+<tr>
+<th>対象</th>
+<td>一般消費者30代</td>
+</tr>
+<tr>
+<th>受講予定人数</th>
+<td>10</td>
+</tr>
+<tr>
+<th>講演テーマ</th>
+<td>自転車をとり巻くリスクとその責任</td>
+</tr>
+<tr>
+<th>ビデオ</th>
+<td>なし</td>
+</tr>
+<tr>
+<th>配付希望資料（必要部数）</th>
+<td>10部</td>
+</tr>
+<tr>
+<th>配付希望資料（資料送付先）</th>
+<td>主催者</td>
+</tr>
+<tr>
+<th>パソコンおよびプロジェクターの使用</th>
+<td>使用可能</td>
+</tr>
+<tr>
+<th>本制度・動画教材のご利用経験</th>
+<td>前回は2011年 1月 頃</td>
+</tr>
+<tr>
+<th>その他連絡事項</th>
+<td>コメントコメントコメントコメント</td>
+</tr>
+</table>
+
+<br>
+<form action="/manage/forms/index.php/module/FormManage/action/InstRegist" method="POST" name="frm1">
+確定内容
+<table cellspacing="1" class="azlist" width="90%">
+
+<tr>
+<th>講演日</th>
+<td width="75%">
+<select name="year_3">
+<option value=""></option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022" selected>2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select> 年 
+<select name="month_3">
+<option value=""></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5" selected>5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select> 月 
+<select name="day_3">
+<option value=""></option>
+<option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select> 日
+</td>
+</tr>
+<tr>
+<th>派遣先</th>
+<td>
+　対象 <select name="taisyou">
+<option value=""></option>
+<option value="1" selected>一般消費者</option>
+<option value="2">高校</option>
+<option value="3">大学</option>
+<option value="4">相談員</option>
+<option value="5">その他</option>
+</select><br>
+紹介先 <input type="text" name="syoukai" size="40" value=""><br>
+主催者名 <input type="text" name="host2" size="40" value="あああああ">
+</td>
+</tr>
+<tr>
+<th>講演テーマ</th>
+<td><input type="text" name="theme2" value="自転車をとり巻くリスクとその責任" size="40"></td>
+</tr>
+<tr>
+<th>派遣講師</th>
+<td>
+　分類 <select name="inst_type">
+<option value=""></option>
+<option value="1">協会職員</option><option value="3">OB講師</option><option value="5">シニアコンダクター</option><option value="6">SAAアドバイザー</option><option value="4">その他</option></select><br>
+講師名 <input type="text" name="inst_name" size="40" value="">
+</td>
+</tr>
+<tr>
+<th>担当部署</th>
+<td>
+<select name="branch">
+<option value=""></option>
+<option value="1">北海道支部</option>
+<option value="2" selected>東北支部</option>
+<option value="20">北関東支部</option>
+<option value="21">関東支部</option>
+<option value="4">北陸支部</option>
+<option value="6">中部支部</option>
+<option value="7">近畿支部</option>
+<option value="8">中国支部</option>
+<option value="9">四国支部</option>
+<option value="10">九州支部</option>
+<option value="11">沖縄支部</option>
+<option value="12">経営企画部</option>
+<option value="22">そんぽＡＤＲセンター</option>
+<option value="15">国際企画部</option>
+<option value="16">業務企画部</option>
+<option value="17">損害サービス企画部</option>
+<option value="18">総務人事部</option>
+<option value="19">募集・教育企画部</option>
+<option value="24">IT推進部</option>
+<option value="13">生活サービス部（2017年3月まで）</option>
+<option value="23">法務・リスク管理部（2017年3月まで）</option>
+</select>
+</td>
+</tr>
+<tr>
+<th>聴講者数</th>
+<td><input type="text" name="inst_num" value="10" size="10">人</td>
+</tr>
+
+<tr>
+<th>資料送付先</th>
+<td>
+住所自動入力<select name="addresslist">
+<option>▼選択しない</option>
+<option value="1">北海道支部</option><option value="2">東北支部</option><option value="13">関東支部</option><option value="4">北陸支部</option><option value="6">中部支部</option><option value="7">近畿支部</option><option value="8">中国支部</option><option value="9">四国支部</option><option value="10">九州支部</option><option value="11">沖縄支部</option></select><input type="button" value="設定する" onClick="setBranchAddress()">（※支部へ送付する場合）<br>
+<br>
+
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td>郵便番号</td><td><input type="text" name="szip1" value="111" size="10">-<input type="text" name="szip2" value="1111" size="10"></td>
+</tr>
+<tr>
+<td>住所</td><td><select name="spref">
+<option value="">選択してください。</option>
+<option value="1">北海道</option>
+<option value="2">青森県</option>
+<option value="3" selected>岩手県</option>
+<option value="4">宮城県</option>
+<option value="5">秋田県</option>
+<option value="6">山形県</option>
+<option value="7">福島県</option>
+<option value="8">茨城県</option>
+<option value="9">栃木県</option>
+<option value="10">群馬県</option>
+<option value="11">埼玉県</option>
+<option value="12">千葉県</option>
+<option value="13">東京都</option>
+<option value="14">神奈川県</option>
+<option value="15">新潟県</option>
+<option value="16">富山県</option>
+<option value="17">石川県</option>
+<option value="18">福井県</option>
+<option value="19">山梨県</option>
+<option value="20">長野県</option>
+<option value="21">岐阜県</option>
+<option value="22">静岡県</option>
+<option value="23">愛知県</option>
+<option value="24">三重県</option>
+<option value="25">滋賀県</option>
+<option value="26">京都府</option>
+<option value="27">大阪府</option>
+<option value="28">兵庫県</option>
+<option value="29">奈良県</option>
+<option value="30">和歌山県</option>
+<option value="31">鳥取県</option>
+<option value="32">島根県</option>
+<option value="33">岡山県</option>
+<option value="34">広島県</option>
+<option value="35">山口県</option>
+<option value="36">徳島県</option>
+<option value="37">香川県</option>
+<option value="38">愛媛県</option>
+<option value="39">高知県</option>
+<option value="40">福岡県</option>
+<option value="41">佐賀県</option>
+<option value="42">長崎県</option>
+<option value="43">熊本県</option>
+<option value="44">大分県</option>
+<option value="45">宮崎県</option>
+<option value="46">鹿児島県</option>
+<option value="47">沖縄県</option>
+</select><br><input type="text" name="saddress" value="ああああああ" size="60"></td>
+</tr>
+<tr>
+<td>あて先</td><td><input type="text" name="sname" value="あああああ" size="60"></td>
+</tr>
+<tr>
+<td>ご担当者名</td><td><input type="text" name="t_tantou" value="田口達雄" size="30"></td>
+</tr>
+<tr>
+<td>電話番号</td><td><input type="text" name="stel1" value="11" size="8">-<input type="text" name="stel2" value="1111" size="8">-<input type="text" name="stel3" value="111" size="8"></td>
+</tr>
+<tr>
+<td>摘要</td>
+<td><textarea name="stekiyou" cols="35" rows="3"></textarea></td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<th>配付資料</th>
+<td>
+  <table cellpadding="1" cellspacing="0" border="0">
+<!--  <tr>
+  <td colspan="2">
+<ul class="sdocs">
+<li><input type="checkbox" name="sdoc[]" value="1">損害保険の契約にあたっての手引（ﾊﾞｲﾔｰｽﾞｶﾞｲﾄﾞ）（第5版)</li>
+<li><input type="checkbox" name="sdoc[]" value="4">保険金の請求から受け取りまでの手引</li>
+<li><input type="checkbox" name="sdoc[]" value="9">そんぽのホント（フレッシャーズガイド）（第2版）</li>
+<li><input type="checkbox" name="sdoc[]" value="10">わかりやすい損害保険の入りかた（知っ得！ｶﾞｲﾄﾞ）（第3版）</li>
+<li><input type="checkbox" name="sdoc[]" value="14">【2010年度版】地震への備え大丈夫？</li>
+<li><input type="checkbox" name="sdoc[]" value="15">自然災害あなたの備えは大丈夫？</li>
+<li><input type="checkbox" name="sdoc[]" value="16">交通事故被害者のために</li>
+<li><input type="checkbox" name="sdoc[]" value="17">飲酒運転防止マニュアル</li>
+<li><input type="checkbox" name="sdoc[]" value="18">知っていますか？自転車の事故（第3版）</li>
+<li><input type="checkbox" name="sdoc[]" value="19">ファクトブック2009年版</li>
+<li><input type="checkbox" name="sdoc[]" value="22">判例に学ぶ</li>
+<li><input type="checkbox" name="sdoc[]" value="23">建物構造区分の一部改定（チラシ）</li>
+</ul>
+<br clear="all">
+
+  </td>
+  </tr>
+  <tr>
+  <td>配付資料部数</td><td><input type="text" name="shiryou_num" value="" size="10"> 部</td>
+  </tr>
+-->
+
+<tr>
+  <td colspan="2">
+
+  </td>
+  </tr>
+
+  <tr>
+  <td colspan="2">
+<table width="100%">
+<tr>
+<td>バイヤーズガイド（損害保険の契約にあたっての手引）【生サ部】</td><td><input type="text" name="order_2" size="4" value="">部</td>
+</tr>
+<tr>
+<td>ほっと安心ガイド</td><td><input type="text" name="order_132" size="4" value="">部</td>
+</tr>
+<tr>
+<td>そんぽのホント（フレッシャーズガイド）2019年3月発行</td><td><input type="text" name="order_219" size="4" value="">部</td>
+</tr>
+<tr>
+<td>知っ得！ガイド　損害保険を賢く利用する方法</td><td><input type="text" name="order_12" size="4" value="">部</td>
+</tr>
+<tr>
+<td>ご高齢者のためのそんがいほけん３つの注意（チラシ）</td><td><input type="text" name="order_121" size="4" value="">部</td>
+</tr>
+<tr>
+<td>安心・安全な生活に向けて</td><td><input type="text" name="order_172" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2020年度版】備えて安心地震保険の話</td><td><input type="text" name="order_253" size="4" value="">部</td>
+</tr>
+<tr>
+<td>そんぽ相談ガイド2017（2018年3月改訂）</td><td><input type="text" name="order_194" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【講師派遣用】知っていますか？自転車の事故2020年8月発行</td><td><input type="text" name="order_255" size="4" value="">部</td>
+</tr>
+<tr>
+<td>判例に学ぶ 〜学校事故・交通事故の傷跡〜</td><td><input type="text" name="order_36" size="4" value="">部</td>
+</tr>
+<tr>
+<td>くらしの安全・くらしの安心 マンガゼミナール</td><td><input type="text" name="order_37" size="4" value="">部</td>
+</tr>
+<tr>
+<td>講師派遣チラシ【紫】（消費者）2017年作成</td><td><input type="text" name="order_59" size="4" value="">部</td>
+</tr>
+<tr>
+<td>講師派遣チラシ【青】（学生）2017年作成</td><td><input type="text" name="order_60" size="4" value="">部</td>
+</tr>
+<tr>
+<td>講師派遣チラシ【相談員用】2017年作成</td><td><input type="text" name="order_61" size="4" value="">部</td>
+</tr>
+<tr>
+<td>損害保険の歴史と人物</td><td><input type="text" name="order_58" size="4" value="">部</td>
+</tr>
+<tr>
+<td>自転車事故の実態と備え（チラシ）【全国版】(2020年8月発行）</td><td><input type="text" name="order_257" size="4" value="">部</td>
+</tr>
+<tr>
+<td>子どもを犯罪・事故から守る手引</td><td><input type="text" name="order_33" size="4" value="">部</td>
+</tr>
+<tr>
+<td>地震保険の再保険のしくみ（地再社）</td><td><input type="text" name="order_125" size="4" value="">部</td>
+</tr>
+<tr>
+<td>そんぽADRセンターのご案内</td><td><input type="text" name="order_131" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【講師派遣用】「保険金が使える」という住宅修理トラブルにご注意！</td><td><input type="text" name="order_164" size="4" value="">部</td>
+</tr>
+<tr>
+<td>小学生のための自転車安全教室2016年3月発行</td><td><input type="text" name="order_126" size="4" value="">部</td>
+</tr>
+<tr>
+<td>飲酒運転防止マニュアル2019年7月発行（更新情報ペラ丁合済）</td><td><input type="text" name="order_230" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2016年版】みんなで実践！交通事故防止！！（高齢ドライバー・高齢歩行者編）シニア交通事故防止啓発チラシ</td><td><input type="text" name="order_148" size="4" value="">部</td>
+</tr>
+<tr>
+<td>私たちも、エコ安全ドライブはじめました！</td><td><input type="text" name="order_122" size="4" value="">部</td>
+</tr>
+<tr>
+<td>ながらスマホ注意喚起チラシ</td><td><input type="text" name="order_229" size="4" value="">部</td>
+</tr>
+<tr>
+<td>日本の損害保険　ファクトブック2020</td><td><input type="text" name="order_258" size="4" value="">部</td>
+</tr>
+<tr>
+<td>交通事故被害者のために</td><td><input type="text" name="order_16" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2017年1月制度改定版】地震保険の話（住宅ローン編）</td><td><input type="text" name="order_95" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2019年発行】地震保険の話（住宅ローン編）</td><td><input type="text" name="order_223" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2017年1月制度改定版】地震保険の話（マンション編）</td><td><input type="text" name="order_96" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2019年発行】地震保険の話（マンション編）</td><td><input type="text" name="order_222" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2017年1月制度改定版】地震保険の話（家財編）</td><td><input type="text" name="order_105" size="4" value="">部</td>
+</tr>
+<tr>
+<td>【2019年発行】地震保険の話（家財編）</td><td><input type="text" name="order_224" size="4" value="">部</td>
+</tr>
+</table>
+  </td>
+  </tr>
+
+  <tr>
+  <td>その他</td><td><textarea name="shiryou_other" cols="30" rows="2"></textarea></td> 
+  </tr>
+  <tr>
+  <td>「その他の資料」手配担当</td><td><input type="radio" name="stantou" value="1">本部　<input type="radio" name="stantou" value="2">担当支部　<input type="radio" name="stantou" value="0" checked>なし<br>
+  </td>
+  </tr>
+
+  <tr>
+  <td>資料到着希望日</td>
+  <td><select name="syear">
+<option value=""></option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select> 年 
+<select name="smonth">
+<option value=""></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select> 月 
+<select name="sday">
+<option value=""></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select> 日<br>
+  </td>
+  </tr>
+
+  <tr>
+  <td>発送登録</td>
+  <td><input type="radio" name="sregist" value="1">する　<input type="radio" name="sregist" value="2" checked>しない</td>
+  </tr>
+  <tr>
+  <td>発送状況（旧）</td>
+  <td>
+&nbsp;</td>
+  </tr>
+  <tr>
+  <td>発送状況</td>
+  <td>
+&nbsp;</td>
+  </tr>
+
+  </table>
+
+</td>
+</tr>
+<tr>
+<th>聴講状態</th>
+<td>
+<select name="inst_condition">
+<option value=""></option>
+<option value="1">静かに熱心に聴いていた</option>
+<option value="2">わりあい熱心に聴いていた</option>
+<option value="3">普通であった</option>
+<option value="4">あまり熱心でなかった</option>
+<option value="5">私語がめだった</option>
+<option value="6">非常に悪かった</option>
+</select>
+</td>
+</tr>
+<tr>
+<th>講演時間</th>
+<td>
+<select name="inst_hour">
+<option value="0" selected>0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>時間 
+<select name="inst_min">
+<option value="00">00</option>
+<option value="05">05</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="25">25</option>
+<option value="30">30</option>
+<option value="35">35</option>
+<option value="40">40</option>
+<option value="45">45</option>
+<option value="50">50</option>
+<option value="55">55</option>
+</select>分 
+</td>
+</tr>
+<tr>
+<th>備考</th>
+<td>
+<textarea name="bikou" cols="30" rows="3"></textarea>
+</td>
+</tr>
+<tr>
+<th>ステータス</th>
+<td><select name="status">
+<option value="4">受託拒否
+<option value="0" selected>未対応
+<option value="1">対応中
+<option value="2">確定
+<option value="3">完了
+<option value="5">中止
+</select></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value="　更新　" onClick="return checkStatus();"><input type="hidden" name="mode" value="preview"></td>
+</tr>
+</table>
+<input type="hidden" name="y" value="2022">
+<input type="hidden" name="br" value="">
+<input type="hidden" name="st" value="99">
+<input type="hidden" name="ts" value="">
+</form>
+<a href="/manage/forms/index.php/module/FormManage/action/InstList?y=2022&amp;br=&amp;st=99&amp;ts=">戻る</a>
+</div>
+</body>
+</html>

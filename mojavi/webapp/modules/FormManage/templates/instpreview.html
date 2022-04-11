@@ -1,0 +1,329 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<!--<script type="text/javascript" src="/manage/cm.js"></script>-->
+<script language="javascript">
+<!--
+{literal}
+function prtPage(){
+  if(document.getElementById || document.layers){
+    window.print();
+  }
+}
+{/literal}
+//-->
+</script>
+<style>
+{literal}
+ul.sdocs{
+  margin-left:0px;
+  padding-left:0px;
+}
+ul.sdocs li{
+  float:left;
+  width:500px;
+  list-style-type:none;
+}
+{/literal}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF"{if $popmsg} onLoad="alert('{$popmsg|escape}');"{/if}>
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（詳細・内容確認）</h3>
+<div class="maincontents">
+<form action="{$script_path|escape}/module/FormManage/action/InstRegist" method="POST" name="frm1">
+<input type="submit" value="　戻る　"><input type="hidden" name="mode" value="rewrite">
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+</form>
+<hr>
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<div align="right" style="padding-right:10%;"><input type="button" value="印刷" onClick="prtPage();"></div>
+{if $data.sregist==1}<a href="#hassou">配布資料確認</a><br><br>{/if}
+
+申込み内容
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付番号</th>
+<td width="75%">{$data.inst_id|escape}</td>
+</tr>
+<tr>
+<th>受付日時</th>
+<td width="75%">{$data.date_regist|date_format:"%Y-%m-%d %H:%M"}</td>
+</tr>
+<tr>
+<th>主催者名</th>
+<td>{$data.host|escape}</td>
+</tr>
+<tr>
+<th>所在地（郵便番号）</th>
+<td>{$data.post1|escape}-{$data.post2|escape}</td>
+</tr>
+<tr>
+<th>所在地（都道府県）</th>
+<td>{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]|escape}{/if}</td>
+</tr>
+<tr>
+<th>所在地（市町村以下）</th>
+<td>{$data.address|escape}</td>
+</tr>
+<tr>
+<th>ご担当者名</th>
+<td>{$data.person_last|escape}　{$data.person_first|escape}</td>
+</tr>
+<tr>
+<th>ご担当者名フリガナ</th>
+<td>{$data.person_kana_last|escape}　{$data.person_kana_first|escape}</td>
+</tr>
+<tr>
+<th>ご担当者役職</th>
+<td>{$data.yaku|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}{if $data.naisen}　{$data.naisen|escape}{/if}</td>
+</tr>
+<tr>
+<th>FAX番号</th>
+<td>{$data.fax1|escape}-{$data.fax2|escape}-{$data.fax3|escape}</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>{$data.email1|escape}</td>
+</tr>
+
+<tr>
+<td colspan="2"><hr></td>
+</tr>
+
+<tr>
+<th>希望開催日時(第1希望)</th>
+<td>{$data.year_1|escape}年{$data.month_1|escape}月{$data.day_1|escape}日({$data.wTx01|escape}){$data.hour_from_1|escape}:{$data.min_from_1|escape}〜{$data.hour_to_1|escape}:{$data.min_to_1|escape}</td>
+</tr>
+<tr>
+<th>希望開催日時(第2希望)</th>
+<td>{if $data.year_2}{$data.year_2|escape}年{$data.month_2|escape}月{$data.day_2|escape}日({$data.wTx02|escape}){$data.hour_from_2|escape}:{$data.min_from_2|escape}〜{$data.hour_to_2|escape}:{$data.min_to_2|escape}{/if}</td>
+</tr>
+<tr>
+<th>会場所在地（会場名）</th>
+<td>{$data.lecture_hall|escape}</td>
+</tr>
+<tr>
+<th>会場所在地（都道府県）</th>
+<td>{if @$prefs[$data.lecture_prefecture]}{$prefs[$data.lecture_prefecture]|escape}{/if}</td>
+</tr>
+<tr>
+<th>会場所在地（市町村以下）</th>
+<td>{$data.lecture_address|escape}</td>
+</tr>
+<tr>
+<th>講演対象</th>
+<td>{$data.object_text|escape}</td>
+</tr>
+<tr>
+<th>受講予定人数</th>
+<td>{$data.object_num|escape}</td>
+</tr>
+<tr>
+<th>講演テーマ</th>
+<td>{if @$theme[$data.themes]}{$theme[$data.themes]|escape}{/if}{if $data.theme_text}<br>{$data.theme_text|escape|nl2br}{/if}</td>
+</tr>
+<tr>
+<th>ビデオ</th>
+<td>{if $data.video=="1"}あり{else}なし{/if}</td>
+</tr>
+<tr>
+<th>配付希望資料（必要部数）</th>
+<td>{$data.copy|escape}部</td>
+</tr>
+<tr>
+<th>配付希望資料（資料送付先）</th>
+<td>{if $data.receiver_address=="host"}主催者{/if}{if $data.receiver_address=="venue"}会場{/if}{if $data.receiver_address=="other"}その他　（{$data.receiver_text|escape}）{/if}</td>
+</tr>
+<tr>
+<th>パソコンおよびプロジェクターの使用</th>
+<td>{if $data.use_pcprj=="1"}使用可能{/if}{if $data.use_pcprj=="2"}使用不可能{/if}</td>
+</tr>
+<tr>
+<th>本制度・動画教材のご利用経験</th>
+<td>{if $data.exp=="1"}前回は{$data.use_year|escape}年 {$data.use_month}月 頃{else}なし{/if}</td>
+</tr>
+<tr>
+<th>その他連絡事項</th>
+<td>{$data.connection|escape|nl2br}</td>
+</tr>
+</table>
+
+<br><a name="hassou"></a>
+確定内容
+<table cellspacing="1" class="azlist" width="90%">
+
+<tr>
+<th>講演日</th>
+<td width="75%">{$data.year_3|escape}年{$data.month_3|escape}月{$data.day_3|escape}日</td>
+</tr>
+<tr>
+<th>派遣先</th>
+<td>
+対象：{if @$taisyou[$data.taisyou]}{$taisyou[$data.taisyou]|escape}{/if}<br>
+紹介先：{$data.syoukai|escape}<br>
+主催者名：{$data.host2|escape}
+</td>
+</tr>
+<tr>
+<th>講演テーマ</th>
+<td>{$data.theme2|escape}</td>
+</tr>
+<tr>
+<th>派遣講師</th>
+<td>
+分類：{if @$inst_type[$data.inst_type]}{$inst_type[$data.inst_type]}{/if}<br>
+講師名：{$data.inst_name|escape}
+</td>
+</tr>
+<tr>
+<th>担当部署</th>
+<td>{if @$branch[$data.branch]}{$branch[$data.branch]|escape}{/if}</td>
+</tr>
+<tr>
+<th>聴講者数</th>
+<td>{$data.inst_num|escape}人</td>
+</tr>
+
+<tr>
+<th>資料送付先</th>
+<td>{if $data.sregist==1}<span style="color:red;font-weight:bold;">以下の内容で配付資料登録を行います。よろしければ「確定」を押してください。</span><br>{/if}
+
+<table cellspacing="0" cellpadding="1" border="0">
+<tr>
+<td>郵便番号</td><td>{$data.szip1|escape}-{$data.szip2|escape}</td>
+</tr>
+<tr>
+<td>住所</td><td>{if @$prefs[$data.spref]}{$prefs[$data.spref]|escape}　{/if}{$data.saddress|escape}</td>
+</tr>
+<tr>
+<td>あて先</td><td>{$data.sname|escape}</td>
+</tr>
+<tr>
+<td>ご担当者名</td><td>{$data.t_tantou|escape}</td>
+</tr>
+<tr>
+<td>電話番号</td><td>{$data.stel1|escape}-{$data.stel2|escape}-{$data.stel3|escape}</td>
+</tr>
+<tr>
+<td>摘要</td>
+<td>{$data.stekiyou|escape|nl2br}</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<th>配付資料</th>
+<td>
+
+  <table cellpadding="1" cellspacing="0" border="0">
+
+<tr>
+  <td colspan="2">
+{if $doclist}
+<ul class="sdocs">
+{foreach from=$doclist item="datum"}{if $data.sdocs}{foreach from=$data.sdocs item="datum2"}{if $datum2==$datum.id}<li>・{$datum.name|escape}</li>{/if}{/foreach}{/if}{/foreach}
+</ul>
+{/if}
+<br clear="all">
+{if @$data.shiryou}{$shiryou[$data.shiryou]|escape}{/if}
+  </td>
+  </tr>
+  <tr>
+  <td width="40%">配付資料部数</td><td width="60%">{$data.shiryou_num|escape}部</td>
+  </tr>
+
+  <tr>
+  <td colspan="2">
+{if $books}
+<table width="100%">
+{foreach from=$books item="datum"}
+{if $datum.count}
+<tr>
+<td>{$datum.name|escape}</td><td>{if $datum.count}{$datum.count|escape} 部{else}&nbsp;{/if}</td>
+</tr>
+{/if}
+{/foreach}
+</table>
+{/if}
+  </td>
+  </tr>
+
+  <tr>
+  <td>その他</td><td>{$data.shiryou_other|escape|nl2br}</td>
+  <tr>
+  <td>「その他の資料」手配担当</td><td>{if $data.stantou==1}本部{/if}{if $data.stantou==2}担当支部{/if}{if !$data.stantou}なし{/if}</td>
+  </tr>
+  <tr>
+  <td>資料到着希望日</td><td>{if $data.syear}{$data.syear|escape}{else}-{/if}年{if $data.smonth}{$data.smonth|escape}{else}-{/if}月{if $data.sday}{$data.sday|escape}{else}-{/if}日</td>
+  </tr>
+  <tr>
+  <td>発送登録</td><td>{if $data.sregist==1}する{/if}{if $data.sregist==2}しない{/if}</td>
+  </tr>
+  </table>
+
+</td>
+</tr>
+<tr>
+<th>聴講状態</th>
+<td>
+{if @$inst_condition[$data.inst_condition]}{$inst_condition[$data.inst_condition]}{/if}&nbsp;
+</td>
+</tr>
+<tr>
+<th>講演時間</th>
+<td>
+{if @$hours[$data.inst_hour]}{$hours[$data.inst_hour]}{/if}時間 
+{if @$mins[$data.inst_min]}{$mins[$data.inst_min]}{/if}分 
+</td>
+</tr>
+<tr>
+<th>備考</th>
+<td>
+{$data.bikou|escape|nl2br}
+</td>
+</tr>
+<tr>
+<!--<th>ステータス</th>
+<td>
+{$status[$data.status]}</td>
+</tr>-->
+</table>
+
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<form action="{$script_path|escape}/module/FormManage/action/InstRegist" method="POST" name="frm1">
+<td align="center">
+<input type="submit" value="　確定　"><input type="hidden" name="mode" value="submit">
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+</td>
+</form>
+</tr>
+</table>
+
+<form action="{$script_path|escape}/module/FormManage/action/InstRegist" method="POST" name="frm1">
+<input type="submit" value="　戻る　"><input type="hidden" name="mode" value="rewrite">
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+</form>
+
+</div>
+</body>
+</html>

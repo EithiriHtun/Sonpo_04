@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="19"
+   name=""
+   committed-date="2005-04-25T20:49:52.328520Z"
+   url="svn://tanner.is-a-geek.net/code/yuma/trunk/opt/validators"
+   last-author="tanner"
+   kind="dir"
+   uuid="94574c91-2cf4-0310-b6df-ad59b46b3743"
+   revision="20"/>
+<entry
+   committed-rev="19"
+   name="StripValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="bac57eab517f33ac632779063d90af4a"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="StringValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="458f00b243679d8bbfa21172355f444a"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="EmailValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="c44cac1943c4b5dc2e14b3c43ea26b57"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="NumberValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="b5b66a87c084040b6eac401f867212ba"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="RegexValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="b6b0767d1745c08406a27da1d8762c03"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="ChoiceValidator.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="82bd36857988c7aed4b1ece0ce253416"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+</wc-entries>

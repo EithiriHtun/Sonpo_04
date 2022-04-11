@@ -1,0 +1,6 @@
+							<dl id="info">
+{foreach from=$data item="datum"}{if $datum.is_time_over}
+								<dt>{$datum.open_date|date_format:"%b %d, %Y"}</dt>
+								<dd class="icn-{if $datum.category==5}nws{/if}{if $datum.category==6}stm{/if}{if $datum.category==7 && $datum.article_title==1}reg{/if}{if $datum.category==7 && $datum.article_title==2}sts{/if}{if $datum.category==7 && $datum.article_title==3}pub{/if}{if $datum.category==7 && $datum.article_title==4}abt{/if}{if $datum.category==7 && $datum.article_title==5}faq{/if}"><a href="{if $datum.category==5}/en/news/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==6}/en/statements/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==7}{$datum.link_url_1|escape}{/if}">{$datum.list_title|escape}</a></dd>
+{/if}{/foreach}
+							</dl>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}')"{/if}>
+<h2>日本損害保険協会・登録者 管理画面</h2>
+<h3>登録者詳細</h3>
+
+<div class="maincontents">
+<a href="/manage/forms/index.php/module/FormManage/action/ListIDPW">戻る</a>
+<br>
+<br>
+{if @$errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/FormManage/action/SetIDPW" method="POST" name="frm1">
+<input type="hidden" name="id" value="{$data.id|escape}">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>登録者タイプ</th>
+<td width="75%">{if @$data.is_master==1}マスター（全権）{/if}{if @$data.is_master2==1}マスター{/if}{if @$data.branch}支部{/if}{if @$data.is_shipping==1}委託業者{/if}{if @$data.is_sassi==1}冊子所管部門{/if}</td>
+</tr>
+<tr>
+<th>登録者アカウント名</th>
+<td width="75%">{$data.account|escape}<input type="hidden" name="account" value="{$data.account|escape}"></td>
+</tr>
+<tr>
+<th>パスワード</th>
+<td width="75%"><input type="password" name="password" AUTOCOMPLETE="off"></td>
+</tr>
+<tr>
+<th>パスワード（確認用）</th>
+<td width="75%"><input type="password" name="password2" AUTOCOMPLETE="off"></td>
+</tr>
+<tr>
+<th>冊子所管部門名・支部名</th>
+<td width="75%"><input type="text" name="bikou" value="{$data.bikou|escape}" size="50"></td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td width="75%"><input type="text" name="email" value="{$data.email|escape}" size="50"></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="保存">　<input type="button" value="キャンセル" onClick="location.href='{$script_path|escape}/module/FormManage/action/ListIDPW'"></td>
+</tr>
+
+</table>
+</form>
+
+</div>
+</body>
+</html>

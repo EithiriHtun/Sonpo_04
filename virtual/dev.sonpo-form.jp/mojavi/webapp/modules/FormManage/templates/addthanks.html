@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>日本損害保険協会・講師派遣 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}')"{/if}>
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（追加登録）</h3>
+<div class="maincontents">
+<center>
+登録しました。<br><br>
+</center>
+<input type="button" value="戻る" onClick="location.href='{$script_path|escape}/module/FormManage/action/InstList?y={if @$year}{$year|escape}{/if}&amp;br={if @$nbranch}{$nbranch|escape}{/if}&amp;st={if @$nstatus}{$nstatus|escape}{/if}&amp;ts={if @$ntaisyou}{$ntaisyou|escape}{/if}'">
+
+</div>
+</body>
+</html>

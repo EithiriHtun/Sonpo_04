@@ -1,0 +1,4 @@
+142
+a:4:{s:8:"template";a:1:{s:20:"mail/stantoumail.txt";b:1;}s:9:"timestamp";i:1605850568;s:7:"expires";i:1605850568;s:13:"cache_serials";a:0:{}}2020年12月1日実施（受付番号K2011204885）の講演会について、担当支部からレジュメなどのその他資料の手配依頼が来ていますので、対応してください。
+
+管理画面　https://dev.sonpo-form.jp/manage/forms/

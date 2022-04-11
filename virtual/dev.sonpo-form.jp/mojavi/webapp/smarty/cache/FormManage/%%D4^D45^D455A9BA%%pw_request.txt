@@ -1,0 +1,6 @@
+141
+a:4:{s:8:"template";a:1:{s:19:"mail/pw_request.txt";b:1;}s:9:"timestamp";i:1618817557;s:7:"expires";i:1618817557;s:13:"cache_serials";a:0:{}}アカウント
+p1d
+
+再設定用URL
+https://dev.sonpo-form.jp/manage/forms/index.php/module/FormManage/action/ResetPassword/?u=153e7bc7ce4e031858b3030ad0b3586313238f27d001870ec98b481598c46450

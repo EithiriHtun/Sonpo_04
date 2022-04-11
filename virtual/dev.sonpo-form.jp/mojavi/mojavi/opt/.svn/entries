@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="20"
+   name=""
+   committed-date="2005-04-25T21:23:36.209846Z"
+   url="svn://tanner.is-a-geek.net/code/yuma/trunk/opt"
+   last-author="tanner"
+   kind="dir"
+   uuid="94574c91-2cf4-0310-b6df-ad59b46b3743"
+   revision="20"/>
+<entry
+   name="sql"
+   kind="dir"/>
+<entry
+   name="auth"
+   kind="dir"/>
+<entry
+   name="session"
+   kind="dir"/>
+<entry
+   name="logging"
+   kind="dir"/>
+<entry
+   name="validators"
+   kind="dir"/>
+<entry
+   name="filters"
+   kind="dir"/>
+<entry
+   name="renderers"
+   kind="dir"/>
+<entry
+   name="util"
+   kind="dir"/>
+<entry
+   name="user"
+   kind="dir"/>
+</wc-entries>

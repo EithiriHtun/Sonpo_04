@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<div class="maincontents">
+<div>［<a href="{$script_path|escape}/module/Manage/action/Logout">ログアウト</a>］</div>
+<table cellspacing="1" width="50%" class="azlist">
+<tr>
+<th>お知らせ</th>
+<td valign="top">
+{if $is_master}<br>
+　<a href="/manage/index.php/module/ManageTop">トップページ</a><br>{/if}
+<br>
+　<a href="/manage/index.php/module/ManageNews">協会ニュースリリース</a><br>
+<br>
+　<a href="/manage/index.php/module/ManageRelease">各社ニュースリリース</a><br>
+<br>
+　<a href="/manage/index.php/module/ManageTopic">協会からのお知らせ</a>
+<br><br>
+</td>
+</tr>
+
+<tr>
+<th>協会各地の活動</th>
+<td valign="top">
+<br>
+{foreach from=$branch key="dkey" item="datum"}　<a href="/manage/index.php/module/ManageInfo?b={$dkey|escape}">{$datum|escape}</a><br>
+{/foreach}
+<br>
+</td>
+</tr>
+
+<tr>
+<th>英語</th>
+<td valign="top">
+<br>
+　<a href="/manage/index.php/module/ManageENews">Information(News)</a><br>
+<br>
+　<a href="/manage/index.php/module/ManageEState">Statements</a><br>
+<br>
+　<a href="/manage/index.php/module/ManageEInfo">Others</a><br>
+<br>
+</td>
+</tr>
+
+</table>
+
+</div>
+</body>
+</html>

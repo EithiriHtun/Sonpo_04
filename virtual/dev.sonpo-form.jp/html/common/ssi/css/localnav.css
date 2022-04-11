@@ -1,0 +1,55 @@
+ul,li {
+	padding:0;
+	margin:0;
+}
+
+/* ------------------------------------------
+	localnav
+--------------------------------------------- */
+#leftside {
+	float:left;
+	width:220px;
+	background-color:#FFFFFF;
+	margin:0px;
+	padding-bottom:10px;
+}
+
+#leftside ul#localnav {
+	list-style-type:none;
+	background-color:#FFFFFF;
+	border-bottom:1px solid #CCCCCC;
+}
+
+#leftside ul#localnav li{
+	display:block;
+	border:1px solid #CCCCCC;
+	border-bottom:0;
+	padding:6px 5px 5px 0;
+}
+
+#leftside ul#localnav li a {
+	text-decoration:none;
+}
+
+#leftside ul#localnav li.subm2{
+	padding-left:26px;
+	background:url(/common/img/icon_lnav1.gif) no-repeat 10px 11px;
+}
+
+#leftside ul#localnav li.subm3{
+	padding-left:36px;
+	background:url(/common/img/icon_lnav2.gif) no-repeat 26px 13px;
+	border-top:1px dotted #CCCCCC;
+}
+
+#leftside ul#localnav li.subm4{
+	padding-left:48px;
+	background:url(/common/img/icon_lnav2.gif) no-repeat 38px 13px;
+	border-top:1px dotted #CCCCCC;
+}
+
+#leftside ul#localnav li.on {
+	background-color:#DEECFB;
+}
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>日本損害保険協会 - SONPO | お知らせ − ニュースリリース</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" type="text/css" href="/news/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="news">
+<div id="wrapper">
+<div id="inbox"> 
+
+<br>
+<div id="main" class="clearfix">
+
+{include file="../../../templates/news_main.html" data=$data}
+</div>
+<hr>
+<br>
+<div style="padding:10px;" align="center">
+<table cellspacing="0" border="0">
+<tr>
+<form action="{$script_path}/module/ManageNews/action/Regist" method="POST">
+<td><input type="submit" value="戻る"><input type="hidden" name="mode" value="rewrite">　</td>
+</form>
+<form action="{$script_path}/module/ManageNews/action/Regist" method="POST">
+<td><input type="submit" value="保存"><input type="hidden" name="mode" value="submit">　</td>
+</form>
+{if $is_master}<form action="{$script_path}/module/ManageNews/action/Regist" method="POST">
+<td><input type="submit" value="公開予約/公開"><input type="hidden" name="mode" value="submit"><input type="hidden" name="submit_mode" value="open">　</td>
+</form>{/if}
+</tr>
+</table>
+</form>
+</div>
+
+</div>
+</div>
+</body>
+</html>

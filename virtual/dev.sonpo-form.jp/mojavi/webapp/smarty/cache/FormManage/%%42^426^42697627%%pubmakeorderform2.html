@@ -1,0 +1,450 @@
+144
+a:4:{s:8:"template";a:1:{s:22:"pubmakeorderform2.html";b:1;}s:9:"timestamp";i:1619499304;s:7:"expires";i:1619499304;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/archive/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+
+<script type="text/javascript" src="/manage/cm.js"></script>
+<script>
+  var toscroll='position1';
+
+
+  function setPosition(){
+    if(toscroll){
+      obj = document.getElementById(toscroll);
+      y = obj.offsetTop;
+      scrollTo(0,y);
+      document.frm1.toscroll.value='';
+    }
+  }
+
+  function changeSendinfo(){
+    var send_type=document.frm1.send_type;
+    
+    for (var i=0;i<send_type.length;i++){
+      if(send_type[i].checked && send_type[i].value=='0'){
+        document.getElementById("sendinfo").style.display="none";
+      }
+      if(send_type[i].checked && send_type[i].value=='1'){
+        document.getElementById("sendinfo").style.display="";
+      }
+    }
+
+  }
+
+</script>
+<script type="text/javascript" src="/archive/publish/js/check2.js"></script>
+</head>
+
+<body id="archive-form" onLoad="setPosition();changeSendinfo();">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+
+<form action="/manage/forms/index.php/module/FormManage/action/PubMakeOrder" method="POST" name="frm1" onSubmit="return pre_check();">
+<input type="hidden" name="toscroll">
+		<!-- メインエリア -->
+		<div id="main">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">刊行物申込</span></h2>
+
+				<div class="contentBlock">
+					<img src="/archive/publish/img/step_02.gif" width="670" height="33" border="0" alt="お届け先情報の入力">
+				</div>
+
+					<div class="subt1">
+						<div class="frm">
+							<p class="text2">お届け先情報の入力</p>
+						</div>
+					</div>
+
+
+					<div class="contentBlock1">
+						<div class="clearfix text2">※<span class="colorE97">*</span>印は必須項目です。</div>
+					</div>
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">使用目的</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>使用目的</strong></td>
+									<td><div style="padding-bottom: 5px;">※刊行物の使用目的を記入してください。<br>
+									<textarea name="purpose" cols="40" rows="2"></textarea>
+									</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+<a id="position1"></a>
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">ご依頼者様情報</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>属性<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;">
+									<select name="address_type" onChange="document.frm1.toscroll.value='position1';document.frm1.mode.value='form3';document.frm1.select_address_type.value='1';document.frm1.submit();"><option>▼選択してください
+									<option value="1" selected>その他（個人）<option value="2">その他（法人）<option value="3">協会本部<option value="4">北海道支部<option value="5">東北支部<option value="16">関東支部<option value="8">北陸支部<option value="9">中部支部<option value="10">近畿支部<option value="11">中国支部<option value="12">四国支部<option value="13">九州支部<option value="14">沖縄支部									</select><input type="hidden" name="select_address_type" value="0">
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>住所<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">郵便番号<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px 2px 5px 2px;"><input type="text" name="zipcode1" size="3" maxlength="3" value="">
+													−
+													<input type="text" name="zipcode2" size="4" maxlength="4" value="">
+													&nbsp;&nbsp;<font class="colorE97">半角数字</font> <br>（例：101-8335） </td>
+											</tr>
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">都道府県<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px 2px 10px 2px;"><select name="prefecture">
+														<option value="" selected>選択してください。</option>
+												<option value="1">北海道</option>
+												<option value="2">青森県</option>
+												<option value="3">岩手県</option>
+												<option value="4">宮城県</option>
+												<option value="5">秋田県</option>
+												<option value="6">山形県</option>
+												<option value="7">福島県</option>
+												<option value="8">茨城県</option>
+												<option value="9">栃木県</option>
+												<option value="10">群馬県</option>
+												<option value="11">埼玉県</option>
+												<option value="12">千葉県</option>
+												<option value="13">東京都</option>
+												<option value="14">神奈川県</option>
+												<option value="15">新潟県</option>
+												<option value="16">富山県</option>
+												<option value="17">石川県</option>
+												<option value="18">福井県</option>
+												<option value="19">山梨県</option>
+												<option value="20">長野県</option>
+												<option value="21">岐阜県</option>
+												<option value="22">静岡県</option>
+												<option value="23">愛知県</option>
+												<option value="24">三重県</option>
+												<option value="25">滋賀県</option>
+												<option value="26">京都府</option>
+												<option value="27">大阪府</option>
+												<option value="28">兵庫県</option>
+												<option value="29">奈良県</option>
+												<option value="30">和歌山県</option>
+												<option value="31">鳥取県</option>
+												<option value="32">島根県</option>
+												<option value="33">岡山県</option>
+												<option value="34">広島県</option>
+												<option value="35">山口県</option>
+												<option value="36">徳島県</option>
+												<option value="37">香川県</option>
+												<option value="38">愛媛県</option>
+												<option value="39">高知県</option>
+												<option value="40">福岡県</option>
+												<option value="41">佐賀県</option>
+												<option value="42">長崎県</option>
+												<option value="43">熊本県</option>
+												<option value="44">大分県</option>
+												<option value="45">宮崎県</option>
+												<option value="46">鹿児島県</option>
+												<option value="47">沖縄県</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">市区町村以下<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="address" size="45" value="">
+													<br>（例：千代田区 神田 淡路町 2-9）</td>
+											</tr>
+										</table></td>
+								</tr>
+
+  								<tr>
+									<td class="gray02"><strong>お名前<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px 0 2px 0; width: 85px;">漢字<font class="colorE97">*</font></td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">姓</td>
+												<td valign="top" class="text2" style="border:none; padding:2px;"><input type="text" name="name1" size="8" value=""><br>（例：損保）</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">名</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="name2" size="8" value=""><br>（例：太郎）</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">フリガナ</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">セイ</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="kana1" size="8" value=""><br>（例：ソンポ）</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">メイ</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="kana2" size="8" value="">&nbsp;&nbsp;<font class="colorE97">全角カナ</font><br>（例：タロウ）</td>
+											</tr>
+										</table></td>
+								</tr>
+  
+								<tr>
+									<td class="gray02"><strong>メールアドレス<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;"><input type="text" name="email" size="50" value="">&nbsp;&nbsp;<font class="colorE97">半角英数字</font><br>（例：abc@sonpo.or.jp）</div>
+										<div>確認のため再度入力してください。<br><input type="text" name="email2" size="50" value="">&nbsp;&nbsp;<font class="colorE97">半角英数字</font></div></td>
+								</tr>
+
+								<tr>
+									<td class="gray02"><strong>電話番号<span class="colorE97">*</span></strong></td>
+									<td><input type="text" name="tel1" size="6" value="">
+										−
+										<input type="text" name="tel2" size="6" value="">
+										−
+										<input type="text" name="tel3" size="6" value="">
+										&nbsp;&nbsp;<font class="colorE97">半角数字</font><br>（例：03 - 3255 - 1215）</td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>資料送付先<span class="colorE97">*</span></strong></td>
+									<td>
+									<input type="radio" name="send_type" value="0" checked id="send_type_0" onClick="changeSendinfo();"><label for="send_type_0">ご依頼者様住所に同じ</label><br>
+									<input type="radio" name="send_type" value="1" id="send_type_1" onClick="changeSendinfo();"><label for="send_type_1">ご依頼者様住所と異なる</label>（「資料送付先情報」が表示されますので入力してください。）<br>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+<div id="sendinfo">
+<a id="position2"></a>
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">資料送付先情報</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>属性<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;">
+									<select name="saddress_type" onChange="document.frm1.toscroll.value='position2';document.frm1.mode.value='form3';document.frm1.select_saddress_type.value='1';document.frm1.submit();"><option>▼選択してください
+									<option value="1">その他（個人）<option value="2">その他（法人）<option value="3">協会本部<option value="4">北海道支部<option value="5">東北支部<option value="16">関東支部<option value="8">北陸支部<option value="9">中部支部<option value="10">近畿支部<option value="11">中国支部<option value="12">四国支部<option value="13">九州支部<option value="14">沖縄支部									</select><input type="hidden" name="select_saddress_type" value="0">
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>住所<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px;">郵便番号<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px 2px 5px 2px;"><input type="text" name="szipcode1" size="3" maxlength="3" value="">
+													−
+													<input type="text" name="szipcode2" size="4" maxlength="4" value="">
+													&nbsp;&nbsp;<font class="colorE97">半角数字</font> <br>（例：101-8355） </td>
+											</tr>
+											<tr>
+												<td class="text2" style="border:none; padding:2px;">都道府県<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px 2px 10px 2px;"><select name="sprefecture">
+														<option value="" selected>選択してください。</option>
+												<option value="1">北海道</option>
+												<option value="2">青森県</option>
+												<option value="3">岩手県</option>
+												<option value="4">宮城県</option>
+												<option value="5">秋田県</option>
+												<option value="6">山形県</option>
+												<option value="7">福島県</option>
+												<option value="8">茨城県</option>
+												<option value="9">栃木県</option>
+												<option value="10">群馬県</option>
+												<option value="11">埼玉県</option>
+												<option value="12">千葉県</option>
+												<option value="13">東京都</option>
+												<option value="14">神奈川県</option>
+												<option value="15">新潟県</option>
+												<option value="16">富山県</option>
+												<option value="17">石川県</option>
+												<option value="18">福井県</option>
+												<option value="19">山梨県</option>
+												<option value="20">長野県</option>
+												<option value="21">岐阜県</option>
+												<option value="22">静岡県</option>
+												<option value="23">愛知県</option>
+												<option value="24">三重県</option>
+												<option value="25">滋賀県</option>
+												<option value="26">京都府</option>
+												<option value="27">大阪府</option>
+												<option value="28">兵庫県</option>
+												<option value="29">奈良県</option>
+												<option value="30">和歌山県</option>
+												<option value="31">鳥取県</option>
+												<option value="32">島根県</option>
+												<option value="33">岡山県</option>
+												<option value="34">広島県</option>
+												<option value="35">山口県</option>
+												<option value="36">徳島県</option>
+												<option value="37">香川県</option>
+												<option value="38">愛媛県</option>
+												<option value="39">高知県</option>
+												<option value="40">福岡県</option>
+												<option value="41">佐賀県</option>
+												<option value="42">長崎県</option>
+												<option value="43">熊本県</option>
+												<option value="44">大分県</option>
+												<option value="45">宮崎県</option>
+												<option value="46">鹿児島県</option>
+												<option value="47">沖縄県</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">市区町村以下<font class="colorE97">*</font></td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="saddress" size="45" value="">
+													<br>（例：千代田区 神田 淡路町 2-9）</td>
+											</tr>
+										</table></td>
+								</tr>
+
+  
+								<tr>
+									<td class="gray02"><strong>法人・団体名<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px 0 2px 0;">法人・団体名<font class="colorE97">*</font></td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td valign="top" class="text2" style="border:none; padding:2px;"><input type="text" name="scompany" size="40" value=""><br>（例：日本損害保険協会）</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">部署</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;"></td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="ssection" size="40" value=""><br>（例：業務企画部）</td>
+											</tr>
+										</table></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>ご担当者<span class="colorE97">*</span></strong></td>
+									<td><table border="0" cellspacing="0" cellpadding="2">
+											<tr>
+												<td valign="top" class="text2" style="border:none; padding:2px 0 2px 0; width: 85px;">漢字<font class="colorE97">*</font></td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">姓</td>
+												<td valign="top" class="text2" style="border:none; padding:2px;"><input type="text" name="sname1" size="8" value=""><br>（例：損保）</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">名</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="sname2" size="8" value=""><br>（例：太郎）</td>
+											</tr>
+											<tr>
+												<td nowrap valign="top" class="text2" style="border:none; padding:2px;">フリガナ</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">セイ</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="skana1" size="8" value=""><br>（例：ソンポ）</td>
+												<td valign="top" class="text2" style="border:none; padding:2px; text-align: right;">メイ</td>
+												<td class="text2" style="border:none; padding:2px;"><input type="text" name="skana2" size="8" value="">&nbsp;&nbsp;<font class="colorE97">全角カナ</font><br>（例：タロウ）</td>
+											</tr>
+										</table></td>
+								</tr>
+  <!--
+								<tr>
+									<td class="gray02"><strong>メールアドレス<span class="colorE97">*</span></strong></td>
+									<td><div style="padding-bottom: 5px;"><input type="text" name="semail" size="50" value="">&nbsp;&nbsp;<font class="colorE97">半角英数字</font><br>（例：webmaster@sonpo.or.jp）</div>
+										<div>確認のため再度入力してください。<br><input type="text" name="semail2" size="50" value="">&nbsp;&nbsp;<font class="colorE97">半角英数字</font></div></td>
+								</tr>
+-->
+								<tr>
+									<td class="gray02"><strong>電話番号<span class="colorE97">*</span></strong></td>
+									<td><input type="text" name="stel1" size="6" value="">
+										−
+										<input type="text" name="stel2" size="6" value="">
+										−
+										<input type="text" name="stel3" size="6" value="">
+										&nbsp;&nbsp;<font class="colorE97">半角数字</font><br>（例：03 - 3255 - 1215）</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+</div><!--/sendinfo-->
+
+					<div class="subt2">
+						<div class="frm">
+							<p class="text2">到着希望日</p>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>到着希望日</strong></td>
+									<td><div style="padding-bottom: 5px;">
+<select name="req_year"><option value="">▼<option value="2021">2021<option value="2022">2022<option value="2023">2023<option value="2024">2024</select>年 
+<select name="req_month"><option value="">▼<option value="1">1<option value="2">2<option value="3">3<option value="4">4<option value="5">5<option value="6">6<option value="7">7<option value="8">8<option value="9">9<option value="10">10<option value="11">11<option value="12">12</select>月 
+<select name="req_day"><option value="">▼<option value="1">1<option value="2">2<option value="3">3<option value="4">4<option value="5">5<option value="6">6<option value="7">7<option value="8">8<option value="9">9<option value="10">10<option value="11">11<option value="12">12<option value="13">13<option value="14">14<option value="15">15<option value="16">16<option value="17">17<option value="18">18<option value="19">19<option value="20">20<option value="21">21<option value="22">22<option value="23">23<option value="24">24<option value="25">25<option value="26">26<option value="27">27<option value="28">28<option value="29">29<option value="30">30<option value="31">31</select>日 
+									</div></td>
+								</tr>
+								<tr>
+									<td class="gray02"><strong>到着希望日摘要</strong></td>
+									<td><div style="padding-bottom: 5px;">
+									<textarea name="req_text" cols="40" rows="2"></textarea>
+									</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="contentBlock1">
+						<div class="clearfix">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="archive_list text2">
+								<tr>
+									<td class="gray02" width="25%"><strong>備考</strong></td>
+									<td><div style="padding-bottom: 5px;">
+									<textarea name="bikou" cols="40" rows="2"></textarea>
+									</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+
+					<div class="contentBlock1">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td>						<div class="clearfix text2 btn">
+							<input type="button" class="btnback" value="&nbsp;&nbsp;戻る&nbsp;&nbsp;" onClick="document.frm2.submit();"></div></td>
+<td>							&nbsp;&nbsp;</td>
+<td>						<div class="clearfix text2 btn"><input type="hidden" name="mode" value="preview">
+							<input type="submit" value="&nbsp;&nbsp;申し込み内容を確認する&nbsp;&nbsp;">
+						</div></td>
+</tr>
+</table>
+					</div>
+</form>
+
+<form method="POST" action="/manage/forms/index.php/module/FormManage/action/PubMakeOrder" name="frm2">
+<input type="hidden" name="mode" value="form">
+</form>
+
+				<!-- //送付先-->
+				<!-- colorCFライン-->
+				<div class="lineCF"></div>
+				<!-- //colorCFライン-->
+
+			</div>
+
+			<!-- //コンテンツエリア -->
+		</div>
+		<!-- //メインエリア -->
+
+	</div>
+</div>
+</body>
+</html>

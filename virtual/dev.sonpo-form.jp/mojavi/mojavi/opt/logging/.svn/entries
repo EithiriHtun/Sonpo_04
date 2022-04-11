@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="20"
+   name=""
+   committed-date="2005-04-25T21:23:36.209846Z"
+   url="svn://tanner.is-a-geek.net/code/yuma/trunk/opt/logging"
+   last-author="tanner"
+   kind="dir"
+   uuid="94574c91-2cf4-0310-b6df-ad59b46b3743"
+   revision="20"/>
+<entry
+   committed-rev="20"
+   name="ErrorLogger.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="ecf22a1c2cdee68e7968bbad1a69c889"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="20"
+   name="PatternLayout.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="1a1ce92f21a60d822774c3d28b81b7b0"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="20"
+   name="FileAppender.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="2000a686ef1bd8cdc37dd413e0c6ef6d"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="20"
+   name="StdoutAppender.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="81c7e1b9adcff34f70190538443a924a"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+</wc-entries>

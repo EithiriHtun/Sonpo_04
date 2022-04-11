@@ -1,0 +1,107 @@
+h2 {
+  font-size:130%;
+  color:#333333;
+  border-left  :#ddddff solid 10px;
+  border-bottom:#ddddff solid 1px;
+  padding-left:5px;
+}
+
+h3 {
+  font-size:120%;
+  color:#333333;
+  margin-left:10px;
+  padding-left:5px;
+  border-left:#ddddff solid 5px;
+}
+
+h4 {
+  font-size:100%;
+  color:#ffffff;
+  margin-left:10px;
+  padding-left:5px;
+  border     :#dddddd solid 1px;
+  border-left:#dddddd solid 10px;
+  background:#ddddff;
+}
+
+.maincontents{
+  margin-left:15px;
+}
+
+.topicpath{
+  padding-left:15px;
+  font-size:medium;
+}
+
+.listlabel{
+  font-size:medium;
+  font-weight:bold;
+  color:#999999;
+  background:#ddddff;
+  text-align:center;
+  margin-right:5px;
+}
+
+.formlabel{
+  font-size:small;
+  font-weight:bold;
+  text-align:right;
+  padding-right:5px;
+}
+
+.linkl{
+  font-size:medium;
+  padding-left:10px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+.comment{
+  padding-left:15px;
+  font-size:small;
+}
+
+.normal{
+  font-size:small;
+}
+
+.mainmenu{
+  margin-left:10px;
+  font-size:small;
+}
+
+.mainmenu ul{
+  line-height:150%;
+}
+
+.azlist th{
+  font-size:small;
+  font-weight:bold;
+  color:white;
+  background:#aa88aa;
+  border:#dddddd solid 1px;
+}
+.azlist td{
+  font-size:small;
+  border:#dddddd solid 1px;
+}
+
+.azform th{
+  font-size:small;
+  font-weight:bold;
+  color:white;
+  background:#aa88aa;
+  border:#dddddd solid 1px;
+  padding-right:8px;
+  padding-left :8px;
+}
+.azform td{
+  font-size:small;
+  border:#dddddd solid 1px;
+}
+
+.formerror{
+  font-size:small;
+  color:red;
+  font-weight:bold;
+}

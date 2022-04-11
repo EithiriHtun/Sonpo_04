@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+{literal}
+<script>
+<!--
+function sendForm01(){
+  document.form01.submit();
+}
+
+function allCheck(check){
+  var index;
+  if(check){
+    for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = true;
+    }
+  }else{
+    for(index = 0; index < form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = false;
+    }
+  }
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを元に戻してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+function checkchecked2(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    conf=confirm('選択したデータを完全に削除してよろしいですか？'+ "\n" + ids);
+    if(conf){
+      document.form02.do_mode.value="delete";
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+}
+
+//-->
+</script>
+{/literal}
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>削除データ[受付管理・発送管理]（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+
+{if $data}
+
+<form action="index.php/module/FormManage/action/PubOrderActivate" method="POST" name="form02">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講師派遣<br>受付番号</th>
+<th>属性</th>
+<th>名前・主催者名</th>
+<th>受付日</th>
+<!--<th>発送日</th>
+<th>到着予定日</th>-->
+<th>承認</th>
+<th>発送状況</th>
+{if $is_master || $is_master2}<th>決済状況</th>{/if}
+{if $is_master || $is_master2}<th>チェック</th>{/if}
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td><!--<a href="{$script_path|escape}/module/FormManage/action/PubOrderRegist?id={$datum.id|escape}">-->{$datum.recept_id|escape}<!--</a>--></td>
+<td>{if $datum.inst_id}{if @$datum.is_dub}<span style="color:red;">{/if}{$datum.inst_inst_id|escape}{if @$datum.is_dub}</span>{/if}{else}&nbsp;{/if}</td>
+<td>{$pub_order_type[$datum.type]|escape}</td>
+<td>{if $datum.inst_host}{$datum.inst_host|escape}：{else}{if $datum.user_status==2 && $datum.company}{$datum.company|escape}：{/if}{/if}{$datum.name1|escape}{$datum.name2|escape}</td>
+<td>{$datum.regist_time|date_format:"%Y/%m/%d"}</td>
+<!--<td>{if $datum.out_year}{$datum.out_year|escape}/{$datum.out_month|string_format:"%02d"}/{$datum.out_day|string_format:"%02d"}{else}&nbsp;{/if}</td>
+<td>{if $datum.arr_year}{$datum.arr_year|escape}/{$datum.arr_month|string_format:"%02d"}/{$datum.arr_day|string_format:"%02d"}{else}&nbsp;{/if}</td>-->
+<td>{if $datum.approve==1}承認{else}未承認{/if}</td>
+<td>{$trans_status[$datum.trans_status]|escape}</td>
+{if $is_master || $is_master2}<td>{$settle_status[$datum.settle_status]|escape}</td>{/if}
+{if $is_master || $is_master2}<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"><input type="hidden" name="recept_id[]" value="{$datum.recept_id|escape}"></td>{/if}
+</tr>
+{/foreach}
+<input type="hidden" name="dl[]" value="">
+<input type="hidden" name="recept_id[]" value="">
+</table>
+<input type="hidden" name="do_mode" value="activate">
+{if $is_master || $is_master2}<input type="checkbox" name="checkall" onClick="allCheck(this.checked);">全選択<br>{/if}
+{if $is_master || $is_master2}<input type="submit" value="チェックしたデータを元に戻す" onClick="return checkchecked();">{/if}
+{if $is_master || $is_master2}<input type="submit" value="チェックしたデータを完全に削除する" onClick="return checkchecked2();">{/if}
+</form>
+{/if}
+<br><a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+
+</div>
+</body>
+</html>

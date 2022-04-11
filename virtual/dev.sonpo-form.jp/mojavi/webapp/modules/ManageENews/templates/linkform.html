@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="document.frm1.content.value=window.opener.document.frm2.tempcontent.value;">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>リンク</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageNews/action/LinkRegist" method="POST" enctype="multipart/form-data" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>リンクテキスト</th>
+<td><input type="text" name="link_text" value="{$data.link_text|escape}" size="60"></td>
+</tr>
+<tr>
+<th>URL</th>
+<td><input type="text" name="link_url" value="{$data.link_url|escape}" size="60"><input type="hidden" name="content"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+
+</table>
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="submit" value="OK"></td>
+</tr>
+</table>
+
+</form>
+
+</div>
+</body>
+</html>

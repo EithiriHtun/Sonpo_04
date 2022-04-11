@@ -1,0 +1,77 @@
+<?php
+require_once(LIB_DIR.'CustomSmartyRenderer.class.php');
+
+class TestDefaultIndexView extends View{
+  function & execute (&$controller, &$request, &$user){
+      require($controller->getModuleDir()."config/config.php");
+      $renderer=& new CustomSmartyRenderer(
+        $controller, $request, $user
+      );
+    
+      $renderer->setTemplate('index_test.html');
+      
+      $data=$request->getAttribute("data");
+      $renderer->setAttribute("data",$data);
+      $renderer->setAttribute("tab",$request->getAttribute("tab"));
+      $renderer->setAttribute("topimage",$request->getAttribute("topimage"));
+      
+      if(file_exists(SONPO_IMAGE_DIR."top_1.jpg")){
+        $renderer->setAttribute("image_1_name","top_1.jpg");
+        $filename=SONPO_IMAGE_DIR."top_1.jpg";
+      }
+      if(file_exists(SONPO_IMAGE_DIR."top_1.gif")){
+        $renderer->setAttribute("image_1_name","top_1.gif");
+        $filename=SONPO_IMAGE_DIR."top_1.gif";
+      }
+      $picsize=getimagesize(
+        $filename
+      );
+      $renderer->setAttribute("image_1_width",$picsize[0]);
+      $renderer->setAttribute("image_1_height",$picsize[1]);
+
+      $filename='';
+
+      if(file_exists(SONPO_IMAGE_DIR."top_2.jpg")){
+        $renderer->setAttribute("image_2_name","top_2.jpg");
+        $filename=SONPO_IMAGE_DIR."top_2.jpg";
+      }
+      if(file_exists(SONPO_IMAGE_DIR."top_2.gif")){
+        $renderer->setAttribute("image_2_name","top_2.gif");
+        $filename=SONPO_IMAGE_DIR."top_2.gif";
+      }
+      $picsize=getimagesize(
+        $filename
+      );
+      $renderer->setAttribute("image_2_width",$picsize[0]);
+      $renderer->setAttribute("image_2_height",$picsize[1]);
+      
+      $filename='';
+
+      if(file_exists(SONPO_IMAGE_DIR."top_3.jpg")){
+        $renderer->setAttribute("image_3_name","top_3.jpg");
+        $filename=SONPO_IMAGE_DIR."top_3.jpg";
+      }
+      if(file_exists(SONPO_IMAGE_DIR."top_3.gif")){
+        $renderer->setAttribute("image_3_name","top_3.gif");
+        $filename=SONPO_IMAGE_DIR."top_3.gif";
+      }
+      $picsize=getimagesize(
+        $filename
+      );
+      $renderer->setAttribute("image_3_width",$picsize[0]);
+      $renderer->setAttribute("image_3_height",$picsize[1]);
+      
+      $renderer->setAttribute("image_url",SONPO_IMAGE_URL);
+
+      $renderer->setAttribute("script_path",SCRIPT_PATH);
+      
+      $renderer->setAttribute("branch_file",$branch_file);
+      $renderer->setAttribute("branch_sname",$branch_sname);
+      
+      // for test
+      $renderer->setAttribute("include_base",'../../../../../test33.sonpo.or.jp');
+      
+      return $renderer;
+  }
+}
+?>

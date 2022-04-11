@@ -1,0 +1,140 @@
+/* 統計・刊行物・報告書 共通*/
+
+.boxNormal {
+	border:solid 1px #dadada;
+	padding:10px 10px 10px 10px;
+	margin:0 0 0 0;
+	background-color:#ffffff;
+}
+
+table.archive_list {
+	border: solid 1px #ccc;
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+table.archive_list td,table.list th {
+	padding:10px 15px;
+	border: solid 1px #ccc;
+}
+
+table.archive_list td.center,
+table.archive_list th.center {
+	text-align:center;
+}
+
+.box_contentBlock4 {
+	margin:0 0 10px 0px;
+}
+
+.box_subt4 {
+	text-align:left;
+	padding:0 0 0 0;
+	margin:0 0 10px 0px;
+}
+
+.box_subt4 p {
+	white-space: nowrap;
+	line-height:1em;
+	font-weight:bold;
+	color:#333;
+}
+
+.listLeftside,
+.listRightside {
+	width: 50%;
+	float: left;
+}
+
+
+/* ------------------------------------------
+	cgiフォーム用ページ(blankページ)
+--------------------------------------------- */
+body#archive-form {
+	width:100%;
+	padding:0;
+	margin:0;
+	text-align:center;
+	background:url(../../common/img/bg_side.gif) repeat;
+}
+
+#archive-form #wrapper {
+	width:100%;
+	padding:0;
+	margin:0;
+	background:none;
+}
+
+#archive-form #inbox {
+	width:100%;
+	text-align:center;
+	padding:0;
+	margin:0 auto;
+	background:none;
+}
+
+	/* - - - - - - - - - - - - - - - 
+				ヘッダ設定
+	 - - - - - - - - - - - - - - - - */
+#archive-form #head {
+	width:100%;
+	background:#FFFFFF;
+	padding:0 0 8px 0;
+	border-bottom:1px solid #CCCCCC;
+	text-align:center;
+}
+
+#archive-form #head h1#title {
+	width:690px;
+	margin:0 auto;
+	padding:10px 0 0 0;
+	text-align:left;
+}
+
+	/* - - - - - - - - - - - - - - - 
+				メインエリア設定
+	 - - - - - - - - - - - - - - - - */
+#archive-form #main {
+	background:#FFFFFF;
+	width:710px;
+	margin:0 auto;
+	padding:20px 0 40px 0;
+	text-align:center;
+}
+
+#archive-form #main #content {
+	float:none;
+	width:670px;
+	margin:0 20px;
+	text-align:left;
+	background:none;
+}
+
+#archive-form #main #content .attentionblk01 {
+	border:2px solid #ff0000;
+	background:#fdf0f1;
+}
+	#archive-form #main #content .attentionblk01 .frm {
+		border:1px solid #fff;
+		padding:8px;
+	}
+		
+
+	/* - - - - - - - - - - - - - - - 
+				フッタ設定
+	 - - - - - - - - - - - - - - - - */
+#archive-form #foot {
+	width:100%;
+	background:#F2F2F2;
+	padding:4px 0 20px 0;
+	border-top:1px solid #CCCCCC;
+	text-align:center;
+}
+
+#archive-form #foot #copy {
+	float:none;
+	width:690px;
+	margin:0 auto;
+	padding:14px 0 0 0;
+	text-align:left;
+}

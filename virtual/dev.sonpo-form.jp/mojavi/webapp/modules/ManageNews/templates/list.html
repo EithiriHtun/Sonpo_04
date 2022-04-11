@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 − 損害保険の契約にあたっての手引（バイヤーズガイド）</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、一般社団法人 日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="/news/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="news">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+{include file="../../../../../html/common/ssi/smarty/head.html" menu_id="news"}
+		<!-- //ヘッダ -->
+		<!-- パンくず -->
+		<div id="breadcrumbs" class="text1"><a href="/">トップ</a><a href="/news/new_info/">お知らせ</a><strong>ニュースリリース</strong></div>
+		<!-- //パンくず -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">ニュースリリース</span></h2>
+				<!-- //content title -->
+				<!-- submenu -->
+				<div id="submenu">
+				<table width="670" cellspacing="0" cellpadding="0" class="frm1">
+				<tr>
+{foreach from=$years key="dkey" item="datum" name="loop_years"}<th class="{if $dkey==$year}active {/if}text2"><a href="/news/release/index_{$dkey|string_format:"%04d"}.html"><strong>{$dkey|escape}年</strong></a></th>
+{/foreach}
+				</tr>
+				</table>
+				</div>
+				<!-- //submenu -->
+				<!-- ニュース一覧 -->
+				<div class="contentBlock1">
+					<div class="clearfix text2" id="topicbox">
+						<dl id="info">
+{foreach from=$data item="datum"}{if $datum.is_time_over}
+						<dt>{$datum.open_year|date_format:"%y"}.{$datum.open_month|string_format:"%02d"}.{$datum.open_day|string_format:"%02d"}</dt>
+						<dd><a href="{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html">{$datum.list_title|escape}</a></dd>
+{/if}{/foreach}
+						</dl>
+					</div>
+				</div>
+				<!-- //ニュース一覧 -->
+
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+			<!--#set var="menu1" value="release" -->
+			<!--#set var="menu2" value="index" -->
+			<!--#include virtual="/common/ssi/localnav_news.html" -->
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+		<!--#include virtual="/common/ssi/foot.html" -->
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

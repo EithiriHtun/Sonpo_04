@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+{literal}
+  function delImage(obj){
+    if(confirm('画像を削除します。\nその際、編集中のデータはリセットされますがよろしいですか？')){
+      document[obj].submit();
+    }
+  }
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>トップページ（画像）</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+
+<h3>バナー</h3>
+
+<form action="{$script_path|escape}/module/ManageTop/action/Index" method="POST" enctype="multipart/form-data" name="frm0">
+<table cellspacing="1" class="azlist">
+
+{section name=cnt start=1 loop=4}
+<tr>
+<th>バナー {$smarty.section.cnt.index}</th>
+<td>
+
+<table cellspacing="1">
+<tr>
+<td>ファイル</td>
+<td>{if $image_name[$smarty.section.cnt.index]}<img src="{$image_url|escape}{$image_name[$smarty.section.cnt.index]}#{$rndnum}"><input type="button" value="削除" onClick="delImage('frm{$smarty.section.cnt.index}')"><br />{/if}<input type="file" name="image_{$smarty.section.cnt.index}"><br><span style="color:red;">幅160 x 高さ100ピクセルの画像ファイルを参照してください。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="url_{$smarty.section.cnt.index}" value="{$url[$smarty.section.cnt.index]|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_{$smarty.section.cnt.index}" value=""{if $target[$smarty.section.cnt.index]==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_{$smarty.section.cnt.index}" value="_blank"{if $target[$smarty.section.cnt.index]=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+</table>
+
+</td>
+</tr>
+{/section}
+</table>
+
+<h3>メインビジュアルA</h3>
+<table cellspacing="1" class="azlist">
+<tr>
+<th>切替<br>アニメーション<br>パターン</th>
+<td>
+<input type="radio" name="anime_pattern" value="1"{if $anime_pattern==1} checked{/if}>なし 
+<input type="radio" name="anime_pattern" value="2"{if $anime_pattern==2} checked{/if}>クロスフェード 
+<input type="radio" name="anime_pattern" value="3"{if $anime_pattern==3} checked{/if}>横スライド 
+<input type="radio" name="anime_pattern" value="4"{if $anime_pattern==4} checked{/if}>縦スライド 
+</td>
+</tr>
+
+{foreach from=$sort_suffix key="key" item="val" name="suff"}
+<tr>
+<th>画像 {$smarty.foreach.suff.iteration}</th>
+<td>
+
+<table cellspacing="1">
+
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_{$key}">
+<option value="1"{if $sort_num[$key]==1} selected{/if}>1番目</option>
+<option value="2"{if $sort_num[$key]==2} selected{/if}>2番目</option>
+<option value="3"{if $sort_num[$key]==3} selected{/if}>3番目</option>
+<option value="4"{if $sort_num[$key]==4} selected{/if}>4番目</option>
+<option value="5"{if $sort_num[$key]==5} selected{/if}>5番目</option>
+<option value="6"{if $sort_num[$key]==6} selected{/if}>6番目</option>
+<option value="7"{if $sort_num[$key]==7} selected{/if}>7番目</option>
+<option value="8"{if $sort_num[$key]==8} selected{/if}>8番目</option>
+</select>
+<br /><span style="color:red;">同じ番号が複数設定されている場合は、登録が新しい画像が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_{$key}" value="1"{if $is_visible[$key]==1} checked{/if}>表示する </td>
+</tr>
+
+<tr>
+<td>ファイル</td>
+<td>{if $image_name[$key]}<img src="{$image_url|escape}{$image_name[$key]}#{$rndnum}"><input type="button" value="削除" onClick="delImage('frm{$key}')"><br />{/if}<input type="file" name="image_{$key}"><br><span style="color:red;">幅670 x 高さ160ピクセルの画像ファイルを参照してください。</span></td>
+</tr>
+<tr>
+
+<td>URL</td>
+<td><input type="text" name="url_{$key}" value="{$url[$key]|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_{$key}" value=""{if $target[$key]==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_{$key}" value="_blank"{if $target[$key]=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>表示秒数</td>
+<td>
+<select name="opensec_{$key}">
+{section name=imgtime start=1000 loop=31000 step=1000}
+<option value="{$smarty.section.imgtime.index}"{if $opensec[$key]==$smarty.section.imgtime.index} selected{/if}>{assign var="viewtime" value=$smarty.section.imgtime.index*0.001}{$viewtime}秒</option>
+{/section}
+</select>
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+{/foreach}
+
+</table>
+
+<h3>メインビジュアルB</h3>
+<table cellspacing="1" class="azlist">
+<tr>
+<td>ファイル</td>
+<td>{if $image_name[12]}<img src="{$image_url|escape}{$image_name[12]}#{$rndnum}"><input type="button" value="削除" onClick="delImage('frm12')"><br />{/if}<input type="file" name="image_12"><br><span style="color:red;">幅220 x 高さ160ピクセルの画像ファイルを参照してください。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="url_12" value="{$url[12]|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_12" value=""{if $target[12]==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_12" value="_blank"{if $target[12]=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+</table>
+
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="submit" value="OK">　<input type="button" value="戻る" onClick="location.href='/manage/index.php'"></td>
+</tr>
+</table>
+
+</form>
+
+{section name=cnt start=1 loop=13}
+<form action="{$script_path|escape}/module/ManageTop/action/Index" method="POST" name="frm{$smarty.section.cnt.index}">
+<input type="hidden" name="mode" value="delete_image_{$smarty.section.cnt.index}">
+</form>
+{/section}
+
+</div>
+</body>
+</html>

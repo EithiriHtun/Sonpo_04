@@ -1,0 +1,2 @@
+php_value session.cookie_secure 1
+php_flag session.cookie_httponly On

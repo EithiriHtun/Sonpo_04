@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTPS} off
+RewriteCond $1 !^__test
+RewriteRule ^(.*)$ http://www.sonpo.or.jp/$1 [R=301,L]
+
+RewriteCond %{HTTPS} on
+RewriteCond $1 !^__test
+RewriteRule ^(.*)$ https://www.sonpo.or.jp/$1 [R=301,L]
+

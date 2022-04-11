@@ -1,0 +1,1211 @@
+/* ------------------------------------------
+	全体定義
+--------------------------------------------- */
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+	width:100%;
+	text-align:center;
+	background:#AEBCCA;
+	color: #333;
+}
+
+#wrapper {
+	width:970px;
+	margin:0 auto;
+	background:#AEBCCA url(../../common/img/bg.gif) repeat-y 0 0;
+}
+
+#inbox{
+	width:950px;
+	margin:0 10px;
+	text-align:left;
+}
+
+img {
+	border:0;
+}
+
+	/* - - - - - - - - - - - - - - - 
+		font デフォルト設定
+	 - - - - - - - - - - - - - - - - */
+
+/* Hides from IE-mac \*/
+
+.text1{font-size:70%;line-height:130%;}
+.text2{font-size:80%;line-height:130%;letter-spacing:1px;}
+.text3{font-size:90%;line-height:130%;letter-spacing:1px;}
+.text4{font-size:110%;line-height:130%;letter-spacing:1px;}
+.text9{font-size:310.5%;font-family:Verdana;}
+
+/* End hide from IE-mac */ 
+
+a:link		{	color:#0066CC;	}
+a:visited	{	color:#9B72CF;	}
+a:active	{	color:#75A3ED;	}
+a:hover		{	color:#75A3ED;	}
+	
+.fc-org {	color:#E97961;	}
+.fc-grn {	color:#5CB294;	}
+.fc-blu {	color:#5C8FAF;	}
+.fc-red {	color:#E97961;	}
+.fc-lgrn {	color:#87B55B;	}
+.fc-lblu {	color:#64B6C9;	}
+.fc-vio {	color:#A185BC;	}
+.fc-pur {	color:#C96495;	}
+.fc-kha {	color:#B2A07A;	}
+
+strong
+	{
+	font-weight: bold;
+	font-family: 'ヒラギノ角ゴシック Pro W6',Hiragino Kaku Gothic Pro;
+}
+
+.fw-b
+	{
+	font-weight: bold;
+}
+
+br {
+	letter-spacing:0;
+}
+
+	/* 1文字分のインデント */
+.indention {
+	text-indent:1em;
+}
+
+.caution {
+	color:#999;
+	margin: 5px 0;
+}
+
+.hdn {
+	display:none !important;
+}
+
+/* ------------------------------------------
+	メインコンテンツ
+--------------------------------------------- */
+#main {
+	background:#FFFFFF url(../../common/img/bg_side.gif) repeat-y 0 0;
+	margin:0 20px;
+}
+
+#content {
+	float:right;
+	width:670px;
+	text-align:left;
+	background:#fff;
+}
+
+
+/* ------------------------------------------
+	ぱんくず
+--------------------------------------------- */
+#breadcrumbs {
+	margin:10px 20px 20px 20px;
+	padding-bottom:6px;
+	border-bottom:1px solid #CCCCCC;
+}
+
+#breadcrumbs a {
+	padding:0 12px 0 8px;
+	background:url(/common/img/icon_lnav2.gif) no-repeat 100% 2px;
+	text-decoration:none;
+}
+
+#breadcrumbs span {
+	padding:0 12px 0 8px;
+	background:url(/common/img/icon_lnav2.gif) no-repeat 100% 2px;
+	text-decoration:none;
+}
+
+#breadcrumbs strong {
+	padding:0 8px;
+}
+
+/* ------------------------------------------
+	コンテンツタイトル
+--------------------------------------------- */
+
+h2 {
+	margin:0 0 20px 0;
+	color:#333;
+}
+
+/* ------------------------------------------
+	コンテンツタイトル下のテキスト
+--------------------------------------------- */
+
+.subhead {
+	margin:5px 0 10px 0;
+}
+
+
+/* ------------------------------------------
+左からのマージンによる中コンテンツ領域
+	見出しがない場合	contentBlock
+	大見出しの中	contentBlock1
+	中見出しの中	contentBlock2
+	小見出しの中	contentBlock3
+	見出しの中　	contentBlock4
+--------------------------------------------- */
+.contentBlock {
+	padding: 5px 0 15px 0;
+}
+
+.contentBlockCenter {
+	padding: 0 0 15px 0;
+	text-align:center;
+}
+
+.contentBlockRight {
+	padding: 0 0 15px 0;
+	text-align:right;
+}
+
+.contentBlock1 {
+	width:660px;
+	margin:0 0 20px 10px;
+}
+
+.contentBlock2 {
+	width:650px;
+	margin:0 0 20px 20px;
+}
+
+.contentBlock3 {
+	width:640px;
+	margin:0 0 20px 30px;
+}
+
+.contentBlock4 {
+	width:640px;
+	margin:0 0 10px 30px;
+}
+
+.insideBlock1 {
+	margin: 0 0 0 10px;
+}
+
+.insideBlock2 {
+	margin: 0 0 0 20px;
+}
+
+.insideBlock3 {
+	margin: 0 0 0 30px;
+}
+
+/* ------------------------------------------
+	大見出し	subt1
+	中見出し	subt2
+	小見出し	subt3
+	見出し　	subt4
+--------------------------------------------- */
+
+
+.subt1 {
+	text-align:left;
+	background-image:url(/common/img/subt_l_up.gif);
+	background-position:left top;
+	background-repeat:repeat-x;
+	padding:3px 0 0 0;
+	margin:0 0 15px 0;
+}
+
+.subt1 .frm {
+	background-image:url(/common/img/subt_l_bg.gif);
+	background-position:left top;
+	background-repeat:repeat;
+}
+
+.subt1 .frm p {
+	padding:0.3em 1em 0.6em 1em;
+/*	white-space: nowrap;				070615 delete*/
+	line-height:1em;
+	color: #FFFFFF;
+	font-weight:bold;
+	background-image:url(/common/img/subt_l_down.gif);
+	background-position:left bottom;
+	background-repeat:repeat-x;
+}
+
+.subt2 {
+	text-align:left;
+	background-image:url(/common/img/subt_m_w660_up.gif);
+	background-position:left top;
+	background-repeat:no-repeat;
+	padding:2px 0 0 0;
+	margin:0 0 10px 10px;
+}
+
+.subt2 .frm {
+	background-image:url(/common/img/subt_m_w660_bg.gif);
+	background-position:left top;
+	background-repeat:repeat-y;
+}
+
+.subt2 .frm p {
+	padding:0.3em 1em 0.5em 0.7em;
+/*	white-space: nowrap;				070615 delete*/
+	line-height:1em;
+	color: #333333;
+	font-weight:bold;
+	background-image:url(/common/img/subt_m_w660_down.gif);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+
+
+.subt3 {
+	text-align:left;
+	background-image:url(/common/img/subt_s_w650_up.gif);
+	background-position:left top;
+	background-repeat:no-repeat;
+	padding:2px 0 0 0;
+	margin:0 0 10px 20px;
+}
+
+.subt3 .frm {
+	background-image:url(/common/img/subt_s_w650_bg.gif);
+	background-position:left top;
+	background-repeat:repeat-y;
+}
+
+.subt3 .frm p {
+	padding:0.3em 1em 0.5em 0.7em;
+/*	white-space: nowrap;				070615 delete*/
+	line-height:1em;
+	color: #333333;
+	font-weight:bold;
+	background-image:url(/common/img/subt_s_w650_down.gif);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+
+.subt4 {
+	text-align:left;
+	padding:0 0 0 0;
+	margin:0 0 10px 30px;
+}
+
+.subt4 p {
+	white-space: nowrap;
+	line-height:1em;
+	font-weight:bold;
+	color:#333;
+}
+
+.subt4i {			/* sub title 4 inbox version */
+	text-align:left;
+	padding:0 0 0 0;
+	margin:0 0 10px 0;
+}
+
+.subt4i p {
+	font-weight:bold;
+	color:#333;
+}
+
+/* ------------------------------------------
+	ライン
+--------------------------------------------- */
+
+.lineCF {
+	border-bottom:solid 1px #cfcfcf;
+	margin:0 0 10px 0;
+}
+
+/* ------------------------------------------
+	ページの先頭へ戻るリンク
+--------------------------------------------- */
+
+.topLink {
+	text-align:right;
+	padding:0 0 15px 0;
+}
+
+.totop {
+	background-image:url(/common/img/arrow_pagetop.gif) ;
+	background-position:left bottom;
+	background-repeat:no-repeat;
+	padding:0 0 0 14px;
+}
+
+/* ------------------------------------------
+	画像が右側にある場合、テキスト回り込み。
+--------------------------------------------- */
+
+.imageRightSide {
+	float:right;
+	margin: 0 0 20px 20px;
+	}
+
+/* ------------------------------------------
+	画像が左側にある場合、テキスト回り込み。
+--------------------------------------------- */
+
+.imageLeftSide {
+	float:left;
+	margin: 0 20px 20px 0;
+	}
+
+/* ------------------------------------------
+	画像が右側にある場合、テキスト回り込みしない。
+	pictBoxRight01	画像横幅サイズ200px以下
+	pictBoxRight02	画像横幅サイズ201px 以上 215px 以下
+	pictBoxRight03	画像横幅サイズ216px 以上 230px 以下
+	pictBoxRight04	画像横幅サイズ231px 以上 245px 以下
+	pictBoxLeft05   画像横幅サイズ246px 以上 355px 以下
+--------------------------------------------- */
+
+.pictBoxRight01 {
+	float:left;
+	width:200px;
+}
+
+.pictBoxRightTxt01 {
+	float:right;
+	width:450px;
+}
+
+.pictBoxRight02 {
+	float:left;
+	width:215px;
+}
+
+.pictBoxRightTxt02 {
+	float:right;
+	width:435px;
+}
+
+.pictBoxRight03 {
+	float:left;
+	width:230px;
+}
+
+.pictBoxRightTxt03 {
+	float:right;
+	width:420px;
+}
+
+.pictBoxRight04 {
+	float:left;
+	width:245px;
+}
+
+.pictBoxRightTxt04 {
+	float:right;
+	width:405px;
+}
+
+.pictBoxLeft05 {
+	float:right;
+	text-align:right;
+	width:355px;
+}
+	  		 
+.pictBoxLeftTxt05 {
+	float:left;
+	width:290px;
+}
+
+/* ------------------------------------------
+	画像が左側にある場合、テキスト回り込みしない。
+	pictBoxLeft01	画像横幅サイズ200px以下
+	pictBoxLeft02	画像横幅サイズ201px 以上 215px 以下
+	pictBoxLeft03	画像横幅サイズ216px 以上 230px 以下
+	pictBoxLeft04	画像横幅サイズ231px 以上 245px 以下
+	pictBoxLeft05	画像横幅サイズ246px 以上 355px 以下
+--------------------------------------------- */
+
+
+.pictBoxLeft01 {
+	float:right;
+	text-align:right;
+	width:200px;
+}
+
+.pictBoxLeftTxt01 {
+	float:left;
+	width:450px;
+}
+
+.pictBoxLeft02 {
+	float:right;
+	text-align:right;
+	width:215px;
+}
+
+.pictBoxLeftTxt02 {
+	float:left;
+	width:435px;
+}
+
+.pictBoxLeft03 {
+	float:right;
+	text-align:right;
+	width:230px;
+}
+
+.pictBoxLeftTxt03 {
+	float:left;
+	width:420px;
+}
+
+.pictBoxLeft04 {
+	float:right;
+	text-align:right;
+	width:245px;
+}
+
+.pictBoxLeftTxt04 {
+	float:left;
+	width:405px;
+}
+
+.pictBoxLeft05 {
+	float:right;
+	text-align:right;
+	width:355px;
+}
+
+.pictBoxLeftTxt05 {
+	float:left;
+	width:290px;
+}
+
+
+/* ------------------------------------------
+	submenu
+--------------------------------------------- */
+
+#submenu {
+	margin: 0 0 20px 0;
+}
+
+#submenu table {
+	border-collapse:collapse;
+	empty-cells: show;
+	text-align:center;
+}
+
+#submenu table.frm1 th,
+#submenu table.frm1 td{
+	border:1px solid #CCCCCC;
+	padding:6px 10px;
+	background-color:#F9F9F9;
+}
+
+#submenu table.frm0 td{
+	border:0px;
+}
+
+#submenu table.frm1 th.active{
+	background-color:#75A3ED;
+}
+
+#submenu table.frm1 th.active a {
+	color:#FFFFFF;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+
+/* ------------------------------------------ 		 
+	   submenu2 		 
+--------------------------------------------- */  		 
+	  		 
+#submenu2 { 		 
+	margin: 0 0 20px 0;
+} 		 
+	  		 
+#submenu2 table { 		 
+	border-collapse:collapse; 		 
+	empty-cells: show; 		 
+	text-align:center; 		 
+} 		 
+	  		 
+#submenu2 table.frm1 th, 		 
+#submenu2 table.frm1 td{ 		 
+	border:1px solid #CCCCCC; 		 
+	padding:3px 6px; 		 
+	background-color:#F9F9F9; 		 
+} 		 
+	  		 
+#submenu2 table.frm0 td{ 		 
+	border:0px; 		 
+} 		 
+	  		 
+#submenu2 table.frm1 th.active{ 		 
+	background-color:#75A3ED; 		 
+} 		 
+	  		 
+#submenu2 table.frm1 th.active a { 		 
+	color:#FFFFFF; 		 
+	font-weight:bold; 		 
+	text-decoration:underline; 		 
+} 		 
+	  		 	 
+/* ------------------------------------------
+	テーブル設定	表
+--------------------------------------------- */
+
+table.list {
+	border: solid 1px #ccc;
+	border-collapse:collapse;
+	empty-cells: show;
+	table-layout: fixed;
+}
+
+table.list2 {
+	border: solid 1px #ccc;
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+/* 通常の見出し color AAA */
+
+.gray01 {
+	background-color:#aaa;
+	color:#fff;
+}
+
+/* 小見出し color e9e9e9 */
+
+.gray02 {
+	background-color:#e9e9e9;
+}
+
+/* 見出し color f8f8f8 */
+
+.gray03 {
+	background-color:#f8f8f8;
+}
+
+.green {
+	background-color:#e4f3ee;
+	color:#5cb294;
+}
+
+.blue {
+	background-color:#e4edf3;
+	color:#5c8faf;
+}
+
+.orange {
+	background-color:#fdece8;
+	color:#e97961;
+}
+
+table.list td,table.list th,
+table.list2 td,table.list2 th {
+	padding:10px 15px;
+	border: solid 1px #ccc;
+}
+
+table.list td.center,
+table.list th.center,
+table.list2 td.center,
+table.list2 th.center  {
+	text-align:center;
+}
+
+table.fixed {
+	border-collapse:collapse;
+	table-layout: fixed;
+}
+
+
+/* テーブル用注釈 color999 */
+
+.color999 {
+	color:#999;
+}
+
+
+/* ------------------------------------------
+	ボックス設定	背景グレー
+--------------------------------------------- */
+
+.boxGray {
+	border:solid 1px #dadada;
+	padding:10px 10px 15px 10px;
+	margin:0 0 15px 0;
+	background-color:#f9f9f9;
+}
+
+
+/* ------------------------------------------
+	ボックス設定	背景白、枠2px
+--------------------------------------------- */
+
+.boxGrayLine {
+	border:solid 2px #dadada;
+	padding:10px 10px 15px 10px;
+	margin:0 0 15px 0;
+	background-color:#fff;
+}
+
+/* ------------------------------------------
+	ボックス設定	橙角丸
+--------------------------------------------- */
+
+
+.boxOrangeTop {
+	background:url(/common/img/box_result_w670_top.gif) left top;
+	background-repeat:no-repeat;
+	padding: 15px 0 0 0;
+}
+
+.boxOrangeBottom {
+	background:url(/common/img/box_result_w670_bottom.gif) left bottom;
+	background-repeat:no-repeat;
+}
+
+.boxOrangeBg {
+	width:670px;
+	background:url(/common/img/box_result_w670_bg.gif) repeat-y;
+	margin: 15px 0 15px 0;
+
+}
+
+.boxOrange {
+	margin:0 20px 0 20px;
+	padding: 0 0 15px 0;
+}
+
+/* ------------------------------------------
+	ボックス設定	アイコン
+--------------------------------------------- */
+
+/* 注釈「！」 */
+
+.notes {
+	background:url(/common/img/icon_attention.gif) no-repeat;
+	padding:3px 0 0 20px;
+}
+
+/* ポイント */
+
+.point {
+	background:url(/common/img/icon_point_s.gif) no-repeat;
+	padding:3px 0 0 30px;
+}
+
+/* まとめ、あいこんなし */
+
+.result {
+	color: #e97961;
+}
+
+/* ------------------------------------------
+	ボックス設定	ライン
+--------------------------------------------- */
+
+.lineDA {
+	border-bottom:solid 1px #dadada;
+	margin:5px 0 10px 0;
+}
+
+.lineOrange {
+	border-bottom:solid 1px #facfc5;
+	margin:5px 0 10px 0;
+}
+
+/* ------------------------------------------
+	リンク設定	アイコン
+--------------------------------------------- */
+
+/* アロー2 */
+
+.arw2 {
+	background:url(/common/img/icon_lnav2.gif) no-repeat 0 3px;
+	padding:0 0 0 10px;
+}
+
+
+/* ------------------------------------------
+	QA 
+--------------------------------------------- */
+
+.lineQa {
+	background:url(/common/img/dotline_w660.gif) no-repeat;
+	margin:15px 0 0 0;
+	padding:15px 0 0 0;
+}
+
+.answer {
+	background:url(/common/img/icon_answer.gif) no-repeat left top;
+}
+
+
+.question {
+	background:url(/common/img/icon_question.gif) no-repeat left top;
+}
+
+/* ------------------------------------------ 		 
+	   QA (協会追加分) 		 
+--------------------------------------------- */  		 
+	  		 
+.answer1 { 		 
+	 background:url(/common/img/icon_answer1.gif) no-repeat left top; 		 
+}
+
+.question1 {
+	background:url(/common/img/icon_question1.gif) no-repeat left top; 		 
+} 		 
+	  		 
+.answer2 {
+	background:url(/common/img/icon_answer2.gif) no-repeat left top; 		 
+}
+
+.question2 { 		 
+	background:url(/common/img/icon_question2.gif) no-repeat left top; 		 
+} 
+
+.answer3 {
+	background:url(/common/img/icon_answer3.gif) no-repeat left top; 		 
+}
+
+.question3 { 		 
+	background:url(/common/img/icon_question3.gif) no-repeat left top; 		 
+}
+
+.answer4 { 		 
+	background:url(/common/img/icon_answer4.gif) no-repeat left top; 		 
+}
+
+.question4 { 		 
+	background:url(/common/img/icon_question4.gif) no-repeat left top; 		 
+}
+
+.qaTitle {
+	margin: 0 0 0 55px;
+}
+
+/* Aの緑文字 */
+
+.color87b {
+	color:#87b55b;
+	margin:0 0 5px 0;
+}
+
+/* Qの赤文字 */
+
+.colorE97 {
+	color:#e97961;
+	margin:0 0 5px 0;
+}
+
+/* ------------------------------------------
+	リスト設定
+--------------------------------------------- */
+ul.dot0 {
+	list-style-type:none;
+}
+
+ul.dot0 li {
+	background:url("/common/img/icon_dot0.gif") no-repeat 0 0;
+	padding:3px 0 0 8px;
+}
+
+ul.dot1 {
+	list-style-type:none;
+}
+
+ul.dot1 li {
+	background:url("/common/img/icon_dot0.gif") no-repeat 0 0;
+	padding:3px 0 0 8px;
+	margin-bottom:4px;
+}
+
+ul.list0 {
+	list-style-type:none;
+}
+ul.list0 li {
+}
+
+
+/* ------------------------------------------
+	検索結果ページ用指定
+--------------------------------------------- */
+#searchresult #moresearch{
+}
+
+#searchresult #moresearch #tit{
+	float:left;
+	width:7.5em;
+	margin:3px 0px 0 0px;
+}
+
+#searchresult #moresearch #tit1{
+	float:left;
+	margin:3px 5px 0px 0px;
+}
+
+#searchresult #moresearch #tit2{
+	float:left;
+	margin:3px 15px 0px 0px;
+}
+
+#searchresult #moresearch #txt{
+	float:left;
+	width:180px;
+	margin:3px 0px 0 0px;
+}
+
+#searchresult #moresearch #txt input{
+	height:16px;
+	color:#999999;
+	border:1px solid #DDDDDD;
+	width:180px;
+	font-size:12px;
+	line-height:1em;
+}
+
+#searchresult #moresearch #btn{
+	float:left;
+	width:40px;
+	margin-top:2px;
+	margin-left:10px;
+	font-size:12px;
+	line-height:1em;
+}
+
+
+#searchresult .hitword {
+	color:#E97961;
+	background:#FCEDE8;
+	font-weight:bold;
+}
+
+#searchresult .hitres {
+	margin:6px 0 12px 0;
+}
+
+#searchresult .hitlink {
+	margin:0 0 6px 0;
+}
+
+#searchresult .hittxt {
+	margin-left:1em;
+}
+
+#searchresult .alignc {
+	width:650px;
+	text-align:center;
+	margin:0;
+}
+
+#searchresult table.hitpagelist {
+	margin:0 auto;
+	text-align:center;
+}
+
+#searchresult table.hitpagelist td {
+	padding: 0 6px;
+}
+
+/* ------------------------------------------
+	Not Found(404)ページ用指定
+--------------------------------------------- */
+#error #main {
+	background:none;
+	margin:0 auto;
+	padding:0 auto;
+	text-align:center;
+}
+
+#error #main #content {
+	float:none;
+	width:670px;
+	margin:0 auto;
+	text-align:left;
+	background:none;
+}
+
+
+#error #msgarea {
+	margin:60px 35px;
+	width:600px;
+	text-align:left;
+	background:none;
+}
+
+#error #msgarea #title {
+	padding:5px;
+	text-align:center;
+}
+
+#error #msgarea .exp {
+	padding:5px 0 10px 0;
+}
+
+#error #msgarea .b-toplink {
+	width:240px;
+	margin:10px 160px 4px;
+}
+
+#error #msgarea .exp2 {
+	text-align:center;
+}
+
+/* ------------------------------------------
+	clearfix floatボックス用ハック
+--------------------------------------------- */
+.clr {
+	clear:both;
+}
+
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+.clearfix {
+	display:inline-block;
+}
+
+/* Hides from IE-mac \*/
+*html .clearfix { height:1%; }
+.clearfix {display:block;}
+/* End hide from IE-mac */ 
+
+/* ------------------------------------------ 		 
+	   協会追加分 		 
+--------------------------------------------- */  		 
+
+/* ボックス上のマージン　*/  		 
+.mar_t{
+	margin-top:1em;
+}
+
+/* ボックス下のマージン　*/
+.mar_b{
+	margin-bottom:1em;
+}
+
+/*ボックス上下のマージン*/  		 
+.mar_tb{
+	margin:1em 0em;
+}
+	 
+/*ボックス左のマージン*/  		 
+.mar_l{
+	margin-left:1em;
+} 
+.mar_l2{
+	margin-left:2em;
+}
+ 		 
+/* ボックスをインデント*/  		 
+.ind{
+	margin-left:1em;
+}
+
+.ind2{
+	margin-left:2em;
+}
+
+.ind3{
+	margin-left:3em;
+}
+
+.ind05{
+	margin-left:0.5em;
+} 
+.k_cont{
+	margin-left:15px;
+}
+
+/*ぶらさげインデント設定*/  		 
+.bur{
+	padding-left:1em;
+	text-indent:-1em;
+} 
+.bur2{
+	padding-left:2em;
+	text-indent:-2em;
+} 
+.bur3{
+	padding-left:3em;
+	text-indent:-3em;
+}
+.bur4{
+	padding-left:2.6em;
+	text-indent:-2.6em;
+}
+
+
+.bur015{
+	padding-left:1.5em;
+	text-indent:-1.5em;
+}
+
+/*テーブルの書式*/  		 
+	table.center,
+	table tr.center {
+		text-align:center;
+}
+
+/*テーブルの枠線を消す*/  		 
+table.list5 {
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+table.list5 td {
+	border: none;
+	padding: 2px 6px;
+}
+
+/*相談ガイドで使用*/  		 
+.marker {
+	background:url(/useful/qanda/s_guide/img/mark.gif) no-repeat left top;
+}
+
+.qaTitle2{ 		 
+	margin-left:5px;
+}
+
+/*注意書き_黒字用*/  		 
+.caution_2 {
+	margin: 5px 0;
+}
+
+/* ------------------------------------------
+	ニュースエリア
+--------------------------------------------- */
+
+/* 画像が左 */
+.obj-l .mod-img {
+	float:left;
+	margin:0 20px 20px 0;
+	text-align:center;
+}
+/* 画像が右 */
+.obj-r .mod-img {
+	float:right;
+	margin:0 0 20px 20px;
+	text-align:center;
+}
+/* 画像が中央 */
+.obj-c .mod-img {
+	margin-bottom:20px;
+	text-align:center;
+}
+/* 2カラム */
+.obj-2col .obj-2colblk {
+	width:50%;
+	text-align:center;
+}
+.obj-2col .obj-2col-l {
+	float:left;
+}
+.obj-2col .obj-2col-r {
+	float:right;
+}
+.obj-2col .mod-img {
+	margin-bottom:20px;
+}
+/* 3カラム */
+.obj-3col .obj-3colblk {
+	float:left;
+	width:33%;
+	text-align:center;
+}
+.obj-3col .mod-img {
+	margin-bottom:20px;
+}
+/* キャプション */
+.mod-caption {
+	display:block;
+	padding:5px 15px 0;
+}
+
+
+/* ------------------------------------------
+	タブ設定
+	.tabBtns .col2	タブ2つ
+	.tabBtns .col3	タブ3つ
+	.tabBtns .col4	タブ4つ
+	.tabBtns .col5	タブ5つ
+--------------------------------------------- */
+.tabBtns{
+	border-bottom:2px solid #71a1ed;
+	margin-bottom:20px;
+}	
+.tabBtns li{
+	float:left;
+	background:#ededed url(/common/img/bg_tab.gif) repeat-x 0 0;
+	list-style-type:none;
+}
+.tabBtns li.act{
+	background:#71a1ed;
+}
+.tabBtns li a{
+	display:block;
+	text-align:center;
+	color:#444;
+	font-weight:bold;
+	text-decoration:none;
+}
+.tabBtns li.act a{
+	color:#fff;
+}
+
+.tabBtns li a span {
+	display:block;
+	padding:10px;
+}
+.tabBtns li.li_r{
+	margin-right:0 !important;
+}
+/* タブ2つ */
+.tabBtns .col2 li{
+	width:330px;
+	margin-right:10px;
+}
+/* タブ3つ */
+.tabBtns .col3 li{
+	width:216px;
+	margin-right:11px;
+}
+/* タブ4つ */
+.tabBtns .col4 li{
+	width:160px;
+	margin-right:10px;
+}
+/* タブ5つ */
+.tabBtns .col5 li{
+	width:126px;
+	margin-right:10px;
+}
+
+
+/* ------------------------------------------
+	追加モジュール（2012.12.14）
+--------------------------------------------- */
+
+/* ボックス上のpadding　*/  		 
+.pad_t05{	padding-top:0.5em;	}
+.pad_t1{	padding-top:1em;	}
+/* ボックス下のpadding　*/
+.pad_b05{	padding-bottom:0.5em;	}
+.pad_b1{	padding-bottom:1em;	}
+/*ボックス上下のpadding */  		 
+.pad_tb05{	margin:0.5em 0em;	}
+.pad_tb1{	margin:1em 0em;	}
+
+/* 下線1px:color:type01 */
+.lineB1c01 {
+	border-bottom:solid 1px #cfcfcf;
+}

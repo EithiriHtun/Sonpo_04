@@ -1,0 +1,91 @@
+142
+a:4:{s:8:"template";a:1:{s:20:"pubinactivelist.html";b:1;}s:9:"timestamp";i:1646880329;s:7:"expires";i:1646880329;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+
+<script>
+<!--
+function sendForm01(){
+  document.form01.submit();
+}
+
+function allCheck(check){
+  var index;
+  if(check){
+    for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = true;
+    }
+  }else{
+    for(index = 0; index < form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = false;
+    }
+  }
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを元に戻してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+function checkchecked2(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('データが選択されていません。');
+    return false;
+  }else{
+    conf=confirm('選択したデータを完全に削除してよろしいですか？'+ "\n" + ids);
+    if(conf){
+      document.form02.do_mode.value="delete";
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+}
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>削除データ[受付管理・発送管理]（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<div align="right">
+［<a href="/manage/forms/index.php/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+
+<br><a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+
+</div>
+</body>
+</html>

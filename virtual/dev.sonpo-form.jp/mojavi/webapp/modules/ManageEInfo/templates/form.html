@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>(Others) 登録/編集</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageEInfo/action/Regist" method="POST" name="frm1">
+<table cellspacing="1" class="azlist">
+
+<tr>
+<th>カテゴリ</th>
+<td>
+<select name="article_title">
+<option value="">--選択</option>
+<option value="1"{if $data.article_title==1} selected{/if}>Regulations</option>
+<option value="2"{if $data.article_title==2} selected{/if}>Statistics</option>
+<option value="3"{if $data.article_title==3} selected{/if}>Publication</option>
+<option value="4"{if $data.article_title==4} selected{/if}>About Us</option>
+<option value="5"{if $data.article_title==5} selected{/if}>FAQ</option>
+</td>
+</tr>
+
+<tr>
+<th>タイトル（一覧用）</th>
+<td><input type="text" name="list_title" size="60" value="{$data.list_title|escape}"><br></td>
+</tr>
+<tr>
+<th>リンク先URL</th>
+<td>
+<input type="text" name="link_url_1" size="40" value="{$data.link_url_1|escape}"><span style="color:red;">http://から入力してください。</span>
+</td>
+</tr>
+<tr>
+<th>記事公開日</th>
+<td>
+<select name="open_year">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時
+<br><span style="color:red;">ここでの登録日付順に、ソートされて表示されます。<br>「時」は表示されません。</span>
+</td>
+</tr>
+
+<!--
+<tr>
+<th>「最新情報」への掲載</th>
+<td><input type="radio" name="link_top" value="1"{if $data.link_top==1} checked{/if}>する　<input type="radio" name="link_top" value="0"{if $data.link_top<>1} checked{/if}>しない</td>
+</tr>
+-->
+
+</table>
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="button" value="保存しないで戻る" onClick="document.location='{$script_path|escape}/module/ManageEInfo?y={$year|escape:"url"}'"></td>
+{if $is_master}<td><input type="submit" name="submitmode" value="公開"></td>{/if}
+<td><input type="submit" name="submitmode" value="保存"></td>
+</tr>
+</table>
+
+</form>
+
+<form name="frm2"><input type="hidden" name="tempcontent"></form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>日本損害保険協会・ビデオ 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if $popmsg} onLoad="alert('{$popmsg|escape}');"{/if}>
+<h2>日本損害保険協会・ビデオ 管理画面</h2>
+<h3>ビデオ（詳細）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/VideoIndex">戻る</a>
+<hr>
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+申込み内容
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付番号</th>
+<td width="75%">{$data.video_id|escape}</td>
+</tr>
+<tr>
+<th>受付日時</th>
+<td width="75%">{$data.date_regist|date_format:"%Y-%m-%d %H:%M"}</td>
+</tr>
+<tr>
+<th>希望ビデオ</th>
+<td width="75%">
+{if $data.video1}・{$data.video1|escape}<br>{/if}
+{if $data.video2}・{$data.video2|escape}<br>{/if}
+{if $data.video3}・{$data.video3|escape}<br>{/if}
+{if $data.video4}・{$data.video4|escape}<br>{/if}
+{if $data.video5}・{$data.video5|escape}<br>{/if}
+</td>
+</tr>
+</table>
+<br>
+申込み者
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>借用期間</th>
+<td width="75%">{$data.syear|escape}年{$data.smonth|escape}月{$data.sday|escape}日-{$data.eyear|escape}年{$data.emonth|escape}月{$data.eday|escape}日</td>
+</tr>
+<tr>
+<th>住所（郵便番号）</th>
+<td>{$data.zipcode1|escape}-{$data.zipcode2|escape}</td>
+</tr>
+<tr>
+<th>住所（都道府県）</th>
+<td>{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]|escape}{/if}</td>
+</tr>
+<tr>
+<th>住所（市町村以下）</th>
+<td>{$data.address|escape}</td>
+</tr>
+<tr>
+<th>お名前</th>
+<td>{$data.name_dat|escape}</td>
+</tr>
+<tr>
+<th>フリガナ</th>
+<td>{$data.name_kana|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}</td>
+</tr>
+<tr>
+<th>FAX番号</th>
+<td>{$data.fax1|escape}-{$data.fax2|escape}-{$data.fax3|escape}</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>{$data.email|escape}</td>
+</tr>
+<tr>
+<th>送付先</th>
+<td>
+{if $data.method==1}支部へ来訪（{$data.month_1|escape}月{$data.day_1|escape}日&nbsp;&nbsp;{if $data.visittime==1}AM（8〜12時）{/if}{if $data.visittime==2}PM（13〜17時）{/if}）{/if}
+{if $data.method==2}申し込み者と同じ{/if}
+{if $data.method==3}申し込み者以外{/if}
+</td>
+</tr>
+</table>
+{if $data.method==3}
+<br>
+送付先
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>住所（郵便番号）</th>
+<td width="75%">{$data.szipcode1|escape}-{$data.szipcode2|escape}</td>
+</tr>
+<tr>
+<th>住所（都道府県）</th>
+<td>{if @$prefs[$data.sprefecture]}{$prefs[$data.sprefecture]|escape}{/if}</td>
+</tr>
+<tr>
+<th>住所（市町村以下）</th>
+<td>{$data.saddress|escape}</td>
+</tr>
+<tr>
+<th>お名前</th>
+<td>{$data.sname_dat|escape}</td>
+</tr>
+<tr>
+<th>フリガナ</th>
+<td>{$data.sname_kana|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.stel1|escape}-{$data.stel2|escape}-{$data.stel3|escape}</td>
+</tr>
+<tr>
+<th>FAX番号</th>
+<td>{$data.sfax1|escape}-{$data.sfax2|escape}-{$data.sfax3|escape}</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>{$data.semail|escape}&nbsp;</td>
+</tr>
+{/if}
+</table>
+
+<br>
+<form action="{$script_path|escape}/module/FormManage/action/VideoRegist" method="POST" name="frm1">
+<table cellspacing="1" class="azlist" width="90%">
+
+<tr>
+<th>発送日</th>
+<td width="75%">
+<select name="rent_year"><option value="">▼{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==@$data.rent_year} selected{/if}>{$datum|escape}{/foreach}</select>年 
+<select name="rent_month"><option value="">▼{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==@$data.rent_month} selected{/if}>{$datum|escape}{/foreach}</select>月 
+<select name="rent_day"><option value="">▼{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==@$data.rent_day} selected{/if}>{$datum|escape}{/foreach}</select>日 
+</td>
+</tr>
+
+<tr>
+<th>返却日</th>
+<td width="75%">
+<select name="back_year"><option value="">▼{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==@$data.back_year} selected{/if}>{$datum|escape}{/foreach}</select>年 
+<select name="back_month"><option value="">▼{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==@$data.back_month} selected{/if}>{$datum|escape}{/foreach}</select>月 
+<select name="back_day"><option value="">▼{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==@$data.back_day} selected{/if}>{$datum|escape}{/foreach}</select>日 
+</td>
+</tr>
+
+<tr>
+<th>ステータス</th>
+<td width="75%">{if @$status[$data.status]}{$status[$data.status]|escape}{/if}</td>
+</tr>
+
+<tr>
+<th>備考</th>
+<td width="75%"><textarea cols="50" rows="3" name="bikou">{$data.bikou|escape}</textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="　更新　"><input type="hidden" name="mode" value="submit"></td>
+</tr>
+</table>
+</form>
+<a href="/manage/forms/index.php/module/FormManage/action/VideoIndex">戻る</a>
+</div>
+</body>
+</html>

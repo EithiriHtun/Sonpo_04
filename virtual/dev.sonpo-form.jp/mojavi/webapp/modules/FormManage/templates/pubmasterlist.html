@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>刊行物マスター（一覧）</h3>
+<div class="maincontents">
+
+<a href="{$script_path|escape}/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<a href="{$script_path|escape}/module/FormManage/action/PubMasterRegist">新規追加</a>
+<hr>
+{if $data}
+<table cellspacing="1" class="azlist" width="700">
+<tr>
+<th>冊子番号</th>
+<th>冊子名</th>
+<th>オンライン</th>
+<th>取寄</th>
+<th>講師派遣</th>
+<!--<th>冊子管理部門</th>-->
+<th>在庫部数</th>
+<!--<th>　</th>-->
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td align="left" valign="top" nowrap>{if $datum.pub_id_1 || $datum.pub_id_2}<a href="{$script_path|escape}/module/FormManage/action/PubMasterRegist?id={$datum.id|escape}">{$datum.pub_id_1|string_format:"%05d"}-{$datum.pub_id_2|string_format:"%02d"}</a>{/if}</td>
+<td align="left" valign="top">{if $datum.name}<a href="{$script_path|escape}/module/FormManage/action/PubMasterRegist?id={$datum.id|escape}">{$datum.name|escape}</a>{else}&nbsp;{/if}</td>
+
+<!--
+<td align="center">{if !$datum.showrange || $datum.showrange==2}○{else}&nbsp;{/if}</td>
+<td align="center">{if !$datum.showrange || $datum.showrange==1}○{else}&nbsp;{/if}</td>
+-->
+
+<td align="center">{if $datum.show_online}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.show_other}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.show_inst}○{else}&nbsp;{/if}</td>
+
+<!--<td align="left" valign="top">{if $datum.users_name}{foreach from=$datum.users_name item="datum2"}{$datum2|escape}<br>{/foreach}{else}&nbsp;{/if}</td>-->
+<td align="right" valign="top">{if $datum.total_amount}{$datum.total_amount|escape|number_format}{else}0{/if}</td>
+<!--<form action="{$script_path|escape}/module/FormManage/action/PubMasterIndex" method="POST">
+<td align="center" valign="top">{if $datum.is_delete}<input type="hidden" name="mode" value="delete"><input type="hidden" name="id" value="{$datum.id|escape}"><input type="submit" value="削除" onClick="return confirm('このデータを削除してよろしいですか？');">{else}　{/if}</td>
+</form>-->
+</tr>
+{/foreach}
+</table>
+{/if}
+<hr>
+<a href="{$script_path|escape}/module/FormManage/action/PubIndex">戻る</a>
+</div>
+</body>
+</html>

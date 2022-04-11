@@ -1,0 +1,15 @@
+{$data.name1} {$data.name2}様
+
+刊行物のお申し込みをいただき誠にありがとうございます。
+お申し込み手続きが完了いたしました。
+
+受付番号：{$recept_id}
+
+<<<お申し込み内容は以下のとおりです>>>
+【お申込みの刊行物】
+{foreach from=$books item="datum"}{foreach from=$datum item="datum2"}{if $datum2.count}　[ {$datum2.count} 部 ] {$datum2.name}
+{/if}{/foreach}{/foreach}
+
+【合計部数】
+　{$data.total_count}部
+

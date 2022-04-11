@@ -1,0 +1,42 @@
+138
+a:4:{s:8:"template";a:1:{s:16:"pubopenform.html";b:1;}s:9:"timestamp";i:1619593811;s:7:"expires";i:1619593811;s:13:"cache_serials";a:0:{}}<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>刊行物申込受付一時停止設定</h3>
+<div class="maincontents">
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+
+<form action="/manage/forms/index.php/module/FormManage/action/PubOpenRegist" method="POST" name="frm1">
+
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付設定</th>
+<td width="75%"><input type="hidden" name="id" value="1">
+<input type="checkbox" name="do_close" value="1">受け付けない
+</td>
+</tr>
+<tr>
+<th>メッセージ</th>
+<td width="75%"><textarea name="message" cols="60" rows="6">ただいまメンテナンス中のため、サービスを一時停止しております。
+メンテナンス期間は11月27日〜11月30日です。
+ご迷惑をおかけして申し訳ございませんが、ご理解くださいますようお願いいたします。</textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="OK">　<input type="button" value="戻る" onClick="location.href='/manage/forms/index.php/module/FormManage/action/PubIndex'"></td>
+</tr>
+
+</table>
+</form>
+
+</div>
+</body>
+</html>

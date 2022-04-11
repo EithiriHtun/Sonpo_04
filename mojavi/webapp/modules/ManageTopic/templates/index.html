@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>協会からのお知らせ一覧</h3>
+<div class="maincontents">
+&gt;<a href="/manage/">トップ・メニューに戻る</a><br>
+&gt;<a href="/news/information/" target="_blank">サイトを確認する</a>
+<br><br>
+{if $years}<table cellspacing="1" class="azlist">
+<tr>
+<td align="center">{foreach from=$years key="dkey" item="datum"}{if $dkey==$thisyear}<b>{/if}<a href="?y={$dkey|escape:"url"}">{$dkey|escape}年度</a>{if $dkey==$thisyear}</b>{/if}　{/foreach}</td>
+</tr>
+</table>{/if}
+
+<table cellspacing="1" width="100" class="azlist">
+<tr>
+<th>新規登録</th>
+</tr>
+<tr>
+<form action="{$script_path|escape}/module/ManageTopic/action/Regist"><td align="center"><input type="submit" value="登録"></td></form>
+</tr>
+</table>
+
+<hr>
+{if $data}
+<table cellspacing="1" class="azlist">
+<tr>
+<th>タイトル</th>
+<th>公開日時</th>
+<th>自動更新予定日時</th>
+<th>ステータス</th>
+<th>ファイルの有無</th>
+<th>ファイルの更新</th>
+{if $is_master}<th>HTML削除</th>
+<th>データ削除</th>{/if}
+</tr>
+{foreach from=$data item="datum"}<tr>
+{if $is_master}
+<td><a href="{$script_path|escape}/module/ManageTopic/action/Regist?id={$datum.id|escape}">{$datum.list_title|escape}</a></td>
+{else}
+<td>{if $datum.visible==1}{else}<a href="{$script_path|escape}/module/ManageTopic/action/Regist?id={$datum.id|escape}">{/if}{$datum.list_title|escape}{if $datum.visible==1}{else}</a>{/if}</td>
+{/if}
+<td><span style="color:{if $datum.visible==1}black{else}#cccccc{/if}">{$datum.open_year|escape}-{$datum.open_month|escape}-{$datum.open_day|escape}({$datum.open_hour|escape})</span></td>
+<td>{if $datum.upload_reserve_datetime}{$datum.upload_reserve_datetime|date_format:"%Y-%m-%d %H:%M"}{else}　{/if}</td>
+<td align="center">{if $datum.visible==1}<span{if $datum.is_time_over==1} style="color:seagreen;"{else} style="color:#ff0000;"{/if}>公開</span>{else}<span{if $datum.is_time_over==1} style="color:darkseagreen;"{else} style="color:#ffccff;"{/if}>編集{/if}</td>
+<td align="center"><span style="color:{if $datum.is_file}seagreen;">有{else}#ff0000;">無{/if}</span></td>
+<td align="center">{if $datum.visible==1}{if $datum.is_file_new==1}<span style="color:seagreen;">更新済{else}<span style="color:red;">未更新{/if}</span>{else}　{/if}</td>
+{if $is_master}<td align="center"><a href="{$script_path|escape}/module/ManageTopic/action/HtmlDelete?id={$datum.id|escape:"url"}" onClick="return confirm('このデータのHTMLファイルを削除しますか？');">削除</a></td>
+<td align="center"><a href="{$script_path|escape}/module/ManageTopic/action/Delete?id={$datum.id|escape:"url"}" onClick="return confirm('このデータを削除しますか？');">削除</a></td>{/if}
+</tr>
+{/foreach}
+</table>{/if}
+
+</div>
+</body>
+</html>

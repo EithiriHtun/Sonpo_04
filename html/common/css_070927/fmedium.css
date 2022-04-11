@@ -1,0 +1,19 @@
+/* ----------------------------------------------- 
+		‹¤’Ê’è‹`
+   ----------------------------------------------- */
+body {
+	font-size:100%;
+}
+
+#mid #zoom ul li.b-m a {
+	background: url("/common/ssi/img/b_font_m_2.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-l a {
+	background: url("/common/ssi/img/b_font_l_1.gif") no-repeat 0 0;
+}
+
+#mid #zoom ul li.b-xl a {
+	background: url("/common/ssi/img/b_font_xl_1.gif") no-repeat 0 0;
+}
+

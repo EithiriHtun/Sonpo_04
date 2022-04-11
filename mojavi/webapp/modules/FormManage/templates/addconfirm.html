@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 − 講師派遣のご案内 − 入力内容確認画面</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" type="text/css" href="/useful/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+
+<script language="javascript">
+<!---
+
+//-->
+</script>
+<style>
+{literal}
+body{
+  background:none;
+}
+{/literal}
+</style>
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+<body id="useful-form" style="padding-left:5px;background:#ffffff;">
+<a name="top"></a>
+<div align="left">
+<br>
+<h2 style="font-size:130%; padding-left:5px;">日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（追加登録・内容確認）</h3>
+</div>
+<div id="wrapper">
+	<div id="inbox">
+
+		<!-- メインエリア -->
+		<div id="main">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+
+				<!-- //content title -->
+
+<form method="post" action="{$script_path|escape}/module/FormManage/action/InstAdd" name="confForm">
+				<!-- 主催者情報 -->
+				<div class="contentBlock1">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form_list text2">
+						<tr>
+							<td colspan="2" class="gray01"><strong>主催者情報</strong></td>
+						</tr>
+
+						<tr>
+							<td valign="top" class="gray02"><strong>主催者名</strong></td>
+							<td>{$data.host|escape}</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>所在地</strong></td>
+							<td valign="top">
+
+								<table border="0" cellspacing="0" cellpadding="2">
+									<tr>
+										<td valign="top" style="border:none; padding:2px;" class="text2">郵便番号</td>
+										<td style="border:none; padding:2px;" class="text2">{$data.post1|escape}-{$data.post2|escape}</td>
+									</tr>
+									<tr>
+										<td style="border:none; padding:2px;" class="text2">都道府県</td>
+
+										<td style="border:none; padding:2px;" class="text2">{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]}{/if}</td>
+									</tr>
+									<tr>
+										<td nowrap valign="top" style="border:none; padding:2px;" class="text2">市区町村以下</td>
+										<td style="border:none; padding:2px;" class="text2">{$data.address|escape}</td>
+									</tr>
+								</table>
+
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>電話番号</strong></td>
+							<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}{if $data.naisen}<br>内線：{$data.naisen|escape}{/if}</td>
+						</tr>
+				<tr>
+
+					<td valign="top" class="gray02"><strong>FAX番号</strong></td>
+					<td>{$data.fax1|escape}-{$data.fax2|escape}-{$data.fax3|escape}</td>
+				</tr>
+
+						<tr>
+							<td valign="top" class="gray02"><strong>ご担当者名</strong></td>
+							<td>{$data.person_last|escape}　{$data.person_first|escape}<br>{$data.person_kana_last|escape}　{$data.person_kana_first|escape}</td>
+
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>ご担当者役職</strong></td>
+							<td>{$data.yaku|escape}</td>
+
+						</tr>
+						<tr>
+							<td valign="top" class="gray02"><strong>メールアドレス</strong></td>
+							<td valign="top">{$data.email1|escape}</td>
+						</tr>
+
+					</table>
+				</div>
+
+				<!-- //主催者情報 -->
+
+				<!-- 講演会内容 -->
+				<div class="contentBlock1">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form_list">
+						<tr>
+							<td colspan="2" class="gray01 text2"><strong>講演会内容</strong></td>
+
+						</tr>
+
+						<tr>
+							<td valign="top" class="text2 gray02" nowrap><strong>希望開催日時</strong></td>
+							<td align="left">
+								<table border="0" cellspacing="0" cellpadding="0" class="noborder text2">
+									<tr>
+										<td valign="top" align="left" nowrap>第1希望&nbsp;</td>
+										<td>{$data.year_1|escape}年{$data.month_1|escape}月{$data.day_1|escape}日({$data.wTx01|escape}) {$data.hour_from_1|escape}時{$data.min_from_1|escape}分〜{$data.hour_to_1|escape}時{$data.min_to_1|escape}分{if $date_warn_1}<br><span style="color:red">希望開催日まで1ヶ月を切っているためお引き受けできない場合があります</span>{/if}</td>
+
+									</tr>
+{if $data.year_2}									<tr>
+										<td valign="top" align="left" nowrap>第2希望&nbsp;</td>
+										<td>{$data.year_2|escape}年{$data.month_2|escape}月{$data.day_2|escape}日({$data.wTx02|escape}) {$data.hour_from_2|escape}時{$data.min_from_2|escape}分〜{$data.hour_to_2|escape}時{$data.min_to_2|escape}分{if $date_warn_2}<br><span style="color:red">希望開催日まで1ヶ月を切っているためお引き受けできない場合があります</span>{/if}</td>
+
+									</tr>{/if}
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>会場<br>所在地</strong></td>
+
+							<td valign="top">
+
+								<table border="0" cellspacing="0" cellpadding="2" class="noborder text2">
+									<tr>
+										<td valign="top" style="border:none; padding:2px;">会場名</td>
+										<td style="border:none; padding:2px;">{$data.lecture_hall|escape}</td>
+									</tr>
+
+									<tr>
+										<td valign="top" style="border:none; padding:2px;">郵便番号</td>
+										<td style="border:none; padding:2px;">{$data.lecture_zip1|escape}-{$data.lecture_zip2|escape}</td>
+									</tr>
+
+									<tr>
+										<td style="border:none; padding:2px;">都道府県</td>
+
+										<td style="border:none; padding:2px;">{if @$prefs[$data.lecture_prefecture]}{$prefs[$data.lecture_prefecture]|escape}{/if}</td>
+									</tr>
+									<tr>
+										<td nowrap valign="top" style="border:none; padding:2px;">市区町村以下</td>
+										<td style="border:none; padding:2px;">{$data.lecture_address|escape}</td>
+									</tr>
+								</table>
+
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>会場<br>電話番号</strong></td>
+							<td class="text2">{$data.lecture_tel1|escape}-{$data.lecture_tel2|escape}-{$data.lecture_tel3|escape}</td>
+						</tr>
+
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>講演対象</strong></td>
+							<td class="text2">{if @$taisyou[$data.object_select]}{$taisyou[$data.object_select]}{/if}{$data.object_text|escape}</td>
+						</tr>
+
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>受講予定人数</strong></td>
+							<td class="text2">{$data.object_num|escape}人 </td>
+
+						</tr>
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>講演テーマ</strong></td>
+							<td valign="top" class="text2">{if @$theme[$data.themes]}{$theme[$data.themes]|escape}{/if}{if $data.themes=="99"}<br>{$data.theme_text|escape|nl2br}{/if}</td>
+						</tr>
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>ビデオ</strong></td>
+
+							<td valign="top" class="text2">希望{if @$data.video=="1"}する{else}しない{/if}</td>
+						</tr>
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>資料送付先</strong></td>
+							<td valign="top" class="text2">必要部数：{if @$data.copy}{$data.copy|escape}{/if} 部<br>
+							資料送付先：{if @$data.receiver_address=="host"}主催者{/if}{if @$data.receiver_address=="venue"}会場{/if}{if @$data.receiver_address=="other"}その他　（{$data.receiver_text|escape}）{/if}</td>
+						</tr>
+
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>パソコンおよびプロジェクターの使用</strong></td>
+							<td valign="top" class="text2">{if @$data.use_pcprj=="1"}使用可能{else}使用不可能{/if}</td>
+						</tr>
+
+						<tr>
+							<td valign="top" class="text2 gray02"><strong>本制度の<br>ご利用経験</strong></td>
+							<td valign="top" class="text2">{if @$data.exp=="1"}あり<br>
+								{if @$data.use_year || @$data.use_month}前回は{if @$data.use_year|escape}{$data.use_year|escape}年 {/if}{if @$data.use_month}{$data.use_month|escape} 月 {/if}頃{/if}{else}なし{/if}</td>
+						</tr>
+					</table>
+					<br>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form_list text2">
+
+				<tr>
+<td class="gray01"><strong>その他連絡事項等ございましたら、ご記入ください。</strong></td></tr><tr><td>{$data.connection|escape|nl2br}</td>				</tr>
+
+
+					</table>
+				</div>
+
+				<!-- //講演会内容 -->
+
+				<div class="contentBlock1">
+					<div class="clearfix text2" align="center">
+						<input type="submit" value="保存"><input type="hidden" name="mode" value="submit"><input type="hidden" name="token" value="{if @$token}{$token|escape}{/if}">
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+					</div>
+				</div>
+				</form>
+					<!-- //講師派遣のご案内 -->
+<input type="button" value="戻る" onClick="document.form04.submit();">
+<form action="{$script_path|escape}/module/FormManage/action/InstAdd" name="form04" method="POST">
+<input type="hidden" name="mode" value="rewrite"><input type="hidden" name="token" value="{if @$token}{$token|escape}{/if}">
+<input type="hidden" name="y" value="{if @$year}{$year|escape}{/if}">
+<input type="hidden" name="br" value="{if @$nbranch}{$nbranch|escape}{/if}">
+<input type="hidden" name="st" value="{if @$nstatus}{$nstatus|escape}{/if}">
+<input type="hidden" name="ts" value="{if @$ntaisyou}{$ntaisyou|escape}{/if}">
+</form>
+
+			</div>
+
+			<!-- //コンテンツエリア -->
+		</div>
+
+		<!-- //メインエリア -->
+	</div>
+
+</div>
+</body>
+
+</html>
+

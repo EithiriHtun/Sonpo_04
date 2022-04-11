@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="document.frm1.content.value=window.opener.document.frm2.tempcontent.value;">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>ファイル</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageNews/action/FileRegist" method="POST" enctype="multipart/form-data" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>リンクテキスト</th>
+<td><input type="text" name="link_text" value="{$data.link_text|escape}" size="60"><input type="hidden" name="content"></td>
+</tr>
+<tr>
+<th>ファイル</th>
+<td><input type="file" name="file"><br><span style="color:red;">PDFやエクセルファイルなどを参照してください。</span></td>
+</tr>
+</table>
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="submit" value="OK"></td>
+</tr>
+</table>
+
+</form>
+
+</div>
+</body>
+</html>

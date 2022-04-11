@@ -1,0 +1,14 @@
+#AuthUserFile /var/www/virtual/dev.sonpo-form.jp/html/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName "Closed Area"
+#AuthType Basic
+
+#require valid-user
+
+#<Files ~ "^.(htpasswd|htaccess)$">
+#    deny from all
+#</Files>
+
+#php_value session.cookie_secure 1
+
+php_value memory_limit 64M

@@ -1,0 +1,200 @@
+/* ‚¨–ğ—§‚¿î•ñ | ‘¹ŠQ•ÛŒ¯‚Ì‰ğà | ’nk•ÛŒ¯ index */
+
+.jishinContents {
+	width: 590px;
+	padding: 5px 0 15px 0;
+	margin: 0 0 0 40px;
+}
+
+/* ‚¨–ğ—§‚¿î•ñ | ‘¹ŠQ•ÛŒ¯‚Ì‰ğà | ’nk•ÛŒ¯ point */
+
+.jishinContents2 {
+	width: 590px;
+	padding: 0 0 10px 0;
+	margin: 5px 0 15px 40px;
+	background-color:#ffcc66;
+}
+
+.charaPosition {
+	float:left;
+	padding:0;
+}
+
+.wolfTxt {
+	float:left;
+	width: 357px;
+	padding: 0 0 0 10px;
+}
+
+.wolfImage {
+	float:right;
+	padding: 0 15px 0 0;
+}
+/* ‚¨–ğ—§‚¿î•ñ | ‘¹ŠQ•ÛŒ¯Q&A */
+.qalist {
+	margin-bottom:4px;
+}
+
+/* ‚¨–ğ—§‚¿î•ñ | ‘Š’k‘‹Œû‚Ì‚²ˆÄ“à */
+/* ‚¨–ğ—§‚¿î•ñ | ‘Š’k‘‹Œû‚Ì‚²ˆÄ“à | ‚»‚ñ‚ª‚¢‚Ù‚¯‚ñ‘Š’kº */
+/* ‚¨–ğ—§‚¿î•ñ | ‘Š’k‘‹Œû‚Ì‚²ˆÄ“à | ©“®Ô•ÛŒ¯¿‹‘Š’kƒZƒ“ƒ^[ */
+
+table.telnumber {
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+table.telnumber td {
+	border: none;
+	padding: 6px;
+}
+
+.cell {
+	width:1.0em;
+	writing-mode: tb-rl;
+}
+
+table.soudanlist {
+	border: solid 1px #ccc;
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+table.soudanlist td,table.soudanlist th {
+	padding:10px 8px;
+	border: solid 1px #ccc;
+}
+
+table.soudanlist td.center,
+table.soudanlist th.center {
+	text-align:center;
+}
+
+/* ‚¨–ğ—§‚¿î•ñ | ‘¹ŠQ•ÛŒ¯Q&A | Œğ’Ê–ŒÌ‚É‚ ‚Á‚½‚Æ‚« */
+.button3block {
+	margin: 0 0 0 90px;
+}
+
+/* ‚¨–ğ—§‚¿î•ñ | WEB‘Š’kƒtƒH[ƒ€ */
+body#useful #agreebtnarea {
+	width:670px;
+}
+
+body#useful #agreebtnarea table,
+body#useful #agreebtnarea table td {
+	padding:0;
+	margin: 0 auto;
+	text-align:center;
+}
+
+body#useful #agreebtnarea table td.btn {
+	margin:0;
+	padding: 5px 5px 20px;
+}
+
+/* ------------------------------------------
+	cgiƒtƒH[ƒ€—pƒy[ƒW(blankƒy[ƒW)
+--------------------------------------------- */
+body#useful-form {
+	width:100%;
+	padding:0;
+	margin:0;
+	text-align:center;
+	background:url(../../common/img/bg_side.gif) repeat;
+}
+
+#useful-form #wrapper {
+	width:100%;
+	padding:0;
+	margin:0;
+	background:none;
+}
+
+#useful-form #inbox {
+	width:100%;
+	text-align:center;
+	padding:0;
+	margin:0 auto;
+	background:none;
+}
+
+	/* - - - - - - - - - - - - - - - 
+				ƒwƒbƒ_İ’è
+	 - - - - - - - - - - - - - - - - */
+#useful-form #head {
+	width:100%;
+	background:#FFFFFF;
+	padding:0 0 8px 0;
+	border-bottom:1px solid #CCCCCC;
+	text-align:center;
+}
+
+#useful-form #head h1#title {
+	width:690px;
+	margin:0 auto;
+	padding:10px 0 0 0;
+	text-align:left;
+}
+
+	/* - - - - - - - - - - - - - - - 
+				ƒƒCƒ“ƒGƒŠƒAİ’è
+	 - - - - - - - - - - - - - - - - */
+#useful-form #main {
+	background:#FFFFFF;
+	width:710px;
+	margin:0 auto;
+	padding:20px 0 40px 0;
+	text-align:center;
+}
+
+#useful-form #main #content {
+	float:none;
+	width:670px;
+	margin:0 20px;
+	text-align:left;
+	background:none;
+}
+
+#useful-form table.form_list {
+	border: solid 1px #ccc;
+	border-collapse:collapse;
+	empty-cells: show;
+}
+
+#useful-form table.form_list td,
+#useful-form table.form_list th {
+	padding:10px 15px;
+	border: solid 1px #ccc;
+}
+
+#useful-form table.form_list td.center,
+#useful-form table.form_list th.center {
+	text-align:center;
+}
+
+#useful-form table.noborder,
+#useful-form table.noborder th,
+#useful-form table.noborder td {
+	border:0;
+	text-align:left;
+	padding:0px;
+}
+
+	/* - - - - - - - - - - - - - - - 
+				ƒtƒbƒ^İ’è
+	 - - - - - - - - - - - - - - - - */
+#useful-form #foot {
+	width:100%;
+	background:#F2F2F2;
+	padding:4px 0 20px 0;
+	border-top:1px solid #CCCCCC;
+	text-align:center;
+}
+
+#useful-form #foot #copy {
+	float:none;
+	width:690px;
+	margin:0 auto;
+	padding:14px 0 0 0;
+	text-align:left;
+}

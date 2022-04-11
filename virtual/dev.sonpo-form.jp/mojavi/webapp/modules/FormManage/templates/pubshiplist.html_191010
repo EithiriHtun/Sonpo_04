@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+{literal}
+<script>
+<!--
+  function sendForm01(){
+    document.form01.submit();
+  }
+
+//-->
+</script>
+{/literal}
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>発送履歴（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<form action="/manage/forms/index.php/module/FormManage/action/PubShipIndex" method="POST" name="form01">
+<table>
+<tr>
+<td align="right">発送月</td><td><select name="out_year" onChange="sendForm01();"><option value="99">▼年{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==@$order_page.out_year} selected{/if}>{$datum|escape}{/foreach}</select><select name="out_month" onChange="sendForm01();"><option value="99">▼月{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==@$order_page.out_month} selected{/if}>{$datum|escape}{/foreach}</select></td>
+</tr>
+<tr>
+<td align="right">属性</td><td><select name="order_type" onChange="sendForm01();"><option value="99">▼すべて{foreach from=$pub_order_type key="dkey" item="datum"}{if $dkey<>5}<option value="{$dkey|escape}"{if $dkey==@$order_page.order_type} selected{/if}>{$datum|escape}{/if}{/foreach}</select></td>
+</tr>
+<tr>
+<td align="right">冊子名</td><td><select name="book_id" onChange="sendForm01();"><option value="0">▼すべて{foreach from=$books key="dkey" item="datum"}<option value="{$datum.id|escape}"{if $datum.id==@$order_page.book_id} selected{/if}>{$datum.name|escape}{/foreach}</select></td>
+</tr>
+<tr>
+<td align="right">請求書発行部署</td><td><select name="bill_user" onChange="sendForm01();"><option value="0">▼すべて{foreach from=$sassi_users key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==@$order_page.bill_user} selected{/if}>{$datum|escape}{/foreach}</select></td>
+</tr>
+</table>
+</form>
+{if $data}
+
+<form action="index.php/module/FormManage/action/PubShipCsv" method="POST" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+{if !$is_sassi}
+<th>講師派遣<br>受付番号</th>
+{/if}
+<th>発送日</th>
+<th>属性</th>
+<th>冊子名</th>
+<th>名前・主催者名</th>
+<th>請求書宛名</th>
+
+<th>請求書発行部署</th>
+
+<th>決済状況</th>
+<th>チェック</th>
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+{if $datum.rows}
+<td rowspan="{$datum.rows|escape}"><a href="{$script_path|escape}/module/FormManage/action/PubShipDetail?id={$datum.id|escape}">{$datum.recept_id|escape}</a></td>
+{if !$is_sassi}
+<td rowspan="{$datum.rows|escape}">{if $datum.inst_id}{if $datum.is_dub}<span style="color:red;">{/if}{$datum.inst_inst_id|escape}{if $datum.is_dub}</span>{/if}{else}&nbsp;{/if}</td>
+{/if}
+<td rowspan="{$datum.rows|escape}">{$datum.out_year|escape}/{$datum.out_month|escape}/{$datum.out_day|escape}</td>
+
+<td rowspan="{$datum.rows|escape}">{$pub_order_type[$datum.type]|escape}</td>
+<td>{$datum.book_name|escape}&nbsp;</td>
+<td rowspan="{$datum.rows|escape}">{if $datum.inst_host}{$datum.inst_host|escape}：{else}{if $datum.user_status==2 && $datum.company}{$datum.company|escape}：{/if}{/if}{$datum.name1|escape}{$datum.name2|escape}&nbsp;</td>
+<td rowspan="{$datum.rows|escape}">{$datum.bill_name|escape}&nbsp;</td>
+
+<td rowspan="{$datum.rows|escape}">{if @$datum.bill_user}{if @$sassi_users[$datum.bill_user]}{$sassi_users[$datum.bill_user]|escape}{else}<span style="color:#aaaaaa;font-size:smaller;">存在しないユーザ({$datum.bill_user|escape})</span>{/if}{/if}&nbsp;</td>
+
+<td rowspan="{$datum.rows|escape}">{$settle_status[$datum.settle_status]|escape}</td>
+<td rowspan="{$datum.rows|escape}" align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"></td>
+
+{else}
+<td>{$datum.book_name|escape}&nbsp;</td>
+{/if}
+
+</tr>
+{/foreach}
+</table>
+
+<div>
+<br>
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td>　　</td>
+<td align="right">CSVダウンロード</td><td><input type="button" value="全件のCSV" onClick="document.frm2.submit();">　<input type="submit" name="subbtn" value="チェックしたデータのCSV"></td>
+</tr>
+</table>
+</div>
+
+</form>
+{/if}
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+
+<form action="index.php/module/FormManage/action/PubShipCsv" method="POST" name="frm2">
+<input type="hidden" name="is_all" value="1">
+<input type="hidden" name="ids" value="{foreach from=$data item="datum"}{if $datum.rows}{$datum.id|escape},{/if}{/foreach}">
+<input type="hidden" name="csvtype" value="basic">
+</form>
+
+</div>
+</body>
+</html>

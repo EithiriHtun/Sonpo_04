@@ -1,0 +1,8 @@
+php_value output_handler mb_output_handler
+php_value mbstring.detect_order auto
+php_flag mbstring.encoding_translation On
+php_value mbstring.http_input pass
+php_value mbstring.http_output pass
+php_value mbstring.internal_encoding UTF-8
+php_value mbstring.language Japanese
+php_flag allow_call_time_pass_reference on

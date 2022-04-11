@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+{literal}
+<script>
+<!--
+function sendForm01(){
+  document.form01.submit();
+}
+
+function allCheck(check){
+  var index;
+  if(check){
+    for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = true;
+    }
+  }else{
+    for(index = 0; index < form02.elements["dl[]"].length; index++){
+      document.form02.elements["dl[]"][index].checked = false;
+    }
+  }
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.form02.elements["dl[]"].length; index++){
+    if(document.form02.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.form02.elements["recept_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('削除するデータが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを削除してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+//-->
+</script>
+{/literal}
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>発送管理（一覧）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<form action="/manage/forms/index.php/module/FormManage/action/PubOrderIndex" method="POST" name="form01">
+<table>
+<tr>
+<td align="right">属性</td><td><select name="order_type" onChange="sendForm01();"><option value="99">▼すべて{foreach from=$pub_order_type key="dkey" item="datum"}{if $dkey<>5}<option value="{$dkey|escape}"{if $dkey==@$order_page.order_type} selected{/if}>{$datum|escape}{/if}{/foreach}</select></td>
+</tr>
+<tr>
+<td align="right">発送月</td><td><select name="out_year" onChange="sendForm01();"><option value="99">▼年度{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==@$order_page.out_year} selected{/if}>{$datum|escape}{/foreach}</select><select name="out_month" onChange="sendForm01();"><option value="99">▼月{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==@$order_page.out_month} selected{/if}>{$datum|escape}{/foreach}</select></td>
+</tr>
+<tr>
+<td align="right">発送状況</td><td><select name="trans_status" onChange="sendForm01();"><option value="99">▼すべて{foreach from=$trans_status key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==$order_page.trans_status} selected{/if}>{$datum|escape}{/foreach}</select></td>
+</tr>
+{if !$is_shipping}
+<tr>
+<td align="right">決済状況</td><td><select name="settle_status" onChange="sendForm01();"><option value="99">▼すべて{foreach from=$settle_status key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==$order_page.settle_status} selected{/if}>{$datum|escape}{/foreach}</select></td>
+</tr>
+{else}
+<input type="hidden" name="settle_status" value="99">
+{/if}
+</table>
+</form>
+{if $data}
+
+<form action="index.php/module/FormManage/action/PubOrderDelete" method="POST" name="form02">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講師派遣<br>受付番号</th>
+<th>属性</th>
+<th>名前・主催者名</th>
+<th>受付日</th>
+<th>発送日</th>
+<th>到着予定日</th>
+<th>発送状況</th>
+{if $is_master || $is_master2}<th>決済状況</th>{/if}
+{if $is_master || $is_master2}<th>チェック</th>{/if}
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td><a href="{$script_path|escape}/module/FormManage/action/PubOrderRegist?id={$datum.id|escape}">{$datum.recept_id|escape}</a></td>
+<td>{if @$datum.inst_id}{if @$datum.is_dub}<span style="color:red;">{/if}{$datum.inst_inst_id|escape}{if @$datum.is_dub}</span>{/if}{else}&nbsp;{/if}</td>
+<td>{$pub_order_type[$datum.type]|escape}</td>
+<td>{if $datum.inst_host}{$datum.inst_host|escape}：{else}{if $datum.user_status==2 && $datum.company}{$datum.company|escape}：{/if}{/if}{$datum.name1|escape}{$datum.name2|escape}</td>
+<td>{$datum.regist_time|date_format:"%Y/%m/%d"}</td>
+<td>{if $datum.out_year}{$datum.out_year|escape}/{$datum.out_month|string_format:"%02d"}/{$datum.out_day|string_format:"%02d"}{else}&nbsp;{/if}</td>
+<td>{if $datum.arr_year}{$datum.arr_year|escape}/{$datum.arr_month|string_format:"%02d"}/{$datum.arr_day|string_format:"%02d"}{else}&nbsp;{/if}</td>
+<td>{$trans_status[$datum.trans_status]|escape}</td>
+{if $is_master || $is_master2}<td>{$settle_status[$datum.settle_status]|escape}</td>{/if}
+{if $is_master || $is_master2}<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"><input type="hidden" name="recept_id[]" value="{$datum.recept_id|escape}"></td>{/if}
+</tr>
+{/foreach}
+<input type="hidden" name="dl[]" value="">
+<input type="hidden" name="recept_id[]" value="">
+</table>
+{if $is_master || $is_master2}<input type="checkbox" name="checkall" onClick="allCheck(this.checked);">全選択<br>{/if}
+{if $is_master || $is_master2}<input type="submit" value="チェックしたデータの削除" onClick="return checkchecked();">{/if}
+</form>
+{/if}
+<br><a href="/manage/forms/index.php/module/FormManage/action/PubIndex">戻る</a>
+
+</div>
+</body>
+</html>

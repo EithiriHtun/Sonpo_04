@@ -1,0 +1,6 @@
+							<dl class="infodata">
+{foreach from=$data item="datum"}{if $datum.is_time_over}
+						<dt>{$datum.open_year2|string_format:"%02d"}.{$datum.open_month|string_format:"%02d"}.{$datum.open_day|string_format:"%02d"}</dt>
+						<dd {if $datum.category==1}class="icn-rel"{/if}{if $datum.category==3}class="icn-pri"{/if}{if $datum.category==4}class="icn-inf"{/if}><a href="{if $datum.category==1}/news/release/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==3}/about/action/branch/{$branch_file[$datum.branch]}/{$datum.filename|escape}.html{/if}{if $datum.category==4}/news/information/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==8}{$datum.link_url_1|escape}{/if}"{if $datum.category==8} target="_blank"{/if}>{if $datum.category==3}¡Ú{$branch_sname[$datum.branch]}¡Û{/if}{$datum.list_title|escape}</a></dd>
+{/if}{/foreach}
+							</dl>

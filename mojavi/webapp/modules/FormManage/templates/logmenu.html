@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会 管理画面</h2>
+<h3>ログのダウンロード</h3>
+<div class="maincontents">
+<a href="{$script_path|escape}/module/FormManage/">戻る</a>
+
+<hr>
+<form action="/manage/forms/index.php/module/FormManage/action/Logdl" method="post">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>期間の指定</th>
+<td width="75%">
+<select name="syear">
+{foreach from=$years item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>年
+<select name="smonth">
+{foreach from=$months item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>月
+<select name="sday">
+{foreach from=$days item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>日
+<select name="shour">
+{foreach from=$hours item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>時
+<select name="smin">
+{foreach from=$mins item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>分　から　
+<br>
+<select name="eyear">
+{foreach from=$years item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>年
+<select name="emonth">
+{foreach from=$months item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>月
+<select name="eday">
+{foreach from=$days item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>日
+<select name="ehour">
+{foreach from=$hours item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>時
+<select name="emin">
+{foreach from=$mins item="dval"}<option value="{$dval|escape}">{$dval|escape}</option>{/foreach}
+</select>分　まで　
+</td>
+</tr>
+
+<tr>
+<th>ログの種類</th>
+<td>
+<input type="submit" name="mode" value="刊行物の申込"><br>
+<input type="submit" name="mode" value="刊行物マスター"><br>
+<input type="submit" name="mode" value="講師派遣の申込"><br>
+<input type="submit" name="mode" value="登録者"><br>
+</td>
+</tr>
+</table>
+</form>
+<hr>
+<a href="{$script_path|escape}/module/FormManage/">戻る</a>
+</div>
+</body>
+</html>

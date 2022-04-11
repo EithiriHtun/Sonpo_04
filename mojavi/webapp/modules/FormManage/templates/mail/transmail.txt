@@ -1,0 +1,4 @@
+{$data.year_3}年{$data.month_3}月{$data.day_3}実施（受付番号{$data.inst_id}）の講演会について、資料発送の依頼が来ています。管理画面から当該受付番号の詳細を確認し、資料発送してください。
+
+管理画面　https://www.sonpo-form.jp/manage/forms/
+

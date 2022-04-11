@@ -1,0 +1,31 @@
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">{$data.article_title}</span><span class="text1">（{$data.open_year|escape}.{$data.open_month|escape}.{$data.open_day|escape}）</span></h2>
+				<!-- //content title -->
+				<div class="lineCF"></div>
+<!-- main contents -->
+
+{$data.content}
+
+<!-- /main contents -->
+				<!-- //中見出し -->
+{if $data.link_text_1 || $data.link_text_2 || $data.link_text_3 || $data.link_text_4 || $data.link_text_5}
+				<!-- 関連リンク -->
+				<div class="boxGray">
+<p class="text2 notes"><strong>関連リンク</strong></p>
+<div class="lineDA"></div>
+{if $data.link_text_1}<p class="text2"><a href="{$data.link_url_1|escape}" target="_blank" class="arw2">{$data.link_text_1|escape}</a></p>{/if}
+{if $data.link_text_2}<p class="text2"><a href="{$data.link_url_2|escape}" target="_blank" class="arw2">{$data.link_text_2|escape}</a></p>{/if}
+{if $data.link_text_3}<p class="text2"><a href="{$data.link_url_3|escape}" target="_blank" class="arw2">{$data.link_text_3|escape}</a></p>{/if}
+{if $data.link_text_4}<p class="text2"><a href="{$data.link_url_4|escape}" target="_blank" class="arw2">{$data.link_text_4|escape}</a></p>{/if}
+{if $data.link_text_5}<p class="text2"><a href="{$data.link_url_5|escape}" target="_blank" class="arw2">{$data.link_text_5|escape}</a></p>{/if}
+				</div>
+				<!-- //関連リンク -->
+{/if}
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->

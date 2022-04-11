@@ -1,0 +1,407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 - SONPO | お役立ち情報 － 講師派遣のご案内</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、社団法人日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="/useful/css/import.css">
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+</head>
+<body id="useful">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+		
+				<div id="head">
+			<div class="clearfix" id="upper">
+				<h1 id="title"><a href="/"><img src="/common/ssi/img/logo.gif" width="259" height="34" border="0" alt="日本損害保険協会 SONPO"></a></h1>
+				<div class="clearfix" id="nav">
+						<ul>
+							<li class="a0 text1"><a href="http://www.sonpo.or.jp/e/index.html" target="_blank">English</a></li>
+							<li class="a1 text1"><a href="/sitemap/">サイトマップ</a></li>
+							<li class="a2 text1"><a href="/link/">関連リンク</a></li>
+						</ul>
+				</div>
+			</div>
+<form name="form" method="post" action="/cgi-bin/search/full_search.cgi">
+			<div class="clearfix" id="mid">
+					<!--  検索 -->
+					<div id="search">
+						<div id="txt"><input type="text" name="query_str" value="ここにキーワードを入力してください。" onfocus="inputareaclr();"></div>
+						<div id="btn"><input type="submit" name="foo" value="検索"></div>
+					</div>
+					<!-- //検索 -->
+<input type="hidden" name="idx" value="ippan,business,assoc">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="display" value="">
+<input type="hidden" name="flag" value="">
+<input type="hidden" name="sort" value="">
+<input type="hidden" name="search" value="">
+<input type="hidden" name="listFile" value="">
+<input type="hidden" name="viewPat" value="df">
+</form>
+					<!--  文字サイズの変更 -->
+					<div id="zoom">
+						<div class="box">
+						<ul>
+							<li class="title"><span>文字サイズの変更</span></li>
+							<li class="b-m"><a href="#" onClick="setActiveStyleSheet('medium');" onfocus="this.blur();"><span>標準</span></a></li>
+							<li class="b-l"><a href="#" onClick="setActiveStyleSheet('large');" onfocus="this.blur();"><span>大</span></a></li>
+							<li class="b-xl"><a href="#" onClick="setActiveStyleSheet('exlarge');" onfocus="this.blur();"><span>特大</span></a></li>
+						</ul>
+						</div>
+					</div>
+					<!-- //文字サイズの変更 -->
+			</div>
+			<div class="clearfix" id="lower">
+				<!-- グローバルナビ -->
+				<ul id="globalnav">
+					<li class="main">
+						<div class="top"><a href="/" onmouseover="imgOn('m_top');" onmouseout="imgOff('m_top');"><img src="/common/ssi/img/m_top_1.gif" width="108" height="33" alt="トップ" name="m_top"></a></div>
+					</li>
+					<li class="main" onmouseover="openSubm('m_useful_sub');" onmouseout="closeSubm('m_useful_sub');">
+						<div class="top"><a href="/useful/"><img src="/common/ssi/img/m_useful_3.gif" width="108" height="33" alt="お役立ち情報" name="m_useful"></a></div>
+						<!-- グローバルナビ第二階層(お役立ち情報) -->
+						<div id="m_useful_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/useful/insurance/">損害保険の解説</a></li>
+								<li class="text2"><a href="/useful/buyers/">損害保険の契約にあたっての手引（バイヤーズガイド）</a></li>
+								<li class="text2"><a href="/useful/flow/">保険金の請求から受取りまでの手引（保険金請求版バイヤーズガイド）</a></li>
+								<li class="text2"><a href="/useful/qanda/">損害保険Q&amp;A</a></li>
+								<li class="text2"><a href="/useful/soudan/">相談窓口のご案内</a></li>
+								<li class="text2"><a href="/useful/koushi/">講師派遣のご案内</a></li>
+								<li class="btm text2"><a href="/useful/word/">用語辞典</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(お役立ち情報) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_news_sub');" onmouseout="closeSubm('m_news_sub');">
+						<div class="top"><a href="/news/" onmouseover="imgOn('m_news');" onmouseout="imgOff('m_news');"><img src="/common/ssi/img/m_news_1.gif" width="108" height="33" alt="お知らせ" name="m_news"></a></div>
+						<!-- グローバルナビ第二階層(お知らせ) -->
+						<div id="m_news_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/news/new_info/">最新情報</a></li>
+								<li class="text2"><a href="/news/release/">ニュースリリース</a></li>
+								<li class="text2"><a href="/news/application/">懸賞・公募</a></li>
+								<li class="text2"><a href="/news/information/">協会からのお知らせ</a></li>
+								<li class="btm text2"><a href="/news/member/">各社ニュースリリース</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(お知らせ) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_protection_sub');" onmouseout="closeSubm('m_protection_sub');">
+						<div class="top"><a href="/protection/" onmouseover="imgOn('m_protection');" onmouseout="imgOff('m_protection');"><img src="/common/ssi/img/m_protection_1.gif" width="108" height="33" alt="防災・防犯・交通安全" name="m_protection"></a></div>
+						<!-- グローバルナビ第二階層(防災・防犯・交通安全) -->
+						<div id="m_protection_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/protection/disaster/">自然災害に備えて</a></li>
+								<li class="text2"><a href="/protection/research/">安全対策研究</a></li>
+								<li class="text2"><a href="/protection/bousai/">防災教育情報</a></li>
+								<li class="text2"><a href="/protection/insyu/">飲酒運転対策</a></li>
+								<li class="text2"><a href="/protection/kousaten/">事故多発交差点</a></li>
+								<li class="text2"><a href="/protection/bouhan/">防犯のひろば</a></li>
+								<li class="btm text2"><a href="/protection/jidoshatounan/">自動車盗難対策</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(防災・防犯・交通安全) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_archive_sub');" onmouseout="closeSubm('m_archive_sub');">
+						<div class="top"><a href="/archive/" onmouseover="imgOn('m_archive');" onmouseout="imgOff('m_archive');"><img src="/common/ssi/img/m_archive_1.gif" width="108" height="33" alt="統計・刊行物・報告書" name="m_archive"></a></div>
+						<!-- グローバルナビ第二階層(統計・刊行物・報告書) -->
+						<div id="m_archive_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/archive/statistics/">統計</a></li>
+								<li class="text2"><a href="/archive/publish/">刊行物</a></li>
+								<li class="text2"><a href="/archive/report/">報告書</a></li>
+								<li class="btm text2"><a href="/archive/video/">ビデオ</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(統計・刊行物・報告書) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_about_sub');" onmouseout="closeSubm('m_about_sub');">
+						<div class="top"><a href="/about/" onmouseover="imgOn('m_about');" onmouseout="imgOff('m_about');"><img src="/common/ssi/img/m_about_1.gif" width="108" height="33" alt="協会のご案内" name="m_about"></a></div>
+						<!-- グローバルナビ第二階層(協会のご案内) -->
+						<div id="m_about_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/about/gaiyo/">概要</a></li>
+								<li class="text2"><a href="/about/action/">活動内容</a></li>
+								<li class="text2"><a href="/about/guideline/">行動規範・指針等</a></li>
+								<li class="text2"><a href="/about/address/">所在地</a></li>
+								<li class="text2"><a href="/about/financial/">財務状況</a></li>
+								<li class="btm text2"><a href="/about/recruit/" target="_blank">採用情報</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(協会のご案内) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_exam_sub');" onmouseout="closeSubm('m_exam_sub');">
+						<div class="top"><a href="/exam/" onmouseover="imgOn('m_exam');" onmouseout="imgOff('m_exam');"><img src="/common/ssi/img/m_exam_1.gif" width="108" height="33" alt="試験・研修・医療助成" name="m_exam"></a></div>
+						<!-- グローバルナビ第二階層(試験・研修・医療) -->
+						<div id="m_exam_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/exam/dairiten/">代理店試験</a></li>
+								<li class="text2"><a href="/exam/kanteinin/">「損害保険登録鑑定人」認定試験</a></li>
+								<li class="text2"><a href="/exam/shougakutanki/">少額短期募集人試験</a></li>
+								<li class="text2"><a href="/exam/iryoukenshu/">医療研修</a></li>
+								<li class="btm text2"><a href="/exam/kenkyujyosei/">研究助成</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(試験・研修・医療) -->
+					</li>
+					<li class="beginnernavi"><a href="/navi/" onMouseOver="imgOn('m_beginner');" onMouseOut="imgOff('m_beginner');"><img src="/common/ssi/img/m_beginner_1.gif" width="170" height="22" alt="初めての方 サイト総合ナビ" name="m_beginner"></a></li>
+				</ul>
+				<!-- //グローバルナビ -->
+			</div>
+		</div>
+		<!-- //ヘッダ -->
+		<!-- パンくず -->
+		<div id="breadcrumbs" class="text1"><a href="/">トップ</a><a href="/useful/">お役立ち情報</a><strong>講師派遣のご案内</strong></div>
+		<!-- //パンくず -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+			<!-- コンテンツエリア -->
+			<div id="content">
+				<!-- content title -->
+				<h2 class="lineCFhead"><span class="text2">講師派遣のご案内</span></h2>
+				<!-- //content title -->
+				<!-- contents Subtitle -->
+				<div class="lineCF"></div>
+				<p class="subhead text2"><strong>
+講師の講演料・交通費はすべて当協会で負担します。
+				</strong></p>
+				<div class="lineCF"></div>
+				<!-- //contents Subtitle -->
+
+				<!-- 講師派遣のご案内 -->
+				<div class="contentBlock1">
+				<p class="text2">
+当協会では、消費者の皆様に損害保険の仕組みや役割を理解していただくために、講師派遣事業を行っています。<br>
+損害保険やその周辺知識に関する講演会、勉強会、研修会等の催しの際にぜひご利用下さい。
+				</p>
+				</div>
+				<!-- //講師派遣のご案内 -->
+
+				<!-- 対象となる講演は -->
+				<div class="subt2"><div class="frm"><p class="text2">対象となる講演は</p></div></div>
+				<div class="contentBlock2 text2">
+<ul class="dot0">
+<li>一般消費者の方等を対象として、消費生活センターや自治体が主催する各種講演会<br>
+（例）消費者セミナー、消費者講座、生活学校、市民向け講座 等</li>
+<li>高校生や高校教諭、保護者等を対象として高等学校等が主催する講演会<br>
+（例）商業・家庭・公民科の授業、ロングホームルーム、生活指導・交通安全等の講話</li>
+<li>高校教諭によって構成される教育研究団体等が主催する講演会、研究会での基調講演 等</li>
+<li>大学生・短期大学生を対象として大学・短期大学等が主催する講演会<br>
+（例）大学・短期大学の講義・授業、入学時の学生生活に関するガイダンス、学生指導や業界研究 等</li>
+</ul>
+				</div>
+				<!-- //対象となる講演は -->
+				<!-- 損害保険の基礎 -->
+				<div class="subt3"><div class="frm"><p class="text2">損害保険の基礎</p></div></div>
+				<div class="contentBlock3 text2">
+身近な損害保険の種類や仕組みについて、分かりやすくお話します。
+				</div>
+				<!-- //損害保険の基礎 -->
+				<!-- 暮らしの中の危険と損害保険 -->
+				<div class="subt3"><div class="frm"><p class="text2">暮らしの中の危険と損害保険</p></div></div>
+				<div class="contentBlock3 text2">
+火災や交通事故など、わたしたちの暮らしを取り巻く様々な危険からわたしたちの財産を守る損害保険。特に、わたしたちの暮らしとかかわりの深い、住まい･クルマ･からだなどの保険について、その補償内容や加入する際のポイントなどについて、分かりやすくお話します。
+				</div>
+				<!-- //暮らしの中の危険と損害保険 -->
+				<!-- 交通事故とその責任 -->
+				<div class="subt3"><div class="frm"><p class="text2">交通事故とその責任</p></div></div>
+				<div class="contentBlock3 text2">
+交通事故を起こしたとき、あわてたり対応に困ったりしないように、基礎的な知識を身につけていただくため、交通事故から生じる3つの大きな責任、解決の手立ておよび交通事故に備える自動車保険について、分かりやすくお話します。
+				</div>
+				<!-- //交通事故とその責任 -->
+				<!-- 自然災害と損害保険 -->
+				<div class="subt3"><div class="frm"><p class="text2">自然災害と損害保険</p></div></div>
+				<div class="contentBlock3 text2">
+台風、地震、火山の噴火といった自然災害は、わたしたち日本人にとって、残念ながらとっても身近な危険です。そんな危険に備えるための損害保険の種類や補償の内容などについて、分かりやすくお話します。
+				</div>
+				<!-- //自然災害と損害保険 -->
+				<!-- 損害保険業界の現状 -->
+				<div class="subt3"><div class="frm"><p class="text2">損害保険業界の現状</p></div></div>
+				<div class="contentBlock3 text2">
+損害保険業界の最近の動向、損害保険の販売形態と消費者保護などに、車両盗難の増加などのトピックスを交えて、分かりやすくお話します。
+				</div>
+				<!-- //損害保険業界の現状 -->
+				<!-- その他のテーマ -->
+				<div class="subt3"><div class="frm"><p class="text2">その他のテーマ</p></div></div>
+				<div class="contentBlock3 text2">
+「損害保険の上手な選び方」「損害保険の現状」「自転車の交通事故とその責任」
+				</div>
+				<!-- //その他のテーマ -->
+<br>
+				<!-- お申し込みは -->
+				<div class="subt2"><div class="frm"><p class="text2">お申し込みは</p></div></div>
+				<div class="contentBlock2">
+<p class="text2">希望開催日の1か月前までに、お申し込み下さい。<br><br>
+<a href="moushikomi/form.php" class="arw2" target="_blank">インターネットによるお申し込み</a></p>
+<p class="caution text1">※応募フォームはセキュリティで保護されています。</p>
+<br>
+<p class="text2">FAXによるお申し込み<br>
+所定の申込書により、最寄りの当協会の各支部までFAXでお申し込み下さい。<br>
+<a href="/useful/koushi/pdf/index/koushi_moushikomi.pdf" class="arw2" target="_blank">申込書はこちら</a></p>
+				</div>
+				<div class="contentBlock2">
+<p class="text2">なお、希望開催日まで1か月を切っている場合には、お引受けできないことがありますので、スケジュールが決まりましたらお早めにお申込み下さい。</p>
+				</div>
+				<!-- //お申し込みは -->
+
+				<!-- ご注意 -->
+				<div class="contentBlock2">
+					<!-- ボックス グレー -->
+					<div class="boxGray">
+<p class="text2 notes"><strong>ご注意</strong></p>
+<!-- colorDAライン--><div class="lineDA"></div><!-- //colorDAライン-->
+<ul class="dot0 text2">
+<li>学校でのお申込みについては、原則として学年単位でお願いいたします。</li>
+<li>申込受付後、講師の選定を進めますが、申込状況によってはご希望どおりお引受けできない場合がありますので、お含みおき下さい。</li>
+<li>講師が決まり次第ファックスでご連絡します。また、講演の2週間前に文書で、派遣内容を改めてご通知します。</li>
+<li>講師の講演料・交通費はすべて当協会で負担します。</li>
+<li>会場（使用料を含みます)は、主催者側でご手配下さい。</li>
+<li>使用する資料は事前に送付しますが、レジュメについては必要部数をコピーの上、ご用意下さい。</li>
+<li>講師派遣に関するお問い合わせは、該当の下記申込先（各支部）までご連絡下さい。</li>
+</ul>
+					</div>
+					<!-- //ボックス グレー -->
+				</div>
+				<!-- //ご注意 -->
+
+				<!-- お申し込み先（支部）一覧 -->
+				<div class="subt2"><div class="frm"><p class="text2">お申し込み先（支部）一覧</p></div></div>
+				<div class="contentBlock2">
+<table border="0" cellpadding="0" cellspacing="0" class="list text2">
+<tr>
+<th class="gray01">主催者所在地域</th>
+<th class="gray01">申込先</th>
+<th class="gray01">FAX</th>
+<th class="gray01">電話</th>
+</tr>
+<tr>
+<td>北海道</td>
+<td>北海道支部</td>
+<td>011-231-3843</td>
+<td>011-231-3815</td>
+</tr>
+
+<tr>
+<td>青森県、岩手県、宮城県、秋田県、山形県、福島県</td>
+<td>東北支部</td>
+<td>022-221-7381</td>
+<td>022-221-6466</td>
+</tr>
+
+<tr>
+<td>東京都、神奈川県、埼玉県、千葉県、茨城県、栃木県、群馬県、山梨県、長野県、新潟県</td>
+<td>関東支部</td>
+<td>03-3255-1238</td>
+<td>03-3255-1450</td>
+</tr>
+
+<tr>
+<td>静岡県</td>
+<td>静岡支部</td>
+<td>054-273-2514</td>
+<td>054-252-1843</td>
+</tr>
+<tr>
+<td>富山県、石川県、福井県</td>
+<td>北陸支部</td>
+<td>076-221-0482</td>
+<td>076-221-1149</td>
+</tr>
+<tr>
+<td>岐阜県、愛知県、三重県</td>
+<td>名古屋支部</td>
+<td>052-249-9761</td>
+<td>052-249-9760</td>
+</tr>
+<tr>
+<td>滋賀県、京都府、大阪府、奈良県、和歌山県、兵庫県</td>
+<td>近畿支部</td>
+<td>06-6202-8764</td>
+<td>06-6202-8761</td>
+</tr>
+<tr>
+<td>広島県、山口県、岡山県、鳥取県、島根県</td>
+<td>中国支部</td>
+<td>082-242-3992</td>
+<td>082-247-4529</td>
+</tr>
+<tr>
+<td>徳島県、香川県、愛媛県、高知県</td>
+<td>四国支部</td>
+<td>087-823-1377</td>
+<td>087-851-3344</td>
+</tr>
+<tr>
+<td>福岡県、佐賀県、長崎県、熊本県、大分県、宮崎県、鹿児島県</td>
+<td>九州支部</td>
+<td>092-731-7878</td>
+<td>092-771-9766</td>
+</tr>
+<tr>
+<td>沖縄県</td>
+<td>沖縄支部</td>
+<td>098-862-8372</td>
+<td>098-862-8363</td>
+</tr>
+</table>
+				</div>
+				<!-- //お申し込み先（支部）一覧 -->
+
+
+				<div class="lineCF"></div>
+				<!-- ページの先頭に戻る -->
+				<div class="topLink"><p class="text2"><a href="#top" class="totop">ページの先頭に戻る</a></p></div>
+				<!-- ページの先頭に戻る -->
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+			
+			
+						<div id="leftside">
+				<div class="top"><img src="/common/ssi/img/lnav_tit_useful.gif" width="220" height="37" border="0" alt="お役立ち情報"></div>
+				<ul id="localnav">
+					<li class="subm2"><a class="text2" href="/useful/insurance/">損害保険の解説</a></li>
+
+					<li class="subm2"><a class="text2" href="/useful/buyers/">損害保険の契約にあたっての手引(バイヤーズガイド)</a></li>
+
+					<li class="subm2"><a class="text2" href="/useful/flow/">保険金の請求から受取りまでの手引(保険金請求版バイヤーズガイド)</a></li>
+					<li class="subm2"><a class="text2" href="/useful/qanda/">損害保険Q&amp;A</a></li>
+
+					<li class="subm2"><a class="text2" href="/useful/soudan/">相談窓口のご案内</a></li>
+
+					<li class="subm2 on"><a class="text2" href="/useful/koushi/">講師派遣のご案内</a></li>
+					<li class="subm2"><a class="text2" href="/useful/word/">用語辞典</a></li>
+				</ul>
+			</div>
+
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+				<div class="clearfix" id="foot">
+			<div id="copy"><a href="/index.html"><img src="/common/ssi/img/copyright.gif" width="400" height="10" border="0" alt="Copyright (c)  The General Insurance Association of Japan. All rights reserved."></a></div>
+			<div id="links">
+				<ul>
+					<li class="text1 li0"><a href="/notice/">当サイトについて</a></li>
+					<li class="text1 li1"><a href="/about/guideline/individual/">個人情報保護方針</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{if $image_2_name}<!-- ²èÁüÁÞÆþ¡ÊÃæ±û´ó¤»¡§º¸±¦2Ëç¡Ë --><div class="news-container">
+	<div class="obj-2col clearfix">
+		<div class="obj-2colblk obj-2col-l">
+			<p class="mod-img">{if $data.url_1}<a href="{$data.url_1|escape}" target="_blank">{/if}<img src="{$image_url|escape}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt="{$data.caption_1|strip_tags}" class="frame1">{if $data.url_1}</a>{/if}<span class="mod-caption">{if $data.caption_1}{$data.caption_1}{/if}</span></p>
+		</div>
+		<div class="obj-2colblk obj-2col-r">
+			<p class="mod-img">{if $data.url_2}<a href="{$data.url_2|escape}" target="_blank">{/if}<img src="{$image_url|escape}{$image_2_name|escape}" width="{$image_2_width|escape}" height="{$image_2_height|escape}" alt="{$data.caption_2|strip_tags}" class="frame1">{if $data.url_2}</a>{/if}<span class="mod-caption">{if $data.caption_2}{$data.caption_2}{/if}</span></p>
+		</div>
+	</div>
+</div>
+<!-- //²èÁüÁÞÆþ¡ÊÃæ±û´ó¤»¡§º¸±¦2Ëç¡Ë -->
+{else}
+{if $data.position==1}<!-- ²èÁüÁÞÆþ¡Ê±¦´ó¤»¡Ë -->
+<div class="news-container">
+	<div class="obj-r clearfix">
+	<p class="mod-img">{if $data.url_1}<a href="{$data.url_1|escape}" target="_blank">{/if}<img src="{$image_url}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt="{$data.caption_1|strip_tags}" class="frame1">{if $data.url_1}</a>{/if}<span class="mod-caption">{if $data.caption_1}{$data.caption_1}{/if}</span></p>
+	<p class="mod-txt">{if $data.image_text}{$data.image_text}{else}¥Æ¥­¥¹¥È¥Æ¥­¥¹¥È¥Æ¥­¥¹¥È{/if}</p>
+	</div>
+</div>
+<!-- //²èÁüÁÞÆþ¡Ê±¦´ó¤»¡Ë -->
+{else}
+{if $data.position==2}<!-- ²èÁüÁÞÆþ¡ÊÃæ±û´ó¤»¡Ë -->
+<div class="news-container">
+	<div class="obj-c clearfix">
+	<p class="mod-img">{if $data.url_1}<a href="{$data.url_1|escape}" target="_blank">{/if}<img src="{$image_url}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt="{$data.caption_1|strip_tags}" class="frame1">{if $data.url_1}</a>{/if}<span class="mod-caption">{if $data.caption_1}{$data.caption_1}{/if}</span></p>
+	</div>
+</div>
+<!-- //²èÁüÁÞÆþ¡ÊÃæ±û´ó¤»¡Ë -->
+{else}<!-- ²èÁüÁÞÆþ¡Êº¸´ó¤»¡Ë -->
+<div class="news-container">
+	<div class="obj-l clearfix">
+	<p class="mod-img">{if $data.url_1}<a href="{$data.url_1|escape}" target="_blank">{/if}<img src="{$image_url}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt="{$data.caption_1|strip_tags}" class="frame1">{if $data.url_1}</a>{/if}<span class="mod-caption">{if $data.caption_1}{$data.caption_1}{/if}</span></p>
+	<p class="mod-txt">{if $data.image_text}{$data.image_text}{else}¥Æ¥­¥¹¥È¥Æ¥­¥¹¥È¥Æ¥­¥¹¥È{/if}</p>
+	</div>
+</div>
+<!-- //²èÁüÁÞÆþ¡Êº¸´ó¤»¡Ë -->
+{/if}
+{/if}
+{/if}

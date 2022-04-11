@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="19"
+   name=""
+   committed-date="2005-04-25T20:49:52.328520Z"
+   url="svn://tanner.is-a-geek.net/code/yuma/trunk/opt/session"
+   last-author="tanner"
+   kind="dir"
+   uuid="94574c91-2cf4-0310-b6df-ad59b46b3743"
+   revision="20"/>
+<entry
+   committed-rev="19"
+   name="MySQLSessionHandler.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="2e025d6984212bfa88ee53a279846970"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="PgSQLSessionHandler.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="7be14cf1d2b015ea1631df93c90f7d1c"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="SQLSessionHandler.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="fa04a70bf6f53def6ae6f57f379b048d"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="19"
+   name="SessionHandler.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T20:49:52.328520Z"
+   checksum="2657ac1ebb812ffdad8896d87ee64685"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+</wc-entries>

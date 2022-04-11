@@ -1,0 +1,206 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<!--<script type="text/javascript" src="/manage/cm.js"></script>-->
+<style>
+{literal}
+ul.sdocs{
+  margin-left:0px;
+  padding-left:0px;
+}
+ul.sdocs li{
+  float:left;
+  width:500px;
+  list-style-type:none;
+}
+{/literal}
+</style>
+<script language="javascript">
+{literal}
+  function cautionDate(){
+    f=document.frm1;
+    if(f.t_syear[f.t_syear.selectedIndex].value || f.t_syear[f.t_ayear.selectedIndex].value){
+{/literal}
+      d1=new Date(f.t_syear[f.t_syear.selectedIndex].value,f.t_smonth[f.t_smonth.selectedIndex].value,f.t_sday[f.t_sday.selectedIndex].value);
+      d2=new Date(f.t_ayear[f.t_ayear.selectedIndex].value,f.t_amonth[f.t_amonth.selectedIndex].value,f.t_aday[f.t_aday.selectedIndex].value);
+      d3=new Date({$data.syear|escape},{$data.smonth|escape},{$data.sday|escape});
+{literal}
+      if(d2.getTime()-d3.getTime() >= 0 || d1.getTime()-d3.getTime() >= 0){
+        return confirm('「発送日」「到着予定日」が「到着希望日」よりも後の日付、又は同日になっています。登録しますか？');
+      }
+      return true;
+    }
+  }
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF"{if $popmsg} onLoad="alert('{$popmsg|escape}'); location.href='/manage/forms/index.php/module/FormManage/action/TransList?y={$year|escape}&amp;br={$nbranch|escape}&amp;tr2={$tstatus2|escape}'"{/if}>
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>資料発送（詳細）</h3>
+<div class="maincontents">
+<a href="/manage/forms/index.php/module/FormManage/action/TransList?y={$year|escape}&amp;br={$nbranch|escape}&amp;tr2={$tstatus2|escape}">戻る</a>
+<hr>
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+発送内容
+<form action="{$script_path|escape}/module/FormManage/action/TransRegist" method="POST" name="frm1">
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付番号</th>
+<td width="75%">{$data.inst_id|escape}</td>
+</tr>
+<tr>
+<th>講演日</th>
+<td>{$data.year_3|escape}年{$data.month_3|escape}月{$data.day_3|escape}日</td>
+</tr>
+
+<tr>
+<th>資料送付先</th>
+<td>
+
+<table cellpadding="1" cellspacing="0" border="0" width="100%">
+<tr>
+<td>郵便番号</td><td>{$data.szip1|escape}-{$data.szip2|escape}</td>
+</tr>
+<tr>
+<td>住所</td><td>{if @$prefs[$data.spref]}{$prefs[$data.spref]|escape}　{/if}{$data.saddress|escape}</td>
+</tr>
+<tr>
+<td>あて先</td><td>{$data.sname|escape}</td>
+</tr>
+<tr>
+<td>ご担当者名</td><td>{$data.t_tantou|escape}</td>
+</tr>
+<tr>
+<td>電話番号</td><td>{$data.stel1|escape}-{$data.stel2|escape}-{$data.stel3|escape}</td>
+</tr>
+<tr>
+<td>摘要</td><td>{$data.stekiyou|escape|nl2br}</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<th>送付資料</th>
+<td>
+{if $doclist}
+<ul class="sdocs">
+{foreach from=$doclist item="datum"}{if $data.sdocs}{foreach from=$data.sdocs item="datum2"}{if $datum2==$datum.id}<li>・{$datum.name|escape}</li>{/if}{/foreach}{/if}{/foreach}
+{if $data.shiryou}<li>{$shiryou[$data.shiryou]|escape}{/if}
+</ul>
+{/if}
+</td>
+</tr>
+
+<tr>
+<th>送付部数</th>
+<td>
+{$data.shiryou_num|escape}部
+</td>
+</tr>
+
+<tr>
+<th>到着希望日</th>
+<td>{$data.syear|escape}年{$data.smonth|escape}月{$data.sday|escape}日</td>
+</tr>
+
+{if $is_master || $is_master2}
+<tr>
+<th>発送日</th>
+<td>
+{if $data.t_syear}{$data.t_syear|escape}年{$data.t_smonth|escape}月{$data.t_sday|escape}日{/if}
+</td>
+</tr>
+
+<tr>
+<th>到着予定日</th>
+<td>
+{if $data.t_ayear}{$data.t_ayear|escape}年{$data.t_amonth|escape}月{$data.t_aday|escape}日{/if}
+</td>
+</tr>
+{else}
+<tr>
+<th>発送日</th>
+<td>
+<select name="t_syear">
+<option value=""></option>
+{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_syear} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 年 
+<select name="t_smonth">
+<option value=""></option>
+{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_smonth} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 月 
+<select name="t_sday">
+<option value=""></option>
+{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_sday} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 日<br>
+</td>
+</tr>
+
+<tr>
+<th>到着予定日</th>
+<td>
+<select name="t_ayear">
+<option value=""></option>
+{foreach from=$years item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_ayear} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 年 
+<select name="t_amonth">
+<option value=""></option>
+{foreach from=$months item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_amonth} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 月 
+<select name="t_aday">
+<option value=""></option>
+{foreach from=$days item="datum"}<option value="{$datum|escape}"{if $datum==$data.t_aday} selected{/if}>{$datum|escape}</option>
+{/foreach}
+</select> 日<br>
+</td>
+</tr>
+{/if}
+
+<tr>
+<th>備考</th>
+<td>
+<textarea name="t_bikou" cols="30" rows="3">{$data.t_bikou|escape}</textarea>
+</td>
+</tr>
+
+{if $is_master || $is_master2}
+<tr>
+<th>発送状況</th>
+<td>{if $data.t_status2==1}{$trans_status2[$data.t_status2]}<input type="hidden" name="t_status" value="{$data.t_status|escape}">{else}<select name="t_status">
+{foreach from=$trans_status key="dkey" item="datum"}<option value="{$dkey}"{if $dkey==$data.t_status} selected{/if}>{$datum|escape}
+{/foreach}
+</select>{/if}<input type="hidden" name="t_status2" value="{$data.t_status2|escape}"></td>
+</tr>
+{else}{if $is_shipping}
+<tr>
+<th>発送状況</th>
+<td><select name="t_status2">
+{if $data.t_status==1}{foreach from=$trans_status2 key="dkey" item="datum"}<option value="{$dkey}"{if $dkey==$data.t_status2} selected{/if}>{$datum|escape}
+{/foreach}{else}
+<option>　　　　　　　　{/if}
+</select><input type="hidden" name="t_status" value="{$data.t_status|escape}"></td>
+</tr>
+{/if}{/if}
+
+<tr>
+<td colspan="2" align="center">{if $is_master || $is_master2 || $data.t_status==1}<input type="submit" value="　保存　" onClick="return cautionDate();"><input type="hidden" name="mode" value="submit">{/if}</td>
+</tr>
+</table>
+<input type="hidden" name="y" value="{$year|escape}">
+<input type="hidden" name="br" value="{$nbranch|escape}">
+<input type="hidden" name="tr2" value="{$tstatus2|escape}">
+</form>
+<a href="/manage/forms/index.php/module/FormManage/action/TransList?y={$year|escape}&amp;br={$nbranch|escape}&amp;tr2={$tstatus2|escape}">戻る</a>
+</div>
+</body>
+</html>

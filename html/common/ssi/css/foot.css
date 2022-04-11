@@ -1,0 +1,44 @@
+/* ------------------------------------------
+	footer
+--------------------------------------------- */
+#foot {
+	background-image:url(/common/ssi/img/foot_bg.gif);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#F2F2F2;
+	padding:12px 15px 18px 15px;
+}
+
+#foot #copy {
+	float:left;
+	width:400px;
+	padding:5px 0 0 0;
+}
+
+#foot #links {
+	float:right;
+	width:26em;
+	text-align:right;
+}
+
+#foot #links ul li{
+	list-style-type:none;
+	display:inline;
+}
+#foot #links ul li.li_br{
+	display:block;
+}
+#foot #links ul li a{
+	white-space:nowrap;
+}
+
+#foot #links ul li.li0{
+	padding-right:3px;
+}
+
+#foot #links ul li.li1{
+	background-image:url(/common/ssi/img/slash0.gif);
+	background-repeat:no-repeat;
+	background-position:left top;
+	padding-left:6px;
+}

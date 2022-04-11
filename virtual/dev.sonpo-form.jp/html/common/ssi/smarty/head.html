@@ -1,0 +1,158 @@
+<script type="text/javascript">
+{literal}
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16600020-1']);
+  _gaq.push(['_setDomainName', '.sonpo.or.jp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+{/literal}
+</script>
+		<div id="head">
+			<div class="clearfix" id="upper">
+				<h1 id="title">{if $menu_id<>"top"}<a href="/">{/if}<img src="/common/ssi/img/logo.gif" width="288" height="34" border="0" alt="日本損害保険協会 SONPO">{if $menu_id<>"top"}</a>{/if}</h1>
+				<div class="clearfix" id="nav">
+						<ul>
+							<li class="a0 text1"><a href="http://www.sonpo.or.jp/en/" target="_blank">English</a></li>
+							<li class="a1 text1"><a href="/sitemap/">サイトマップ</a></li>
+							<li class="a2 text1"><a href="/link/">会員会社等へのリンク</a></li>
+						</ul>
+				</div>
+			</div>
+<form name="form" method="post" action="/cgi-bin/search/full_search.cgi">
+			<div class="clearfix" id="mid">
+					<!--  検索 -->
+					<div id="search">
+						<div id="txt"><input type="text" name="query_str" value="ここにキーワードを入力してください。" onfocus="inputareaclr();"></div>
+						<div id="btn"><input type="submit" name="foo" value="検索"></div>
+					</div>
+					<!-- //検索 -->
+<input type="hidden" name="idx" value="assoc">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="display" value="">
+<input type="hidden" name="flag" value="">
+<input type="hidden" name="sort" value="">
+<input type="hidden" name="search" value="">
+<input type="hidden" name="listFile" value="">
+<input type="hidden" name="viewPat" value="df">
+</form>
+					<!--  文字サイズの変更 -->
+					<div id="zoom">
+						<div class="box">
+						<ul>
+							<li class="title"><span>文字サイズの変更</span></li>
+							<li class="b-m"><a href="#" onClick="setActiveStyleSheet('medium');" onfocus="this.blur();"><span>標準</span></a></li>
+							<li class="b-l"><a href="#" onClick="setActiveStyleSheet('large');" onfocus="this.blur();"><span>大</span></a></li>
+							<li class="b-xl"><a href="#" onClick="setActiveStyleSheet('exlarge');" onfocus="this.blur();"><span>特大</span></a></li>
+						</ul>
+						</div>
+					</div>
+					<!-- //文字サイズの変更 -->
+			</div>
+			<div class="clearfix" id="lower">
+				<!-- グローバルナビ -->
+				<ul id="globalnav">
+					<li class="main">
+						<div class="top"><a href="/"{if $menu_id<>"top"} onmouseover="imgOn('m_top');" onmouseout="imgOff('m_top');"{/if}><img src="/common/ssi/img/m_top_{if $menu_id=="top"}3{else}1{/if}.gif" width="108" height="33" alt="トップ" name="m_top"></a></div>
+					</li>
+					<li class="main" onmouseover="openSubm('m_useful_sub');" onmouseout="closeSubm('m_useful_sub');">
+						<div class="top"><a href="/useful/"{if $menu_id<>"useful"} onmouseover="imgOn('m_useful');" onmouseout="imgOff('m_useful');"{/if}><img src="/common/ssi/img/m_useful_{if $menu_id=="useful"}3{else}1{/if}.gif" width="108" height="33" alt="お役立ち情報" name="m_useful"></a></div>
+						<!-- グローバルナビ第二階層(お役立ち情報) -->
+						<div id="m_useful_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/useful/insurance/">損害保険の解説</a></li>
+								<li class="text2"><a href="/useful/kakusyasyouhin/car.html">各社の商品について</a></li>
+								<li class="text2"><a href="/useful/buyers/">バイヤーズガイド（損害保険の契約にあたっての手引）</a></li>
+								<li class="text2"><a href="/useful/flow/">保険金の請求から受取りまでの手引（保険金請求版バイヤーズガイド）</a></li>
+								<li class="text2"><a href="http://soudanguide.sonpo.or.jp/" target="_blank">Web版そんぽ相談ガイド</a></li>
+								<li class="text2"><a href="/useful/soudan/adr/">そんぽADRセンター</a></li>
+								<li class="text2"><a href="/useful/voice/" target="_blank">会員会社に関する情報</a></li>
+								<li class="text2"><a href="/useful/koushi/">講師派遣のご案内</a></li>
+								<li class="btm text2"><a href="/useful/word/">用語辞典</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(お役立ち情報) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_news_sub');" onmouseout="closeSubm('m_news_sub');">
+						<div class="top"><a href="/news/"{if $menu_id<>"news"} onmouseover="imgOn('m_news');" onmouseout="imgOff('m_news');"{/if}><img src="/common/ssi/img/m_news_{if $menu_id=="news"}3{else}1{/if}.gif" width="108" height="33" alt="お知らせ" name="m_news"></a></div>
+						<!-- グローバルナビ第二階層(お知らせ) -->
+						<div id="m_news_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/news/2011quake/">東日本大震災により被災された皆様へ</a></li>
+								<li class="text2"><a href="/news/new_info/">最新情報</a></li>
+								<li class="text2"><a href="/news/release/">ニュースリリース</a></li>
+								<li class="text2"><a href="/news/member/">各社ニュースリリース</a></li>
+								<li class="text2"><a href="/news/information/">協会からのお知らせ</a></li>
+								<li class="btm text2"><a href="/news/jiyutoron/">保険商品の比較に関する自由討論会</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(お知らせ) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_protection_sub');" onmouseout="closeSubm('m_protection_sub');">
+						<div class="top"><a href="/protection/"{if $menu_id<>"protection"} onmouseover="imgOn('m_protection');" onmouseout="imgOff('m_protection');"{/if}><img src="/common/ssi/img/m_protection_{if $menu_id=="protection"}3{else}1{/if}.gif" width="108" height="33" alt="防災・防犯・交通安全" name="m_protection"></a></div>
+						<!-- グローバルナビ第二階層(防災・防犯・交通安全) -->
+						<div id="m_protection_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/protection/disaster/">自然災害に備えて</a></li>
+								<li class="text2"><a href="/protection/research/">安全対策研究</a></li>
+								<li class="text2"><a href="/protection/bousai/">防災教育情報</a></li>
+								<li class="text2"><a href="/protection/insyu/">飲酒運転対策</a></li>
+								<li class="text2"><a href="/protection/kousaten/">事故多発交差点</a></li>
+								<li class="text2"><a href="/protection/bouhan/">防犯のひろば</a></li>
+								<li class="btm text2"><a href="/protection/jidoshatounan/">自動車盗難対策</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(防災・防犯・交通安全) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_archive_sub');" onmouseout="closeSubm('m_archive_sub');">
+						<div class="top"><a href="/archive/"{if $menu_id<>"archive"} onmouseover="imgOn('m_archive');" onmouseout="imgOff('m_archive');"{/if}><img src="/common/ssi/img/m_archive_{if $menu_id=="archive"}3{else}1{/if}.gif" width="108" height="33" alt="統計・刊行物・報告書" name="m_archive"></a></div>
+						<!-- グローバルナビ第二階層(統計・刊行物・報告書) -->
+						<div id="m_archive_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/archive/statistics/">統計</a></li>
+								<li class="text2"><a href="/archive/publish/">刊行物</a></li>
+								<li class="text2"><a href="/archive/report/">報告書</a></li>
+								<li class="btm text2"><a href="/archive/video/">ビデオ</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(統計・刊行物・報告書) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_about_sub');" onmouseout="closeSubm('m_about_sub');">
+						<div class="top"><a href="/about/"{if $menu_id<>"about"} onmouseover="imgOn('m_about');" onmouseout="imgOff('m_about');"{/if}><img src="/common/ssi/img/m_about_{if $menu_id=="about"}3{else}1{/if}.gif" width="108" height="33" alt="協会のご案内" name="m_about"></a></div>
+						<!-- グローバルナビ第二階層(協会のご案内) -->
+						<div id="m_about_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/about/gaiyo/">概要</a></li>
+								<li class="text2"><a href="/about/action/">活動内容</a></li>
+								<li class="text2"><a href="/about/guideline/">行動規範・指針等</a></li>
+								<li class="text2"><a href="/about/address/">所在地</a></li>
+								<li class="text2"><a href="/about/financial/">業務・財務等に関する資料</a></li>
+								<li class="btm text2"><a href="/about/recruit/" target="_blank">採用情報</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(協会のご案内) -->
+					</li>
+					<li class="main" onmouseover="openSubm('m_exam_sub');" onmouseout="closeSubm('m_exam_sub');">
+						<div class="top"><a href="/exam/"{if $menu_id<>"exam"} onmouseover="imgOn('m_exam');" onmouseout="imgOff('m_exam');"{/if}><img src="/common/ssi/img/m_exam_{if $menu_id=="exam"}3{else}1{/if}.gif" width="108" height="33" alt="試験・研修・医療助成" name="m_exam"></a></div>
+						<!-- グローバルナビ第二階層(試験・研修・医療) -->
+						<div id="m_exam_sub">
+							<ol class="subnav">
+								<li class="text2"><a href="/exam/dairiten/">代理店試験</a></li>
+								<li class="text2"><a href="/exam/kanteinin/">「損害保険登録鑑定人」認定試験</a></li>
+								<li class="text2"><a href="/exam/adjuster/">アジャスター試験</a></li>
+								<li class="text2"><a href="/exam/shougakutanki/">少額短期募集人試験</a></li>
+								<li class="text2"><a href="/exam/iryoukenshu/">医療研修</a></li>
+								<li class="btm text2"><a href="/exam/kenkyujyosei/">研究助成</a></li>
+							</ol>
+						</div>
+						<!-- //グローバルナビ第二階層(試験・研修・医療) -->
+					</li>
+					<li class="beginnernavi"><a href="/navi/" onMouseOver="imgOn('m_beginner');" onMouseOut="imgOff('m_beginner');"><img src="/common/ssi/img/m_beginner_1.gif" width="170" height="22" alt="初めての方 サイト総合ナビ" name="m_beginner"></a></li>
+				</ul>
+				<!-- //グローバルナビ -->
+			</div>
+		</div>

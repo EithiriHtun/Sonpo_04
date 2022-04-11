@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="20"
+   name=""
+   committed-date="2005-04-25T21:23:36.209846Z"
+   url="svn://tanner.is-a-geek.net/code/yuma/trunk/opt/renderers"
+   last-author="tanner"
+   kind="dir"
+   uuid="94574c91-2cf4-0310-b6df-ad59b46b3743"
+   revision="20"/>
+<entry
+   committed-rev="20"
+   name="SmartyRenderer.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="578fad45e73f4082b58b439d3baceb8f"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+<entry
+   committed-rev="20"
+   name="SmartTemplatesRenderer.class.php"
+   text-time="2005-04-26T20:22:52.000000Z"
+   committed-date="2005-04-25T21:23:36.209846Z"
+   checksum="d8174b669c1bb3ea0f05655d9449fa9e"
+   last-author="tanner"
+   kind="file"
+   prop-time="2005-04-26T20:22:52.000000Z"/>
+</wc-entries>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>日本損害保険協会 | SONPO</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保">
+<meta name="description" content="損害保険会社の事業者団体、一般社団法人 日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。">
+
+<link rel="stylesheet" type="text/css" href="css/import.css">
+<link rel="stylesheet" type="text/css" href="common/css/fmedium.css" title="medium">
+<link rel="stylesheet" type="text/css" href="common/css/flarge.css" title="large">
+<link rel="stylesheet" type="text/css" href="common/css/fexlarge.css" title="exlarge">
+<script type="text/javascript" src="common/js/check.js"></script>
+<script type="text/javascript" src="common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+</head>
+<body id="top">
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+{include file="../../../../../html/common/ssi/smarty/head.html" menu_id="top"}
+		<!-- //ヘッダ -->
+		<!-- リードエリア -->
+		<div id="lead"><a href=""><img src="/img/visual.jpg" width="690" height="202" alt=""></a><a href=""><img src="/img/p_freedial.jpg" width="260" height="202" alt=""></a></div>
+		<!-- //リードエリア -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+			<!-- コンテンツエリア -->
+			<div id="content-top">
+				<div class="clearfix" id="infoarea">
+
+					<!-- ニュース最新情報 -->
+					<div id="headline">
+{if $tab=="nr"}
+						<div class="clearfix" id="tabarea">
+							<div class="cate"><a href="index.php" onmouseover="imgOn('tab_news_01');" onmouseout="imgOff('tab_news_01');"><img src="/img/tab_news_01_1.gif" width="120" height="31" alt="最新情報" name="tab_news_01"></a></div>
+							<div class="cate"><img src="/img/tab_news_02_3.gif" width="120" height="31" alt="ニュースリリース" name="tab_news_02"></div>
+							<div class="cate"><a href="index.php?t=pz" onmouseover="imgOn('tab_news_03');" onmouseout="imgOff('tab_news_03');"><img src="/img/tab_news_03_1.gif" width="120" height="31" alt="懸賞・公募" name="tab_news_03"></a></div>
+							<div class="cate-r"><a href="index.php?t=in" onmouseover="imgOn('tab_news_04');" onmouseout="imgOff('tab_news_04');"><img src="/img/tab_news_04_1.gif" width="120" height="31" alt="協会からのお知らせ" name="tab_news_04"></a></div>
+						</div>
+{else}
+  {if $tab=="pz"}
+						<div class="clearfix" id="tabarea">
+							<div class="cate"><a href="index.php" onmouseover="imgOn('tab_news_01');" onmouseout="imgOff('tab_news_01');"><img src="/img/tab_news_01_1.gif" width="120" height="31" alt="最新情報" name="tab_news_01"></a></div>
+							<div class="cate"><a href="index.php?t=nr" onmouseover="imgOn('tab_news_02');" onmouseout="imgOff('tab_news_02');"><img src="/img/tab_news_02_1.gif" width="120" height="31" alt="ニュースリリース" name="tab_news_02"></a></div>
+							<div class="cate"><img src="/img/tab_news_03_3.gif" width="120" height="31" alt="懸賞・公募" name="tab_news_03"></div>
+							<div class="cate-r"><a href="index.php?t=in" onmouseover="imgOn('tab_news_04');" onmouseout="imgOff('tab_news_04');"><img src="/img/tab_news_04_1.gif" width="120" height="31" alt="協会からのお知らせ" name="tab_news_04"></a></div>
+						</div>
+  {else}
+    {if $tab=="in"}
+						<div class="clearfix" id="tabarea">
+							<div class="cate"><a href="index.php" onmouseover="imgOn('tab_news_01');" onmouseout="imgOff('tab_news_01');"><img src="/img/tab_news_01_1.gif" width="120" height="31" alt="最新情報" name="tab_news_01"></a></div>
+							<div class="cate"><a href="index.php?t=nr" onmouseover="imgOn('tab_news_02');" onmouseout="imgOff('tab_news_02');"><img src="/img/tab_news_02_1.gif" width="120" height="31" alt="ニュースリリース" name="tab_news_02"></a></div>
+							<div class="cate"><a href="index.php?t=pz" onmouseover="imgOn('tab_news_03');" onmouseout="imgOff('tab_news_03');"><img src="/img/tab_news_03_1.gif" width="120" height="31" alt="懸賞・公募" name="tab_news_03"></a></div>
+							<div class="cate-r"><img src="/img/tab_news_04_3.gif" width="120" height="31" alt="協会からのお知らせ" name="tab_news_04"></div>
+						</div>
+    {else}
+						<div class="clearfix" id="tabarea">
+							<div class="cate"><img src="/img/tab_news_01_3.gif" width="120" height="31" alt="最新情報" name="tab_news_01"></div>
+							<div class="cate"><a href="index.php?t=nr" onmouseover="imgOn('tab_news_02');" onmouseout="imgOff('tab_news_02');"><img src="/img/tab_news_02_1.gif" width="120" height="31" alt="ニュースリリース" name="tab_news_02"></a></div>
+							<div class="cate"><a href="index.php?t=pz" onmouseover="imgOn('tab_news_03');" onmouseout="imgOff('tab_news_03');"><img src="/img/tab_news_03_1.gif" width="120" height="31" alt="懸賞・公募" name="tab_news_03"></a></div>
+							<div class="cate-r"><a href="index.php?t=in" onmouseover="imgOn('tab_news_04');" onmouseout="imgOff('tab_news_04');"><img src="/img/tab_news_04_1.gif" width="120" height="31" alt="協会からのお知らせ" name="tab_news_04"></a></div>
+						</div>
+    {/if}
+  {/if}
+{/if}
+						<div class="clearfix text2" id="box">
+							<dl id="info">
+{foreach from=$data item="datum"}{if $datum.is_time_over}
+						<dt>{$datum.open_year2|string_format:"%02d"}.{$datum.open_month|string_format:"%02d"}.{$datum.open_day|string_format:"%02d"}</dt>
+						<dd {if $datum.category==1}class="icn-rel"{/if}{if $datum.category==2}class="icn-pri"{/if}{if $datum.category==4}class="icn-inf"{/if}><a href="{if $datum.category==1}/news/release/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}{if $datum.category==2}{$datum.link_url_1|escape}{/if}{if $datum.category==4}/news/information/{$datum.open_year|string_format:"%04d"}/{$datum.filename|escape}.html{/if}">{$datum.list_title|escape}</a></dd>
+{/if}{/foreach}
+							</dl>
+							<div class="clearfix btnarea">
+								<div class="listbtn">{if $tab=="nr"}<a href="/news/release/">{else}{if $tab=="pz"}<a href="/news/application/">{else}{if $tab=="in"}<a href="/news/information/">{else}<a href="/news/new_info/">{/if}{/if}{/if}<img src="/img/b_list.gif" width="50" height="20" alt="一覧"></a></div>
+								<div class="rssbtn"><a href="/rss/"><img src="/img/b_rss.gif" width="45" height="20" alt="rss"></a></div>
+								<div class="memberbtn"><a href="/news/member/index.html" class="arw2">各社ニュースリリース</a></div>
+							</div>
+						</div>
+					</div>
+					<!-- //ニュース最新情報 -->
+
+					<!-- バナーエリア -->
+					<div id="bnrbox">
+						{if $image_1_name}<div class="box1"><a href="{$topimage.url_1|escape}"><img src="{$image_url|escape}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt=""></a></div>
+{/if}
+						{if $image_2_name}<div class="box2"><a href="{$topimage.url_2|escape}"><img src="{$image_url|escape}{$image_2_name|escape}" width="{$image_2_width|escape}" height="{$image_2_height|escape}" alt=""></a></div>
+{/if}
+					</div>
+					<!-- //バナーエリア -->
+				</div>
+				<!-- バイヤーズガイド -->
+				<div class="subt1"><div class="frm"><p class="text2">バイヤーズガイド</p></div></div>
+				<div class="contentBlockf">
+					<div class="pad0">
+						<div class="subt2"><div class="frm"><p class="text2">損害保険の契約にあたっての手引</p></div></div>
+						<div class="insideBlock2 text2">
+							<p>皆さまが安心して損害保険の契約をしていただくために、ご注意いただきたいことなどをまとめたものです。損害保険の契約をお考えの方は必ずご覧ください。</p>
+							<p><a href="/useful/buyers/index.html">詳しくはこちら</a></p>
+						</div>
+						<br>
+						<div class="subt2"><div class="frm"><p class="text2">保険金の請求から受け取りまでの手引き</p></div></div>
+						<div class="insideBlock2 text2">
+							<p>損害保険をご契約いただいている皆さまが、万一の事故に遭われたときに、保険金をお受け取りいただくに当たり、知っておいていただきたい基本的なことをまとめたものです。保険金のご請求手続きの際にご活用ください。</p>
+							<p><a href="/useful/flow/index.html">詳しくはこちら</a></p>
+						</div>
+					</div>
+				</div>
+				<!-- //バイヤーズガイド -->
+				<!-- ※詳しく話しを聞きたい方 -->
+				<div class="boxOrangeBg">
+					<div class="boxOrangeTop">
+						<div class="boxOrangeBottom">
+							<div class="boxOrange">
+<p class="text2">※詳しく話しを聞きたい方&nbsp;&rarr;&nbsp;<a href="/useful/koushi/index.html">講師派遣のお申込み</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //※詳しく話しを聞きたい方 -->
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+			<div id="rightside">
+				<!-- 消費者ナビ -->
+				<div class="navibox">
+					<div class="top"><img src="/img/box_consumer_top.gif" width="220" height="29" border="0" alt="消費者ナビ"></div>
+					<div class="frm">
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+					</div>
+				</div>
+				<!-- //消費者ナビ -->
+				<!-- スクールナビ(教育情報) -->
+				<div class="navibox">
+					<div class="top"><img src="/img/box_school_top.gif" width="220" height="29" border="0" alt="スクールナビ(教育情報)"></div>
+					<div class="frm">
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+					</div>
+				</div>
+				<!-- //スクールナビ(教育情報) -->
+				<!-- 協会のご案内 -->
+				<div class="navibox2">
+					<div class="top"><img src="/img/box_society_top.gif" width="220" height="29" border="0" alt="協会のご案内"></div>
+					<div class="frm">
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+						<p class="text2"><a href="" class="arw2">てきつそとつでむ</a></p>
+					</div>
+				</div>
+				<!-- //協会のご案内 -->
+				<!-- 「消費者の声」なんとか会議 -->
+				<div class="refarea">
+					<table cellpadding="0" cellspacing="0" border="0" class="refbox">
+					<!-- 「消費者の声」諮問会議 -->
+					<tr>
+					<td class="txt0"><p class="arw2 text2"><a href="">「消費者の声」諮問会議</a></p></td>
+					<td class="img0"><a href=""><img src="/img/p_pickup_01.jpg" width="50" height="50" border="0" alt="協会のご案内"></a></td>
+					</tr>
+					<!-- //「消費者の声」諮問会議 -->
+					<!-- 飲酒運転防止の取り組み -->
+					<tr>
+					<td class="txt0"><p class="arw2 text2"><a href="">飲酒運転防止の取り組み</a></p></td>
+					<td class="img0"><a href=""><img src="/img/p_pickup_02.jpg" width="50" height="50" border="0" alt="飲酒運転防止の取り組み"></a></td>
+					</tr>
+					<!-- //飲酒運転防止の取り組み -->
+					<!-- 地震保険料控除制度 -->
+					<tr>
+					<td class="txt0"><p class="arw2 text2"><a href="">地震保険料控除制度</a></p></td>
+					<td class="img0"><a href=""><img src="/img/p_pickup_03.jpg" width="50" height="50" border="0" alt="地震保険料控除制度"></a></td>
+					</tr>
+					<!-- //地震保険料控除制度 -->
+					<!-- フル画像バナータイプ -->
+					<tr>
+					<td colspan="2" class="img2"><a href=""><img src="/img/p_pickup_03.jpg" width="220" height="50" border="0" alt="地震保険料控除制度"></a></td>
+					</tr>
+					<!-- //フル画像バナータイプ -->
+					<!-- フル画像バナータイプ -->
+					<tr>
+					<td colspan="2" class="img2"><a href=""><img src="/img/p_pickup_02.jpg" width="220" height="50" border="0" alt="地震保険料控除制度"></a></td>
+					</tr>
+					<!-- //フル画像バナータイプ -->
+					</table>
+				</div>
+				<!-- //「消費者の声」なんとか会議 -->
+				
+			</div>
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+		<!-- フッタ -->
+{include file="../../../../../html/common/ssi/smarty/foot.html"}
+		<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>

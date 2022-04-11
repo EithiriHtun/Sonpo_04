@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+<!--
+{literal}
+var allSel=false;
+function fnc_all_click(objAll){
+	if(allSel){
+	  allSel=false;
+	  document.getElementById("btnSelChk").value="全選択";
+	}else{
+	  allSel=true;
+	  document.getElementById("btnSelChk").value="全解除";
+	}
+
+	for(var i=0;i<document.frm1.length;i++){
+		//チェックボックスであれば
+		if(document.frm1[i].type=="checkbox"){
+			document.frm1[i].checked = allSel;
+		}
+	}
+}
+//-->
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>資料発送（一覧）</h3>
+<div class="maincontents">
+
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<a href="/manage/forms/index.php/module/FormManage/action/InstIndex">戻る</a>
+<hr>
+<b>{$year|escape}年度</b><br><br>
+{if $is_master || $is_master2 || $is_shipping}
+<form action="/manage/forms/index.php/module/FormManage/action/TransList" name="selform">
+<table>
+<tr>
+<td align="right">年度</td><td><select name="y" onChange="document.selform.submit();">
+{foreach from=$years key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==$year} selected{/if}>{$dkey|escape}</option>{/foreach}</select></td>
+</tr>
+{if $is_master || $is_master2}
+<tr>
+<td align="right">担当部署</td><td><select name="br" onChange="document.selform.submit();"><option value="99">すべて</option>
+{foreach from=$branch key="dkey" item="datum"}{if $mybranch}{if $mybranch==$dkey}<option value="{$dkey|escape}"{if $dkey==$nbranch} selected{/if}>{$datum|escape}</option>{/if}{else}<option value="{$dkey|escape}"{if $dkey==$nbranch} selected{/if}>{$datum|escape}</option>{/if}{/foreach}</select></td>
+</tr>
+</table>
+</form>
+{/if}
+{if $is_shipping}
+<form action="/manage/forms/index.php/module/FormManage/action/TransList">
+<input type="hidden" name="y" value="{$year|escape}">
+発送状況<select name="tr2"><option value="0">すべて</option>
+{if $is_master || $is_master2}<option value="1"{if $tstatus2==1} selected{/if}>発送承認待ち{/if}
+<option value="2"{if $tstatus2==2} selected{/if}>発送承認済み
+<option value="3"{if $tstatus2==3} selected{/if}>発送済み
+</select><input type="submit" value="更新">　
+</form>
+{/if}
+{if $data}
+<form action="index.php/module/FormManage/action/TransCsv" method="POST" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講演日</th>
+<th>担当部署</th>
+<th>主催者</th>
+<th>発送状況</th>
+<th>発送日</th>
+<th>到着予定日</th>
+<th>チェック</th>
+</tr>
+
+{foreach from=$data item="datum"}
+{if $datum.sdocs}
+<tr>
+<td><a href="{$script_path|escape}/module/FormManage/action/TransRegist?id={$datum.id|escape}&amp;y={$year|escape}&amp;br={$nbranch|escape}&amp;tr2={$tstatus2|escape}">{$datum.inst_id|escape}</a></td>
+<td>{if $datum.year_3}{$datum.year_3|escape}/{$datum.month_3|escape}/{$datum.day_3|escape}{else}{$datum.year_1|escape}/{$datum.month_1|escape}/{$datum.day_1|escape}{if $datum.year_2}({$datum.year_2|escape}/{$datum.month_2|escape}/{$datum.day_2|escape}){/if}{/if}</td>
+<td>{if $branch[$datum.branch]}{$branch[$datum.branch]|escape}{else}{$branch_no2[$datum.prefecture]}{/if}</td>
+<td>{if $datum.host2}{$datum.host2|escape}{else}{$datum.host}{/if}&nbsp;</td>
+<td>{if $datum.t_status==1}{if $datum.t_status2==1}発送済み{else}発送承認済み{/if}{else}発送承認待ち{/if}&nbsp;</td>
+<td>{if $datum.t_syear}{$datum.t_syear|escape}/{$datum.t_smonth|escape}/{$datum.t_sday|escape}{/if}&nbsp;</td>
+<td>{if $datum.t_ayear}{$datum.t_ayear|escape}/{$datum.t_amonth|escape}/{$datum.t_aday|escape}{/if}&nbsp;</td>
+<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"></td>
+</tr>
+{/if}
+{/foreach}
+<tr><td colspan="7">&nbsp;</td><td><input type="button" value="全選択" id="btnSelChk" onClick="fnc_all_click(this);"></td></tr>
+</table>
+<div>
+<table cellpadding="1" cellspacing="0" border="0">
+{if $is_master || $is_master2}
+<tr>
+<td>　　</td>
+<td align="right">データ削除</td>
+<td><input type="submit" name="subbtn" value="チェックしたデータの削除" onClick="return confirm('チェックしたデータを削除してよろしいですか？');"></td>
+</tr>
+{/if}
+<tr>
+<td>　　</td>
+<td align="right">CSVダウンロード</td><td><input type="button" value="全件のCSV" onClick="document.frm2.submit();">　<input type="submit" name="subbtn" value="チェックしたデータのCSV">　
+<input type="hidden" name="y" value="{$year|escape}">
+<input type="hidden" name="br" value="{$nbranch|escape}"></td>
+</form>
+</tr>
+</table>
+{/if}
+{/if}
+<br>
+<a href="/manage/forms/index.php/module/FormManage/action/InstIndex">戻る</a>
+<form action="index.php/module/FormManage/action/TransCsv" method="POST" name="frm2">
+<input type="hidden" name="is_all" value="1">
+<input type="hidden" name="ids" value="{foreach from=$data item="datum"}{$datum.id|escape},{/foreach}">
+<input type="hidden" name="csvtype" value="basic">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#deny from all
+
+AuthUserFile /var/www/virtual/dev.sonpo-form.jp/html/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Test Area"
+AuthType Basic
+
+require valid-user
+
+<FilesMatch "(index\.html)$">
+Satisfy Any
+Order allow,deny
+Allow from all
+Deny from none
+</FilesMatch>
+
+DirectoryIndex index.php index.html index.htm
+Header always append X-Frame-Options SAMEORIGIN
+
+RewriteEngine on
+
+# RewriteCond %{HTTPS} on
+#RewriteCond %{REQUEST_URI} !/(_pma|archive|common|js|img|css|manage|useful|img_c|xpyfphqt\.htm|r6pluemg.htm|elf6nexa.htm|u0xk6gxn.htm)
+#RewriteRule ^(.*)$ http://www.sonpo.or.jp [R,L]
+
+#RewriteCond %{REQUEST_URI} ^/$
+#RewriteRule ^(.*)$ http://www.sonpo.or.jp [R,L]
+
+AddType video/x-ms-asf .asf
+AddType video/x-ms-asf .asx
+
+order allow,deny
+allow from all
+
+php_flag display_errors On
+php_value output_handler mb_output_handler
+php_value mbstring.detect_order auto
+php_flag mbstring.encoding_translation On
+php_value mbstring.http_input pass
+php_value mbstring.http_output SJIS-win
+php_value mbstring.internal_encoding eucJP-win
+php_value mbstring.language Japanese
+php_flag allow_call_time_pass_reference on
+# php_value session.cookie_secure 1

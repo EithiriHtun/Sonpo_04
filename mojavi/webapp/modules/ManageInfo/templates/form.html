@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>{$branch_name|escape} お知らせの登録/編集</h3>
+<div class="maincontents">
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageInfo/action/Regist" method="POST" enctype="multipart/form-data" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>タイトル</th>
+<td><input type="text" name="list_title" size="80" value="{$data.list_title|escape}"><br><span style="color:red;">20文字以内で入力してください。</span></td>
+</tr>
+<tr>
+<th>本文</th>
+<td>
+<table cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td valign="top" rowspan="2">範囲指定挿入</td>
+<td valign="top">
+<input type="button" value="大見出し" onClick="decorateHeadL(document.frm1.content);">
+<input type="button" value="中見出し" onClick="decorateHeadM(document.frm1.content);">
+<input type="button" value="小見出し" onClick="decorateHeadS(document.frm1.content);">
+<input type="button" value="見出し" onClick="decorateHead(document.frm1.content);">
+</td>
+</tr>
+<tr>
+<td valign="top">
+<input type="button" value="文字小" onClick="decorateTextS(document.frm1.content);">
+<input type="button" value="文字大" onClick="decorateTextL(document.frm1.content);">　
+<input type="button" value="赤" onClick="decorateTextColor(document.frm1.content,'fc-red');">
+<!--<input type="button" value="青" onClick="decorateTextColor(document.frm1.content,'fc-blu');">-->
+<input type="button" value="緑" onClick="decorateTextColor(document.frm1.content,'fc-grn');">
+<!--<input type="button" value="紫" onClick="decorateTextColor(document.frm1.content,'fc-vio');">-->　
+<input type="button" value="太字" onClick="decorateTextStrong(document.frm1.content);">
+</td>
+</tr>
+<tr>
+<td valign="top">挿入</td>
+<td>
+<input type="button" value="画像" onClick="openImageForm('wndimage',document.frm1.content,document.frm2.tempcontent);">
+<input type="button" value="リンク" onClick="openLinkForm('wndimage',document.frm1.content,document.frm2.tempcontent);">
+<input type="button" value="ファイル" onClick="openFileForm('wndimage',document.frm1.content,document.frm2.tempcontent);">　
+<input type="button" value="改行" onClick="insertBr(document.frm1.content);">
+
+</td>
+</tr>
+</table>
+<textarea name="content" cols="100" rows="30">{$data.content|escape}</textarea></td>
+</tr>
+<tr>
+<th>関連リンク</th>
+<td>
+
+<table cellpadding="2" cellspacing="0" border="0">
+<tr>
+<td>テキスト</td>
+<td>URL</td>
+</tr>
+<tr>
+<td><input type="text" name="link_text_1" size="40" value="{$data.link_text_1|escape}"></td>
+<td><input type="text" name="link_url_1" size="40" value="{$data.link_url_1|escape}"><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td><input type="text" name="link_text_2" size="40" value="{$data.link_text_2|escape}"></td>
+<td><input type="text" name="link_url_2" size="40" value="{$data.link_url_2|escape}"><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td><input type="text" name="link_text_3" size="40" value="{$data.link_text_3|escape}"></td>
+<td><input type="text" name="link_url_3" size="40" value="{$data.link_url_3|escape}"><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td><input type="text" name="link_text_4" size="40" value="{$data.link_text_4|escape}"></td>
+<td><input type="text" name="link_url_4" size="40" value="{$data.link_url_4|escape}"><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td><input type="text" name="link_text_5" size="40" value="{$data.link_text_5|escape}"></td>
+<td><input type="text" name="link_url_5" size="40" value="{$data.link_url_5|escape}"><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<th>記事公開日</th>
+<td>
+<select name="open_year">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時
+<br><span style="color:red;">ここでの登録日付順に、ソートされて表示されます。<br>「時」は表示されません。</span>
+</td>
+</tr>
+
+<tr>
+<th>「最新情報」への掲載</th>
+<td><input type="radio" name="link_top" value="1"{if $data.link_top==1} checked{/if}>する　<input type="radio" name="link_top" value="0"{if $data.link_top<>1} checked{/if}>しない</td>
+</tr>
+
+<tr>
+<th>「スクロールメッセージ」<br>への表示</th>
+<td><input type="radio" name="show_scroll" value="1"{if $data.show_scroll==1} checked{/if}>する　<input type="radio" name="show_scroll" value="0"{if $data.show_scroll<>1} checked{/if}>しない</td>
+</tr>
+
+</table>
+<input type="hidden" name="mode" value="preview">
+
+<table>
+<tr>
+<td><input type="submit" value="プレビュー"></td>
+<td><input type="button" value="登録しないで戻る" onClick="document.location='{$script_path|escape}/module/ManageInfo?b={$branch_id|escape:"url"}'"></td>
+</tr>
+</table>
+
+</form>
+
+<form name="frm2"><input type="hidden" name="tempcontent"></form>
+
+</div>
+</body>
+</html>

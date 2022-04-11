@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+<ul>
+{if $is_master || $is_master2}<li><a href="{$script_path|escape}/module/FormManage/action/PubReceptIndex">受付管理</a>{/if}
+{if $is_master || $is_master2 || $is_shipping}<li><a href="{$script_path|escape}/module/FormManage/action/PubOrderIndex">発送管理</a>{/if}
+{if $is_master || $is_master2 || $is_shipping || $is_sassi}<li><a href="{$script_path|escape}/module/FormManage/action/PubShipIndex">発送履歴</a>{/if}
+<li><a href="{$script_path|escape}/module/FormManage/action/PubStockIndex">在庫状況履歴</a>
+{if $is_master}<li><a href="{$script_path|escape}/module/FormManage/action/PubMasterIndex">刊行物マスター管理</a>{/if}
+{if !$is_shipping}<li><a href="{$script_path|escape}/module/FormManage/action/PubMakeOrder">刊行物申込</a>{/if}
+{if $is_master}<li><a href="{$script_path|escape}/module/FormManage/action/PubOpenRegist">刊行物申込受付一時停止設定（取寄せは含まず）</a>{/if}
+{if $is_master}<li style="margin-top:10px;"><a href="{$script_path|escape}/module/FormManage/action/PubInactiveIndex">削除データ[受付管理・発送管理]</a>{/if}
+</ul>
+
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>
+
+</div>
+</body>
+</html>

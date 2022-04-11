@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+<!--
+{literal}
+var allSel=false;
+function fnc_all_click(objAll){
+	if(allSel){
+	  allSel=false;
+	  document.getElementById("btnSelChk").value="全選択";
+	}else{
+	  allSel=true;
+	  document.getElementById("btnSelChk").value="全解除";
+	}
+
+	for(var i=0;i<document.frm1.length;i++){
+		//チェックボックスであれば
+		if(document.frm1[i].type=="checkbox"){
+			document.frm1[i].checked = allSel;
+		}
+	}
+}
+
+function checkchecked(){
+  var is_check=0;
+  var ids='';
+  for(index = 0; index < document.frm1.elements["dl[]"].length; index++){
+    if(document.frm1.elements["dl[]"][index].checked){
+      is_check=is_check+1;
+      ids=ids + document.frm1.elements["inst_id[]"][index].value + "\n";
+    }
+  }
+  
+  if(!is_check){
+    alert('削除するデータが選択されていません。');
+    return false;
+  }else{
+    return confirm('選択したデータを削除してよろしいですか？'+ "\n" + ids);
+  }
+
+}
+
+//-->
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>講師派遣（一覧）</h3>
+<!--{$action_memory_usage}-->
+<!--{$action_memory_usage2}-->
+<!--{$memory_usage}-->
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>{if @$is_master || @$is_master2}　<a href="/manage/forms/index.php/module/FormManage/action/InstInactiveIndex?y={$year|escape:"url"}&br={$nbranch|escape:"url"}&st={$status|escape:"url"}&ts={$ntaisyou|escape:"url"}">削除データ</a>{/if}
+
+<hr>
+<div align="right">
+［<a href="{$script_path|escape}/module/FormManage/action/Logout">ログアウト</a>］
+</div>
+
+<b>{if @$year==-1} {else}{$year|escape}{/if}年度</b><br>
+<a href="{$script_path|escape}/module/FormManage/action/InstAdd?y={$year|escape}&amp;br={$nbranch|escape}&amp;st={$status|escape}&amp;ts={$ntaisyou|escape}">追加登録</a><br>
+{if @$data}<br>
+実施件数：消費者{if @$taisyou_count[1]}{$taisyou_count[1]|escape}{else}0{/if}件　高校{if @$taisyou_count[2]}{$taisyou_count[2]|escape}{else}0{/if}件　大学{if @$taisyou_count[3]}{$taisyou_count[3]|escape}{else}0{/if}件　相談員{if @$taisyou_count[4]}{$taisyou_count[4]|escape}{else}0{/if}件　その他{if @$taisyou_count[5]}{$taisyou_count[5]|escape}{else}0{/if}件<br>
+{/if}
+<br>
+<form action="/manage/forms/index.php/module/FormManage/action/InstList" name="selform">
+<table>
+<tr>
+<td align="right">講演年度</td><td><select name="y" onChange="document.selform.submit();"><!--<option value="">年度</option>-->
+{foreach from=$years key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==@$year} selected{/if}>{if $dkey==-1}それ以外{else}{$dkey|escape}{/if}</option>{/foreach}</td>
+</tr>
+<tr>
+<td align="right">担当部署</td><td><select name="br" onChange="document.selform.submit();"><option value="99">すべて</option>
+{foreach from=$branch key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==@$nbranch} selected{/if}>{$datum|escape}</option>{/foreach}</td>
+</tr>
+<tr>
+<td align="right">対象</td><td><select name="ts" onChange="document.selform.submit();"><option value="0">すべて</option>
+{foreach from=$taisyou key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==@$ntaisyou} selected{/if}>{$datum|escape}</option>{/foreach}</td>
+</tr>
+<tr>
+<td align="right">ステータス</td><td><select name="st" onChange="document.selform.submit();"><option value="99">すべて</option>
+{foreach from=$inst_status key="dkey" item="datum"}<option value="{$dkey|escape}"{if $dkey==@$status} selected{/if}>{$datum|escape}</option>{/foreach}</td>
+</tr>
+</table>
+</form>
+{if @$data}
+<form action="index.php/module/FormManage/action/InstCsv" method="POST" name="frm1">
+<table cellspacing="1" class="azlist">
+<tr>
+<th>受付番号</th>
+<th>講演日</th>
+<th>担当部署</th>
+<th>対象</th>
+<th>主催者</th>
+<th>講演テーマ</th>
+<th>ステータス</th>
+<!--<th>発送状況（旧）</th>-->
+<th>発送状況</th>
+<th>チェック</th>
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td>{if @$is_master || @$is_master2}<a href="{$script_path|escape}/module/FormManage/action/InstRegist?id={$datum.id|escape}&amp;y={$year|escape}&amp;br={$nbranch|escape}&amp;st={$status|escape}&amp;ts={$ntaisyou|escape}">{$datum.inst_id|escape}</a>{else}{if @$datum.branch}{if @$mybranch==@$datum.branch || (@$mybranch==6 && @$datum.branch==5) || (@$mybranch==20 && @$datum.branch==3) || (@$mybranch==21 && @$datum.branch==3) || (@$mybranch==21 && @$datum.branch==20)}<a href="{$script_path|escape}/module/FormManage/action/InstRegist?id={$datum.id|escape}&amp;y={$year|escape}&amp;br={$nbranch|escape}&amp;st={$status|escape}&amp;ts={$ntaisyou|escape}">{$datum.inst_id|escape}</a>{else}{$datum.inst_id|escape}{/if}{else}{if $mybranch==$branch_no[$datum.lecture_prefecture]}<a href="{$script_path|escape}/module/FormManage/action/InstRegist?id={$datum.id|escape}&amp;y={$year|escape}&amp;br={$nbranch|escape}&amp;st={$status|escape}&amp;ts={$ntaisyou|escape}">{$datum.inst_id|escape}</a>{else}{$datum.inst_id|escape}{/if}{/if}{/if}</td>
+<td>{if @$datum.year_3}{$datum.year_3|escape}/{$datum.month_3|escape}/{$datum.day_3|escape}{else}{$datum.year_1|escape}/{$datum.month_1|escape}/{$datum.day_1|escape}{if @$datum.year_2}({$datum.year_2|escape}/{$datum.month_2|escape}/{$datum.day_2|escape}){/if}{/if}</td>
+<td>{if @$branch[$datum.branch]}{$branch[$datum.branch]|escape}{else}{if @$branch_no2[$datum.lecture_prefecture]}{$branch_no2[$datum.lecture_prefecture]}{/if}{/if}</td>
+<td>{if @$taisyou[$datum.taisyou]}{$taisyou[$datum.taisyou]|escape}{else}&nbsp;{/if}</td>
+<td>{if @$datum.host2}{$datum.host2|escape}{else}{$datum.host}{/if}&nbsp;</td>
+<td>{if @$datum.theme2}{$datum.theme2|escape}{else}{if @$theme[$datum.themes]}{$theme[$datum.themes]}{/if}{/if}&nbsp;</td>
+<td>{$inst_status[$datum.status]|escape}</td>
+<!-- old --><!--<td>
+{if @$datum.is_new==0}
+{if @$datum.sdocs}
+  {if @$datum.sregist==1}
+    {if @$datum.t_status==1}
+      {if @$datum.t_status2==1}発送済み
+      {else}発送承認済み
+      {/if}
+    {else}
+      {if @$datum.t_status==0}発送承認待ち
+      {/if}
+    {/if}
+  {/if}
+{/if}
+{/if}&nbsp;
+</td>-->
+<td>
+{if @$datum.sregist==1}{if @$datum.approve==1}{if @$datum.trans_status==1}対応中{elseif $datum.trans_status==2}発送済み{else}承認済み{/if}
+{else}
+{if @$datum.approve<>99}承認待ち{/if}
+{/if}
+{/if}
+&nbsp;</td>
+<td align="center"><input type="checkbox" name="dl[]" value="{$datum.id|escape}"><input type="hidden" name="inst_id[]" value="{$datum.inst_id|escape}"></td>
+</tr>
+{/foreach}
+<input type="hidden" name="dl[]" value="">
+<input type="hidden" name="inst_id[]" value="">
+<tr><td colspan="8">&nbsp;</td><td><input type="button" value="全選択" id="btnSelChk" onClick="fnc_all_click(this);"></td></tr>
+</table>
+<div>
+<table cellpadding="1" cellspacing="0" border="0">
+{if @$is_master || @$is_master2}
+<tr>
+<td>　　</td>
+<td align="right">データ削除</td>
+<td><input type="submit" name="subbtn" value="チェックしたデータの削除" onClick="return checkchecked();"></td>
+</tr>
+{/if}
+<tr>
+<td>　　</td>
+<td align="right">CSVダウンロード</td><td><input type="button" value="全件のCSV" onClick="document.frm2.submit();">　<input type="submit" name="subbtn" value="チェックしたデータのCSV">　
+<input type="radio" name="csvtype" value="basic" checked onClick="if(this.checked)document.frm2.csvtype.value='basic'">基本情報　<input type="radio" name="csvtype" value="all" onClick="if(this.checked)document.frm2.csvtype.value='all'">すべての情報
+<input type="hidden" name="y" value="{$year|escape}">
+<input type="hidden" name="br" value="{$nbranch|escape}">
+<input type="hidden" name="st" value="{$status|escape}">
+<input type="hidden" name="ts" value="{$ntaisyou|escape}"></td>
+</tr>
+</table>
+</form>
+{/if}
+<br><hr>
+<a href="/manage/forms/index.php/module/FormManage">戻る</a>
+<form action="index.php/module/FormManage/action/InstCsv" method="POST" name="frm2">
+<input type="hidden" name="is_all" value="1">
+<input type="hidden" name="ids" value="{foreach from=$data item="datum"}{$datum.id|escape},{/foreach}">
+<input type="hidden" name="csvtype" value="basic">
+</form>
+</div>
+</body>
+</html>

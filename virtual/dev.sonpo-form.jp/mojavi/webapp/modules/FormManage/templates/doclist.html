@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>日本損害保険協会・講師派遣 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+<!--
+{literal}
+var allSel=false;
+function fnc_all_click(objAll){
+	if(allSel){
+	  allSel=false;
+	  document.getElementById("btnSelChk").value="全選択";
+	}else{
+	  allSel=true;
+	  document.getElementById("btnSelChk").value="全解除";
+	}
+
+	for(var i=0;i<document.frm1.length;i++){
+		//チェックボックスであれば
+		if(document.frm1[i].type=="checkbox"){
+			document.frm1[i].checked = allSel;
+		}
+	}
+}
+//-->
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・講師派遣 管理画面</h2>
+<h3>資料（一覧）</h3>
+<div class="maincontents">
+
+<hr>
+<a href="{$script_path|escape}/module/FormManage/action/DocRegist">新規追加</a>
+<hr>
+{if $data}
+<form action="/manage/forms/index.php/module/FormManage/action/DocDelete" method="POST" name="frm1">
+<table cellspacing="1" class="azlist" width="300">
+<tr>
+<th>資料名</th>
+<th>チェック</th>
+</tr>
+
+{foreach from=$data item="datum"}{if $datum.visible}
+<tr>
+<td><a href="{$script_path|escape}/module/FormManage/action/DocRegist?id={$datum.id|escape}">{$datum.name|escape}</a></td>
+<td align="center"><input type="checkbox" name="doc[]" value="{$datum.id|escape}"></td>
+</tr>
+{/if}{/foreach}
+<tr><td align="center">&nbsp;</td><td align="center"><input type="button" value="全選択" id="btnSelChk" onClick="fnc_all_click(this);"></td></tr>
+</table>
+データ削除<input type="submit" value="チェックしたものを削除" onClick="return confirm('チェックしたデータを削除してよろしいですか？');">
+<hr>
+</form>
+{/if}
+<a href="{$script_path|escape}/module/FormManage/action/InstIndex">戻る</a>
+</div>
+</body>
+</html>

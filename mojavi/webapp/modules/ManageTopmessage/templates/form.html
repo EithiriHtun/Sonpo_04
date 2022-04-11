@@ -1,0 +1,416 @@
+<html>
+<head>
+<title>日本損害保険協会・管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script language="javascript">
+{literal}
+  function setNowDate(n){
+    var d = new Date();
+ 
+    var year   = d.getFullYear();
+    var month  = d.getMonth() + 1;
+    var day    = d.getDate();
+    var hour   = d.getHours();
+    
+    var yObj = document.frm1.elements['open_year_'  + n];
+    var mObj = document.frm1.elements['open_month_' + n];
+    var dObj = document.frm1.elements['open_day_'   + n];
+    var hObj = document.frm1.elements['open_hour_'  + n];
+
+    for(i=0;i<yObj.length;i++){
+      if(yObj.options[i].value==year){
+        yObj.options[i].selected = true;
+      }
+    }
+
+    for(i=0;i<mObj.length;i++){
+      if(mObj[i].value==month){
+        mObj.options[i].selected = true;
+      }
+    }
+
+    for(i=0;i<dObj.length;i++){
+      if(dObj[i].value==day){
+        dObj.options[i].selected = true;
+      }
+    }
+
+    for(i=0;i<hObj.length;i++){
+      if(hObj[i].value==hour){
+        hObj.options[i].selected = true;
+      }
+    }
+  }
+  function confirmJump(link){
+    if(confirm('ニュース詳細登録画面に遷移します\nこのページで登録中の未保存の内容はキャンセルされてしまいますがよろしいですか？')){
+      location.href=link;
+    }
+  }
+{/literal}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・管理画面</h2>
+<h3>トップページ（スクロールメッセージ）</h3>
+
+<div class="maincontents">
+<h3>フリーテキスト</h3>
+{if $errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+<form action="{$script_path|escape}/module/ManageTopmessage/action/Index" method="POST" name="frm1">
+
+<table cellspacing="1" class="azlist">
+
+<!-- 1 -->
+<tr>
+<th>テキスト1</th>
+<td>
+
+<table cellspacing="1">
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_1">
+<option value="1"{if $data.sort_num_1==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_1==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_1==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_1==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_1==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_1==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_1" value="1"{if $data.is_visible_1==1} checked{/if}></td>
+</tr>
+<tr>
+<td>テキスト</td>
+<td><input type="text" name="message_1" value="{$data.message_1|escape}" size="60"><br><span style="color:red;">最大34文字。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="link_url_1" value="{$data.link_url_1|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_1" value=""{if $data.target_1==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_1" value="_blank"{if $data.target_1=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>ステータス</td>
+<td>{if $data.is_visible_1}{if $data.is_reserve_1}公開予約中{else}公開中{/if}{else}非公開{/if}</td>
+</tr>
+<tr>
+<td>公開日</td>
+<td>
+<select name="open_year_1">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year_1==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month_1">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month_1==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day_1">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day_1==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour_1">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour_1==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時　<input type="button" value="現時刻をセット" onClick="setNowDate(1);">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+<!-- 2 -->
+<tr>
+<th>テキスト2</th>
+<td>
+
+<table cellspacing="1">
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_2">
+<option value="1"{if $data.sort_num_2==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_2==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_2==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_2==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_2==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_2==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_2" value="1"{if $data.is_visible_2==1} checked{/if}></td>
+</tr>
+<tr>
+<td>テキスト</td>
+<td><input type="text" name="message_2" value="{$data.message_2|escape}" size="60"><br><span style="color:red;">最大34文字。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="link_url_2" value="{$data.link_url_2|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_2" value=""{if $data.target_2==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_2" value="_blank"{if $data.target_2=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>ステータス</td>
+<td>{if $data.is_visible_2}{if $data.is_reserve_2}公開予約中{else}公開中{/if}{else}非公開{/if}</td>
+</tr>
+<tr>
+<td>公開日</td>
+<td>
+<select name="open_year_2">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year_2==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month_2">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month_2==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day_2">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day_2==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour_2">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour_2==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時　<input type="button" value="現時刻をセット" onClick="setNowDate(2);">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+
+<!-- 3 -->
+<tr>
+<th>テキスト3</th>
+<td>
+
+<table cellspacing="1">
+
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_3">
+<option value="1"{if $data.sort_num_3==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_3==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_3==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_3==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_3==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_3==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_3" value="1"{if $data.is_visible_3==1} checked{/if}></td>
+</tr>
+<tr>
+<td>テキスト</td>
+<td><input type="text" name="message_3" value="{$data.message_3|escape}" size="60"><br><span style="color:red;">最大34文字。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="link_url_3" value="{$data.link_url_3|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_3" value=""{if $data.target_3==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_3" value="_blank"{if $data.target_3=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>ステータス</td>
+<td>{if $data.is_visible_3}{if $data.is_reserve_3}公開予約中{else}公開中{/if}{else}非公開{/if}</td>
+</tr>
+<tr>
+<td>公開日</td>
+<td>
+<select name="open_year_3">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year_3==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month_3">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month_3==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day_3">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day_3==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour_3">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour_3==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時　<input type="button" value="現時刻をセット" onClick="setNowDate(3);">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+
+<!-- 4 -->
+<tr>
+<th>テキスト4</th>
+<td>
+
+<table cellspacing="1">
+
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_4">
+<option value="1"{if $data.sort_num_4==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_4==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_4==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_4==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_4==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_4==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_4" value="1"{if $data.is_visible_4==1} checked{/if}></td>
+</tr>
+<tr>
+<td>テキスト</td>
+<td><input type="text" name="message_4" value="{$data.message_4|escape}" size="60"><br><span style="color:red;">最大34文字。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="link_url_4" value="{$data.link_url_4|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_4" value=""{if $data.target_4==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_4" value="_blank"{if $data.target_4=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>ステータス</td>
+<td>{if $data.is_visible_4}{if $data.is_reserve_4}公開予約中{else}公開中{/if}{else}非公開{/if}</td>
+</tr>
+<tr>
+<td>公開日</td>
+<td>
+<select name="open_year_4">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year_4==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month_4">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month_4==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day_4">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day_4==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour_4">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour_4==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時　<input type="button" value="現時刻をセット" onClick="setNowDate(4);">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+
+<!-- 5 -->
+<tr>
+<th>テキスト5</th>
+<td>
+
+<table cellspacing="1">
+
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_5">
+<option value="1"{if $data.sort_num_5==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_5==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_5==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_5==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_5==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_5==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示</td>
+<td><input type="checkbox" name="is_visible_5" value="1"{if $data.is_visible_5==1} checked{/if}></td>
+</tr>
+<tr>
+<td>テキスト</td>
+<td><input type="text" name="message_5" value="{$data.message_5|escape}" size="60"><br><span style="color:red;">最大34文字。</span></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><input type="text" name="link_url_5" value="{$data.link_url_5|escape}" size="60"><br><span style="color:red;">http://から入力してください。</span></td>
+</tr>
+<tr>
+<td>開き方</td>
+<td><input type="radio" name="target_5" value=""{if $data.target_5==""} checked{/if}>同ウィンドウ　<input type="radio" name="target_5" value="_blank"{if $data.target_5=="_blank"} checked{/if}>新規ウィンドウ</td>
+</tr>
+
+<tr>
+<td>ステータス</td>
+<td>{if $data.is_visible_5}{if $data.is_reserve_5}公開予約中{else}公開中{/if}{else}非公開{/if}</td>
+</tr>
+<tr>
+<td>公開日</td>
+<td>
+<select name="open_year_5">{foreach from=$open_years item="datum"}<option value="{$datum|escape}"{if $data.open_year_5==$datum} selected{/if}>{$datum|escape}{/foreach}</select>年
+<select name="open_month_5">{foreach from=$open_months item="datum"}<option value="{$datum|escape}"{if $data.open_month_5==$datum} selected{/if}>{$datum|escape}{/foreach}</select>月
+<select name="open_day_5">{foreach from=$open_days item="datum"}<option value="{$datum|escape}"{if $data.open_day_5==$datum} selected{/if}>{$datum|escape}{/foreach}</select>日
+<select name="open_hour_5">{foreach from=$open_hours item="datum"}<option value="{$datum|escape}"{if $data.open_hour_5==$datum} selected{/if}>{$datum|escape}{/foreach}</select>時　<input type="button" value="現時刻をセット" onClick="setNowDate(5);">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+</table>
+
+<h3>協会ニュースリリース／協会からのお知らせ／協会各地の活動</h3>
+
+<table cellspacing="1" class="azlist">
+
+<!--  -->
+<tr>
+<td>
+
+<table cellspacing="1">
+
+<tr>
+<td>優先順</td>
+<td>
+<select name="sort_num_6">
+<option value="1"{if $data.sort_num_6==1} selected{/if}>1番目</option>
+<option value="2"{if $data.sort_num_6==2} selected{/if}>2番目</option>
+<option value="3"{if $data.sort_num_6==3} selected{/if}>3番目</option>
+<option value="4"{if $data.sort_num_6==4} selected{/if}>4番目</option>
+<option value="5"{if $data.sort_num_6==5} selected{/if}>5番目</option>
+<option value="6"{if $data.sort_num_6==6} selected{/if}>6番目</option>
+</select>
+<br><span style="color:red;">同じ番号が複数設定されている場合は、「登録が新しいテキスト」「フリーテキスト」が優先されます。</span>
+</td>
+</tr>
+
+<tr>
+<td>表示対象ニュース</td>
+<td>
+{foreach from=$articles item="datum"}
+<input type="hidden" name="show_scroll_id[]" value="{$datum.id|escape}">
+<input type="checkbox" name="show_scroll[]" value="{$datum.id|escape}"{if $datum.show_scroll} checked{/if}>表示する <a href="#" onClick="confirmJump('/manage/index.php/module/{if $datum.category==1}ManageNews{/if}{if $datum.category==4}ManageTopic{/if}{if $datum.category==3}ManageInfo{/if}/action/Regist?id={$datum.id|escape}');return false;">{$datum.open_year2|string_format:"%02d"}.{$datum.open_month|string_format:"%02d"}.{$datum.open_day|string_format:"%02d"} {$datum.list_title|escape}</a>{if !$datum.is_time_over}<span style="color:purple;">（公開予約中）</span>{/if}<br>
+{/foreach}
+<br><span style="color:red;">「表示する」のチェックを外して「公開予約・公開」すると、当リストには表示されなくなります。<br />
+該当ニュース登録画面の『「スクロールメッセージ」への表示』の設定にも反映されます。</span>
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+<!-- / -->
+
+</table>
+
+<input type="hidden" name="mode" value="submit">
+
+<table>
+<tr>
+<td><input type="submit" value="　公開予約/公開　">　<input type="button" value="　戻る　" onClick="location.href='/manage/index.php'"></td>
+</tr>
+</table>
+
+</form>
+
+
+</div>
+</body>
+</html>

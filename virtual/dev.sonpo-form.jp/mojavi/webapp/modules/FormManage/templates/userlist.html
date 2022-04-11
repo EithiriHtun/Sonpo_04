@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物・講師派遣関連 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>日本損害保険協会・登録者 管理画面</h2>
+<h3>登録者一覧</h3>
+<div class="maincontents">
+<a href="{$script_path|escape}/module/FormManage/">戻る</a>
+
+<hr>
+{if $data}
+<table cellspacing="1" class="azlist" width="80%">
+<tr>
+<th>登録者アカウント名</th>
+<th>マスター<br>（全権）</th>
+<th>マスター</th>
+<th>冊子所管部門</th>
+<th>支部</th>
+<th>委託業者</th>
+<th>冊子所管部門名・支部名</th>
+</tr>
+
+{foreach from=$data item="datum"}
+<tr>
+<td align="center"><a href="{$script_path|escape}/module/FormManage/action/SetIDPW?id={$datum.id|escape}">{$datum.account|escape}</a></td>
+<td align="center">{if $datum.is_master}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.is_master2}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.is_sassi}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.branch}○{else}&nbsp;{/if}</td>
+<td align="center">{if $datum.is_shipping}○{else}&nbsp;{/if}</td>
+<td align="left">{if $datum.bikou}{$datum.bikou|escape}{else}&nbsp;{/if}</td>
+</tr>
+{/foreach}
+</table>
+{/if}
+<hr>
+<a href="{$script_path|escape}/module/FormManage/">戻る</a>
+</div>
+</body>
+</html>

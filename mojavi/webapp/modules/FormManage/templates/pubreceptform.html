@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>日本損害保険協会・刊行物 管理画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel=STYLESHEET href="/css/manage.css" type="text/css">
+<script type="text/javascript" src="/manage/cm.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF"{if @$popmsg} onLoad="alert('{$popmsg|escape}');"{/if}>
+<h2>日本損害保険協会・刊行物 管理画面</h2>
+<h3>受付管理（詳細）</h3>
+<div class="maincontents">
+
+<a href="/manage/forms/index.php/module/FormManage/action/PubReceptIndex">戻る</a>
+<hr>
+
+{if @$errors}{foreach from=$errors item="datum"}<span style="color:red;">{$datum|escape}</span><br>{/foreach}{/if}
+{if $data.type==3 || $data.type==4}
+
+<form action="{$script_path|escape}/module/FormManage/action/PubReceptRegist" method="POST" name="frm1">
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付番号</th>
+<td width="75%">{$data.recept_id|escape}</td>
+</tr>
+<tr>
+<th>属性</th>
+<td width="75%">{$pub_order_type[$data.type]|escape}</td>
+</tr>
+{if @$data.inst_inst_id}
+<tr>
+<th>講師派遣受付番号</th>
+<td width="75%">{$data.inst_inst_id|escape}</td>
+</tr>
+{/if}
+<tr>
+<th>名前・主催者名</th>
+<td width="75%">{if @$data.inst_host}{$data.inst_host|escape}{else}{$data.name1|escape} {$data.name2|escape}{/if}</td>
+</tr>
+</table>
+<br>
+
+{if @$data.send_type==1}依頼者{else}資料送付先{/if}
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>郵便番号</th>
+<td width="75%">{$data.zipcode1|escape}-{$data.zipcode2|escape}</td>
+</tr>
+<tr>
+<th>住所</th>
+<td>{if @$prefs[$data.prefecture]}{$prefs[$data.prefecture]|escape} {/if}{$data.address|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.tel1|escape}-{$data.tel2|escape}-{$data.tel3|escape}</td>
+</tr>
+{if @$data.user_status==1}
+<tr>
+<th>氏名</th>
+<td>{$data.name1|escape} {$data.name2|escape}</td>
+</tr>
+<tr>
+<th>フリガナ</th>
+<td>{$data.kana1|escape} {$data.kana2|escape}</td>
+</tr>
+{else}
+<tr>
+<th>法人・団体名</th>
+<td>{$data.company|escape}</td>
+</tr>
+<tr>
+<th>部署</th>
+<td>{$data.section|escape}</td>
+</tr>
+<tr>
+<th>担当者氏名</th>
+<td>{$data.name1|escape} {$data.name2|escape}</td>
+</tr>
+<tr>
+<th>担当者フリガナ</th>
+<td>{$data.kana1|escape} {$data.kana2|escape}</td>
+</tr>
+{/if}
+<tr>
+<th>メールアドレス</th>
+<td>{$data.email|escape}</td>
+</tr>
+</table>
+<br>
+
+{if @$data.send_type==1}資料送付先
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>郵便番号</th>
+<td width="75%">{$data.szipcode1|escape}-{$data.szipcode2|escape}</td>
+</tr>
+<tr>
+<th>住所</th>
+<td>{if @$prefs[$data.sprefecture]}{$prefs[$data.sprefecture]|escape} {/if}{$data.saddress|escape}</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>{$data.stel1|escape}-{$data.stel2|escape}-{$data.stel3|escape}</td>
+</tr>
+{if @$data.suser_status==1}
+<tr>
+<th>氏名</th>
+<td>{$data.sname1|escape} {$data.sname2|escape}</td>
+</tr>
+<tr>
+<th>フリガナ</th>
+<td>{$data.skana1|escape} {$data.skana2|escape}</td>
+</tr>
+{else}
+<tr>
+<th>法人・団体名</th>
+<td>{$data.scompany|escape}</td>
+</tr>
+<tr>
+<th>部署</th>
+<td>{$data.ssection|escape}</td>
+</tr>
+<tr>
+<th>担当者氏名</th>
+<td>{$data.sname1|escape} {$data.sname2|escape}</td>
+</tr>
+<tr>
+<th>担当者フリガナ</th>
+<td>{$data.skana1|escape} {$data.skana2|escape}</td>
+</tr>
+{/if}
+<!--<tr>
+<th>メールアドレス</th>
+<td>{$data.semail|escape}</td>
+</tr>-->
+</table>
+<br>
+{/if}
+
+<table cellspacing="1" class="azlist" width="90%">
+{foreach from=$data.books item="datum" name="loopbooks"}
+<tr>
+  {if @$smarty.foreach.loopbooks.first}
+<th rowspan="{$data.allbooks|escape}">送付冊子</th>
+  {/if}
+<td>[ {$datum.amount|escape} 部] {$datum.name|escape}</td>
+</tr>
+{/foreach}
+{if @$data.total_count}
+<tr>
+<th>合計部数</th>
+<td width="75%">{$data.total_count|escape} 部</td>
+</tr>
+{/if}
+{if @$data.inst_shiryou_other}
+<tr>
+<th>資料その他</th>
+<td width="75%">{$data.inst_shiryou_other|escape}</td>
+</tr>
+{/if}
+<tr>
+<th>送料請求書宛名</th>
+<td><input type="text" name="bill_name" value="{$data.bill_name|escape}" size="30"></td>
+</tr>
+</table>
+<br>
+
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>受付日</th>
+<td width="75%">{$data.regist_time|date_format:"%Y-%m-%d"}</td>
+</tr>
+<tr>
+<th>到着希望日</th>
+<td>
+<select name="req_year"><option value="">▼{foreach from=$years item="datum"}<option value="{$datum|escape}"{if @$datum==$data.req_year} selected{/if}>{$datum|escape}{/foreach}</select>年 
+<select name="req_month"><option value="">▼{foreach from=$months item="datum"}<option value="{$datum|escape}"{if @$datum==$data.req_month} selected{/if}>{$datum|escape}{/foreach}</select>月 
+<select name="req_day"><option value="">▼{foreach from=$days item="datum"}<option value="{$datum|escape}"{if @$datum==$data.req_day} selected{/if}>{$datum|escape}{/foreach}</select>日 
+</td>
+</tr>
+<!--
+<tr>
+<th>到着希望日摘要</th>
+<td width="75%"><textarea name="req_text" cols="60" rows="2">{$data.req_text|escape}</textarea></td>
+</tr>
+-->
+{if @$data.req_text}
+<tr>
+<th>到着希望日摘要</th>
+<td width="75%">{$data.req_text|escape|nl2br}</td>
+</tr>
+{/if}
+{if @$data.inst_stekiyou}
+<tr>
+<th>到着希望日摘要</th>
+<td width="75%">{$data.inst_stekiyou|escape|nl2br}</td>
+</tr>
+{/if}
+<tr>
+<th>承認</th>
+<td width="75%"><select name="approve">
+{foreach from=$approve key="dkey" item="datum"}<option value="{$dkey}"{if @$dkey==$data.approve} selected{/if}>{$datum|escape}
+{/foreach}
+</select></td>
+</tr>
+<tr>
+<th>使用目的</th>
+<td width="75%"><textarea name="purpose" cols="60" rows="2">{$data.purpose|escape}</textarea></td>
+</tr>
+</table>
+<br>
+
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<th>備考</th>
+<td width="75%"><textarea name="bikou" cols="60" rows="2">{$data.bikou|escape}</textarea></td>
+</tr>
+</table>
+<br>
+
+<table cellspacing="1" class="azlist" width="90%">
+<tr>
+<td colspan="2" align="center"><input type="submit" value="　保存　"><input type="hidden" name="mode" value="submit"></td>
+</tr>
+</table>
+
+</form>
+
+{/if}
+<a href="/manage/forms/index.php/module/FormManage/action/PubReceptIndex">戻る</a>
+</div>
+</body>
+</html>

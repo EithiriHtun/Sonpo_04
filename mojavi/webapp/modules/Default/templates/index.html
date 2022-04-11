@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<!-- new -->
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta name="verify-v1" content="gfyyiVKhZWYybmy0egbN87OU+4KKr+cpcCOw7vBDWcM=" />
+<title>日本損害保険協会 | SONPO</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="keywords" content="損害保険、防災、防犯、募集人試験、自然災害、地震、自賠責保険、防火、交通事故、損害保険代理店、損害保険登録鑑定人、損保" />
+<meta name="description" content="損害保険会社の事業者団体、一般社団法人 日本損害保険協会のサイト。損害保険業界のニュースをはじめ、損害保険の基礎的な知識や統計、防災・防犯・交通安全に関する情報が満載。" />
+<meta name="google-site-verification" content="wYuMc9hR63RNXCMld2SzJ9RQc5oUss764_q5_r6O7e8" />
+<meta name="globalsign-domain-verification" content="tLPuf5r4oxj9PiqOPgTrYNjzb-OnZc4Tkq-cDlfgQ7" />
+<link rel="stylesheet" type="text/css" href="/css/import.css" />
+<link rel="stylesheet" type="text/css" href="/common/css/fmedium.css" title="medium" />
+<link rel="stylesheet" type="text/css" href="/common/css/flarge.css" title="large" />
+<link rel="stylesheet" type="text/css" href="/common/css/fexlarge.css" title="exlarge" />
+
+<script type="text/javascript" src="/common/js/check.js"></script>
+<script type="text/javascript" src="/common/js/fontsize.js"></script>
+<script type="text/javascript" src="/common/js/share.js"></script>
+
+<!-- customized script -->
+<script type="text/javascript" src="/js/share.js"></script>
+<script type="text/javascript" src="/common/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/common/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/top.js" charset="UTF-8"></script>
+<!-- //customized script -->
+</head>
+<body id="top">
+<div id="wrapper">
+	<div id="inbox">
+		<!-- ヘッダ -->
+{include file=$include_base|cat:"/common/ssi/smarty/head.html" menu_id="top"}
+<!-- //ヘッダ -->
+		<!-- リードエリア -->
+		<div id="mainlead" class="clearfix">
+			<div id="mvfrm">
+				<div id="mainvisual">
+					<ul class="anima_{if $topimage.anime_pattern==1}sw{/if}{if $topimage.anime_pattern==2}fd{/if}{if $topimage.anime_pattern==3}rl{/if}{if $topimage.anime_pattern==4}bt{/if}">		<!-- anima_bt4 / anima_rl3 / anima_fd2 / anima_sw1 -->
+{foreach from=$sort_suffix key="i" item="it"}
+						{if $image_name[$i] && $is_visible[$i]}<li class="spd_{$opensec[$i]|escape}">{if $url[$i]}<a href="{$url[$i]|escape}"{if $target[$i]} target="{$target[$i]|escape}"{/if}>{/if}<img src="{$image_url|escape}{$image_name[$i]|escape}" alt="" width="670" height="160" />{if $url[$i]}</a>{/if}</li>{/if}
+{/foreach}
+					</ul>
+				</div>
+			</div>
+			<div class="mainbnr">
+				{if $image_12_name}<p>{if $topimage.url_12}<a href="{$topimage.url_12|escape}"{if $topimage.target_12} target="{$topimage.target_12|escape}"{/if}>{/if}<img src="{$image_url|escape}{$image_12_name|escape}" alt="" width="220" height="160" />{if $topimage.url_12}</a>{/if}</p>{/if}
+			</div>
+	 	</div>
+		<!-- //リードエリア -->
+		<!-- メインエリア -->
+		<div id="main" class="clearfix">
+
+			<div id="msg2011quake">
+				<p class="txt"><img src="/img/txt_msg_2011quake.gif" alt="東日本大震災により 被災された皆様に 心よりお見舞い申し上げます" width="530" height="16" /></p>
+				<p class="btn"><a href="/news/2011quake/"><img src="/img/b_2011quake.gif" alt="震災に関するお知らせはこちら" width="265" height="26" /></a></p>
+			</div>
+
+			<!-- コンテンツエリア -->
+			<div id="content-top">
+				<div class="clearfix" id="infoarea">
+
+					<!-- ニュース最新情報 -->
+					<div id="headline" class="tabblk">
+
+						<div class="clearfix" id="news_tabs">
+							<div class="cate"><a href="#tab_hottopics" class="tabitem"><img src="/img/tab_news_01_3.gif" width="120" height="31" alt="最新情報" class="rovr" /></a></div>
+							<div class="cate"><a href="#tab_sonpo" class="tabitem"><img src="/img/tab_news_02_1.gif" width="120" height="31" alt="ニュースリリース" class="rovr" /></a></div>
+							<div class="cate"><a href="#tab_group" class="tabitem"><img src="/img/tab_news_03_1.gif" width="120" height="31" alt="各社ニュースリリース" class="rovr" /></a></div>
+							<div class="cate-r"><a href="#tab_info" class="tabitem"><img src="/img/tab_news_04_1.gif" width="120" height="31" alt="協会からのお知らせ" class="rovr" /></a></div>
+						</div>
+      
+    					<div class="headlinebox clearfix text2">
+							<div class="tabtgt tabtgt_hottopics">
+{$list_all}
+							</div>
+							<div class="tabtgt tabtgt_sonpo hdn">
+{$list_nr}
+							</div>
+							<div class="tabtgt tabtgt_group hdn">
+{$list_pz}
+							</div>
+							<div class="tabtgt tabtgt_info hdn">
+{$list_in}
+							</div>
+
+						<div class="clearfix btnarea">
+							<div class="listbtn"><a href="/news/new_info/"><img src="/img/b_list.gif" width="50" height="20" alt="一覧" /></a></div>
+							<div class="rssbtn"><a href="/rss/"><img src="/img/b_rss.gif" width="45" height="20" alt="rss" /></a></div>
+							<div class="memberbtn"><a href="/about/action/branch/" class="arw2">協会各地の活動</a></div>
+							<div class="actionbtn"><a href="/about/action/youbou/index.html" class="arw2">要望・提言活動</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- //ニュース最新情報 -->
+
+					<!-- バナーエリア -->
+					<div id="bnrbox">
+						{if $image_1_name}<div class="box1"><a href="{$topimage.url_1|escape}"{if $topimage.target_1} target="{$topimage.target_1|escape}"{/if}><img src="{$image_url|escape}{$image_1_name|escape}" width="{$image_1_width|escape}" height="{$image_1_height|escape}" alt=""></a></div>
+{/if}
+						{if $image_2_name}<div class="box1"><a href="{$topimage.url_2|escape}"{if $topimage.target_2} target="{$topimage.target_2|escape}"{/if}><img src="{$image_url|escape}{$image_2_name|escape}" width="{$image_2_width|escape}" height="{$image_2_height|escape}" alt=""></a></div>
+{/if}
+						{if $image_3_name}<div class="box2"><a href="{$topimage.url_3|escape}"{if $topimage.target_3} target="{$topimage.target_3|escape}"{/if}><img src="{$image_url|escape}{$image_3_name|escape}" width="{$image_3_width|escape}" height="{$image_3_height|escape}" alt=""></a></div>
+{/if}
+					</div>
+					<!-- //バナーエリア -->
+				</div>
+
+			</div>
+			<!-- //コンテンツエリア -->
+			<!-- ローカルナビエリア -->
+			<div id="rightside">
+				<!-- 会員会社のご案内について -->
+				<div class="navibox">
+					<div class="top"><a href="/useful/voice/index.html" target="_blank"><img src="/img/b_member.gif" width="220" height="40" border="0" alt="会員会社に関する情報" /></a></div>
+					<div class="frm">
+						<div class="boxtop">
+							<div class="memberlink1">
+								<p class="text2"><a href="/useful/kakusyasyouhin/car.html" class="arw2">くるまの保険</a></p>
+								<p class="text2"><a href="/useful/kakusyasyouhin/house.html" class="arw2">すまいの保険</a></p>
+								<p class="text2"><a href="/useful/kakusyasyouhin/body.html" class="arw2">からだの保険</a></p>
+							</div>
+						</div>
+						<div class="boxbelow">
+							<div class="memberlink0">
+								<p class="text2"><a href="/archive/statistics/gaikyou/" class="arw2">損害保険会社の概況</a></p>
+								<p class="text2"><a href="/useful/soudan/each/" class="arw2">各社相談窓口</a></p>
+								<p class="text2"><a href="/useful/voice/top.html" class="arw2" target="_blank">「お客様の声」を受けた取組み</a></p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- //会員会社各社の商品について -->
+
+				<div class="btmbnr">
+					<p><a href="http://www.sonpo.or.jp/exam/dairiten/" target="_blank"><img src="/img/bnr_agency.gif" width="220" height="138" border="0" alt="代理店試験について" /></a></p>
+				</div>
+			</div>
+			<!-- //ローカルナビエリア -->
+		</div>
+		<!-- //メインエリア -->
+
+{if $count_scrolls}		<!-- ニュースティッカーエリア -->
+		<div id="newstickerblk">
+			<div class="frmt">
+				<div class="frmb">
+					<ul id="newstickerlist" class="text4">
+{foreach from=$scrolls item="datum"}
+						<li>{if $datum.link_url}<a href="{$datum.link_url|escape}"{if $datum.target} target="{$datum.target|escape}"{/if}>{/if}<span>{$datum.comment|escape}</span>{if $datum.link_url}</a>{/if}</li>
+{/foreach}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //ニュースティッカーエリア -->{/if}
+		
+		<!-- フッターバナーエリア -->
+		<div id="footbnr">
+			<ul class="clearfix">
+			<!-- 一段目 -->
+				<!--<li><a href="/protection/jidoshatounan/"><img src="/img/bnr_tonan.gif" width="220" height="60" border="0" alt="10月7日は「盗難防止の日」"></a></li>-->
+				<li><a href="/wakaru/" target="_blank"><img src="/img/bnr_sonpo-no-honto.jpg" width="220" height="60" border="0" alt="そんぽのホント"></a></li>
+				<li><a href="http://jibai-info.jp/" target="_blank"><img src="/img/bnr_jibai-info.gif" width="220" height="60" border="0" alt="自賠責運用益拠出事業について"></a></li>
+				<li><a href="http://www.fuseiseikyu-hl.jp/" target="_blank"><img src="/img/bnr_fuseiseikyu-hl.gif" width="220" height="60" border="0" alt="保険金不正請求ホットライン"></a></li>
+				<li><a href="/protection/jidoshatounan/"><img src="/img/bnr_tonan02.gif" width="220" height="60" border="0" alt="自動車盗難にご注意！"></a></li>
+			<!-- 二段目 -->
+				<li><a href="/news/caution/torihikiji.html"><img src="/img/bnr_torihikiji.gif" width="220" height="60" border="0" alt="取引時確認に関するお客さまへのお願い"></a></li>
+				<li><a href="/navi/"><img src="/img/bnr_shohisha.gif" width="220" height="60" border="0" alt="消費者ナビ 損害保険のご案内"></a></li>
+				<li><a href="/eco/"><img src="/img/bnr_mado.gif" width="220" height="60" border="0" alt="環境の窓"></a></li>
+				<li><a href="/about/recruit/new_graduate/" target="_blank"><img src="/img/bnr_saiyo.gif" width="220" height="60" border="0" alt="採用情報"></a></li>
+			<!-- 三段目 -->
+				<li><a href="/about/action/international/regulations/"><img src="/img/bnr_regulations.gif" width="220" height="60" border="0" alt="国際保険監督規制"></a></li>
+				<li><a href="/radio/" target="_blank"><img src="/img/bnr_radio.gif" width="220" height="60" border="0" alt="損害保険情報提供番組（文化放送・ラジオ大阪）バンブー・涙子のそんぽのホント"></a></li>
+				<li><a href="http://hikaku.sonpo.or.jp/" target="_blank"><img src="/img/b_hikaku_car.gif" width="220" height="60" border="0" alt="自動車保険商品の比較サイト"></a></li>
+			</ul>
+		</div>
+		<!-- //フッターバナーエリア -->
+
+		<!-- フッタ -->
+{include file=$include_base|cat:"/common/ssi/smarty/foot.html"}
+<!-- //フッタ -->
+	</div>
+</div>
+</body>
+</html>
